@@ -63,9 +63,9 @@
     "eslint": "9.32.0",
     "eslint-config-next": "16.2.11",
     "prettier": "3.6.2",
-    "turbo": "2.5.6",
+    "turbo": "2.9.14",
     "typescript": "5.9.2",
-    "vitest": "3.2.4"
+    "vitest": "3.2.6"
   },
   "type": "module",
   "workspaces": [
