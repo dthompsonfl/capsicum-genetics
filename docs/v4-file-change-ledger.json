@@ -1,0 +1,728 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-23T03:02:48.491778+00:00",
+  "baselineFileCount": 401,
+  "currentFileCount": 446,
+  "summary": {
+    "created": 45,
+    "modified": 57,
+    "deleted": 0,
+    "generated": 22
+  },
+  "entries": [
+    {
+      "path": ".env.example",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Build, CI, deployment, and operations",
+      "rationale": "Runtime contract, CI, Compose, scanner, build, or operational policy updated."
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Build, CI, deployment, and operations",
+      "rationale": "Runtime contract, CI, Compose, scanner, build, or operational policy updated."
+    },
+    {
+      "path": "apps/web/src/app/actions.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/api/auth/invitation/exchange/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Authentication, abuse prevention, and privacy",
+      "rationale": "Durable authentication, token, rate-limit, session, or privacy behavior hardened."
+    },
+    {
+      "path": "apps/web/src/app/api/auth/password-reset/exchange/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Authentication, abuse prevention, and privacy",
+      "rationale": "Durable authentication, token, rate-limit, session, or privacy behavior hardened."
+    },
+    {
+      "path": "apps/web/src/app/api/exports/[id]/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "apps/web/src/app/api/exports/breeding-ledger/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Biological identity and breeding ledger",
+      "rationale": "Inventory truth, derived identity, cross, plant, harvest, family, provenance, or label workflow completed."
+    },
+    {
+      "path": "apps/web/src/app/api/media/[id]/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "apps/web/src/app/api/media/upload/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "apps/web/src/app/api/simulations/exact/route.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/catalog/normalized/page.tsx",
+      "status": "created",
+      "generated": false,
+      "workstream": "Scientific catalog governance",
+      "rationale": "Normalized scientific authoring, independent review, release membership, or publication authority completed."
+    },
+    {
+      "path": "apps/web/src/app/catalog/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Scientific catalog governance",
+      "rationale": "Normalized scientific authoring, independent review, release membership, or publication authority completed."
+    },
+    {
+      "path": "apps/web/src/app/catalog/releases/[id]/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Scientific catalog governance",
+      "rationale": "Normalized scientific authoring, independent review, release membership, or publication authority completed."
+    },
+    {
+      "path": "apps/web/src/app/experiments/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Observation and experimental authority",
+      "rationale": "Versioned protocol, method, unit, vocabulary, QC, device, or correction workflow completed."
+    },
+    {
+      "path": "apps/web/src/app/globals.css",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/layout.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/observations/session/[id]/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Observation and experimental authority",
+      "rationale": "Versioned protocol, method, unit, vocabulary, QC, device, or correction workflow completed."
+    },
+    {
+      "path": "apps/web/src/app/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/phenotypes/images/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/plants/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Biological identity and breeding ledger",
+      "rationale": "Inventory truth, derived identity, cross, plant, harvest, family, provenance, or label workflow completed."
+    },
+    {
+      "path": "apps/web/src/app/reports/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/research/review/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/seed-lots/[id]/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/app/selection-plans/[id]/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/selection-plans/[id]/segregation-form.tsx",
+      "status": "created",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/selection-plans/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/simulation-lab/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/simulation-lab/simulation-form.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/simulation-lab/weighted-simulation-form.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/simulations/[id]/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/app/simulations/page.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "apps/web/src/components/mutation-form.tsx",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/lib/presentation.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/web/src/lib/session.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Responsive web application",
+      "rationale": "Browser workflow, error envelope, accessibility-oriented state, or operator experience completed."
+    },
+    {
+      "path": "apps/worker-node/src/malware-scanner.test.ts",
+      "status": "created",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "apps/worker-node/src/malware-scanner.ts",
+      "status": "created",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "apps/worker-node/src/worker.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "docs/V4_ACCEPTANCE_TRACEABILITY.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_BASELINE_REPORT.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_DATA_MODEL_AND_MIGRATION_REPORT.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_FILE_CHANGE_LEDGER.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_FINAL_REPORT.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_OPERATIONS_BACKUP_RESTORE_RUNBOOK.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_RELEASE_BLOCKERS.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_ROUTE_INVENTORY.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_SCIENTIFIC_AUTHORITY_AND_MODEL_GATES.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_SECURITY_AND_THREAT_MODEL.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_SHA256SUMS.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/V4_VALIDATION_REPORT.md",
+      "status": "created",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/repository-validation.json",
+      "status": "modified",
+      "generated": false,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-acceptance-traceability.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-authority-matrix-results.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-deletion-manifest.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-evidence/auth-runtime-smoke.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/catalog-reconciliation.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Scientific catalog governance",
+      "rationale": "Normalized scientific authoring, independent review, release membership, or publication authority completed."
+    },
+    {
+      "path": "docs/v4-evidence/environment.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/frozen-install-attempt.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/genetics-runtime-smoke.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "docs/v4-evidence/node-script-syntax.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/python-worker-tests.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "docs/v4-evidence/repository-validator.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/semantic-typecheck.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/shell-syntax.txt",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/typescript-parser.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-evidence/yaml-validation.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Generated validation evidence",
+      "rationale": "Generated command evidence from the V4 validation ladder."
+    },
+    {
+      "path": "docs/v4-file-change-ledger.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-file-inventory.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Biological identity and breeding ledger",
+      "rationale": "Inventory truth, derived identity, cross, plant, harvest, family, provenance, or label workflow completed."
+    },
+    {
+      "path": "docs/v4-migration-replay-results.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-repository-manifest.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "docs/v4-route-inventory.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "Biological identity and breeding ledger",
+      "rationale": "Inventory truth, derived identity, cross, plant, harvest, family, provenance, or label workflow completed."
+    },
+    {
+      "path": "docs/v4-validation-results.json",
+      "status": "created",
+      "generated": true,
+      "workstream": "V4 documentation and traceability",
+      "rationale": "V4 baseline, architecture, security, scientific, validation, release, or traceability documentation added or updated."
+    },
+    {
+      "path": "infra/compose/docker-compose.yml",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Build, CI, deployment, and operations",
+      "rationale": "Runtime contract, CI, Compose, scanner, build, or operational policy updated."
+    },
+    {
+      "path": "packages/application/package.json",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/application/src/auth-service.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/application/src/breeding-service.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Biological identity and breeding ledger",
+      "rationale": "Inventory truth, derived identity, cross, plant, harvest, family, provenance, or label workflow completed."
+    },
+    {
+      "path": "packages/application/src/catalog-service.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Scientific catalog governance",
+      "rationale": "Normalized scientific authoring, independent review, release membership, or publication authority completed."
+    },
+    {
+      "path": "packages/application/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/application/src/observation-service.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Observation and experimental authority",
+      "rationale": "Versioned protocol, method, unit, vocabulary, QC, device, or correction workflow completed."
+    },
+    {
+      "path": "packages/application/src/simulation-service.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "packages/auth/src/index.test.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Authentication, abuse prevention, and privacy",
+      "rationale": "Durable authentication, token, rate-limit, session, or privacy behavior hardened."
+    },
+    {
+      "path": "packages/auth/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Authentication, abuse prevention, and privacy",
+      "rationale": "Durable authentication, token, rate-limit, session, or privacy behavior hardened."
+    },
+    {
+      "path": "packages/config/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/contracts/src/index.test.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/contracts/src/platform.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Repository integration",
+      "rationale": "Shared contract or repository integration change required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0015_v4_auth_abuse_and_public_idempotency.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0016_v4_selection_plan_scientific_snapshot.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0017_v4_catalog_release_lifecycle.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0018_v4_normalized_catalog_authoring.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0019_v4_inventory_truth_and_exception_authority.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0020_v4_observation_protocol_and_method_authority.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0021_v4_selection_plan_lifecycle_and_outcomes.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/migrations/0022_v4_selection_plan_observed_reconciliation.sql",
+      "status": "created",
+      "generated": false,
+      "workstream": "Database authority and migrations",
+      "rationale": "Forward-only schema, RLS, constraint, or transition authority required by V4."
+    },
+    {
+      "path": "packages/database/scripts/verify-authority.mjs",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Database authority and integration",
+      "rationale": "Database runtime, authority verifier, or persistence contract updated for V4."
+    },
+    {
+      "path": "packages/database/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Database authority and integration",
+      "rationale": "Database runtime, authority verifier, or persistence contract updated for V4."
+    },
+    {
+      "path": "packages/observation-domain/src/index.test.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Observation and experimental authority",
+      "rationale": "Versioned protocol, method, unit, vocabulary, QC, device, or correction workflow completed."
+    },
+    {
+      "path": "packages/observation-domain/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Observation and experimental authority",
+      "rationale": "Versioned protocol, method, unit, vocabulary, QC, device, or correction workflow completed."
+    },
+    {
+      "path": "packages/simulation-domain/src/index.test.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "packages/simulation-domain/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Simulation laboratory and selection planning",
+      "rationale": "Scientific authority dimensions, exact/uncertain simulation, selection lifecycle, or observed segregation completed."
+    },
+    {
+      "path": "packages/storage/src/index.test.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "packages/storage/src/index.ts",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Durable workers, media, storage, and exports",
+      "rationale": "Quarantine, malware scanning, streaming, worker, job, artifact, or export behavior hardened."
+    },
+    {
+      "path": "scripts/validate_repository.py",
+      "status": "modified",
+      "generated": false,
+      "workstream": "Validation and release evidence",
+      "rationale": "Behavioral validator, cleanup, build verifier, or release evidence generator updated."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "encodedVersion": "scrypt-v2",
+  "hashLength": 86,
+  "abuseDigestLength": 64,
+  "opaqueTokenLength": 43
+}

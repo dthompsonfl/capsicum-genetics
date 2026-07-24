@@ -1,0 +1,2 @@
+command=node scripts/generate-routine-manifest.mjs --check 
+routine grant manifest verified (29 runtime, 27 worker)

@@ -1,0 +1,18 @@
+command=env TYPESCRIPT_MODULE_PATH=/opt/nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/typescript.js node scripts/ci/run-v6-runtime-smoke.mjs 
+{
+  "schemaVersion": "1.0",
+  "passed": true,
+  "checks": [
+    "sigv4-actual-method",
+    "sigv4-range-header",
+    "local-immutable-put",
+    "local-full-get",
+    "local-range-get",
+    "range-416-equivalent",
+    "streamed-file-put",
+    "bounded-prefix-list",
+    "upload-file-inspection",
+    "safe-internal-redirect",
+    "object-delete"
+  ]
+}

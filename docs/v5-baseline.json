@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "1.0",
+  "baseline": "v4-complete",
+  "fileCount": 446,
+  "pageCount": 54,
+  "apiRouteCount": 11,
+  "migrationCount": 22,
+  "packageCount": 19,
+  "packages": [
+    {
+      "path": "apps/web/package.json",
+      "name": "@capsicum/web",
+      "scripts": [
+        "build",
+        "dev",
+        "lint",
+        "start",
+        "test",
+        "test:e2e",
+        "test:e2e:accessibility",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "apps/worker-node/package.json",
+      "name": "@capsicum/worker-node",
+      "scripts": [
+        "build",
+        "lint",
+        "start",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/ai/package.json",
+      "name": "@capsicum/ai",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/application/package.json",
+      "name": "@capsicum/application",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/auth/package.json",
+      "name": "@capsicum/auth",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/breeding-domain/package.json",
+      "name": "@capsicum/breeding-domain",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/config/package.json",
+      "name": "@capsicum/config",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "name": "@capsicum/contracts",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/database/package.json",
+      "name": "@capsicum/database",
+      "scripts": [
+        "build",
+        "lint",
+        "migrate",
+        "provision:roles",
+        "seed:catalog",
+        "test",
+        "typecheck",
+        "verify:authority"
+      ]
+    },
+    {
+      "path": "packages/genetics-advanced/package.json",
+      "name": "@capsicum/genetics-advanced",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/genetics-core/package.json",
+      "name": "@capsicum/genetics-core",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/jobs/package.json",
+      "name": "@capsicum/jobs",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/observability/package.json",
+      "name": "@capsicum/observability",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/observation-domain/package.json",
+      "name": "@capsicum/observation-domain",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/scientific-catalog/package.json",
+      "name": "@capsicum/scientific-catalog",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/simulation-domain/package.json",
+      "name": "@capsicum/simulation-domain",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/storage/package.json",
+      "name": "@capsicum/storage",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/test-utils/package.json",
+      "name": "@capsicum/test-utils",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    },
+    {
+      "path": "packages/vision/package.json",
+      "name": "@capsicum/vision",
+      "scripts": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ]
+    }
+  ],
+  "pages": [
+    "apps/web/src/app/accept-invitation/page.tsx",
+    "apps/web/src/app/admin/audit/page.tsx",
+    "apps/web/src/app/admin/jobs/page.tsx",
+    "apps/web/src/app/admin/models/page.tsx",
+    "apps/web/src/app/admin/system/page.tsx",
+    "apps/web/src/app/ai/page.tsx",
+    "apps/web/src/app/annotations/page.tsx",
+    "apps/web/src/app/breeding-ledger/page.tsx",
+    "apps/web/src/app/catalog/claims/[id]/page.tsx",
+    "apps/web/src/app/catalog/loci/[id]/page.tsx",
+    "apps/web/src/app/catalog/normalized/page.tsx",
+    "apps/web/src/app/catalog/page.tsx",
+    "apps/web/src/app/catalog/releases/[id]/page.tsx",
+    "apps/web/src/app/crosses/[id]/page.tsx",
+    "apps/web/src/app/crosses/new/page.tsx",
+    "apps/web/src/app/crosses/page.tsx",
+    "apps/web/src/app/dashboard/page.tsx",
+    "apps/web/src/app/experiments/[id]/page.tsx",
+    "apps/web/src/app/experiments/page.tsx",
+    "apps/web/src/app/families/[id]/page.tsx",
+    "apps/web/src/app/forgot-password/page.tsx",
+    "apps/web/src/app/germplasm/[id]/page.tsx",
+    "apps/web/src/app/germplasm/new/page.tsx",
+    "apps/web/src/app/germplasm/page.tsx",
+    "apps/web/src/app/observations/session/[id]/page.tsx",
+    "apps/web/src/app/onboarding/page.tsx",
+    "apps/web/src/app/page.tsx",
+    "apps/web/src/app/pedigrees/[materialId]/page.tsx",
+    "apps/web/src/app/phenotype-capture/[id]/page.tsx",
+    "apps/web/src/app/phenotype-capture/page.tsx",
+    "apps/web/src/app/phenotypes/images/[id]/page.tsx",
+    "apps/web/src/app/phenotypes/images/page.tsx",
+    "apps/web/src/app/plants/[id]/page.tsx",
+    "apps/web/src/app/plants/page.tsx",
+    "apps/web/src/app/reports/page.tsx",
+    "apps/web/src/app/research-assistant/page.tsx",
+    "apps/web/src/app/research/page.tsx",
+    "apps/web/src/app/research/review/page.tsx",
+    "apps/web/src/app/research/sources/[id]/page.tsx",
+    "apps/web/src/app/reset-password/page.tsx",
+    "apps/web/src/app/scan/[token]/page.tsx",
+    "apps/web/src/app/scientific-catalog/page.tsx",
+    "apps/web/src/app/seed-lots/[id]/page.tsx",
+    "apps/web/src/app/seed-lots/page.tsx",
+    "apps/web/src/app/selection-plans/[id]/page.tsx",
+    "apps/web/src/app/selection-plans/page.tsx",
+    "apps/web/src/app/settings/sessions/page.tsx",
+    "apps/web/src/app/settings/users/page.tsx",
+    "apps/web/src/app/settings/workspace/page.tsx",
+    "apps/web/src/app/sign-in/page.tsx",
+    "apps/web/src/app/simulation-lab/page.tsx",
+    "apps/web/src/app/simulations/[id]/page.tsx",
+    "apps/web/src/app/simulations/new/page.tsx",
+    "apps/web/src/app/simulations/page.tsx"
+  ],
+  "apiRoutes": [
+    "apps/web/src/app/api/auth/invitation/exchange/route.ts",
+    "apps/web/src/app/api/auth/password-reset/exchange/route.ts",
+    "apps/web/src/app/api/exports/[id]/route.ts",
+    "apps/web/src/app/api/exports/breeding-ledger/route.ts",
+    "apps/web/src/app/api/health/liveness/route.ts",
+    "apps/web/src/app/api/health/readiness/route.ts",
+    "apps/web/src/app/api/health/route.ts",
+    "apps/web/src/app/api/media/[id]/route.ts",
+    "apps/web/src/app/api/media/upload/route.ts",
+    "apps/web/src/app/api/simulations/exact/route.ts",
+    "apps/web/src/app/api/system/readiness/route.ts"
+  ],
+  "migrations": [
+    "packages/database/migrations/0001_foundation.sql",
+    "packages/database/migrations/0002_operations_and_observations.sql",
+    "packages/database/migrations/0003_authenticated_mvp.sql",
+    "packages/database/migrations/0004_runtime_authority_guards.sql",
+    "packages/database/migrations/0005_durable_worker_runtime.sql",
+    "packages/database/migrations/0006_membership_bound_rls.sql",
+    "packages/database/migrations/0007_v3_biological_identity_and_cross_authority.sql",
+    "packages/database/migrations/0008_v3_genotype_observation_and_simulation_authority.sql",
+    "packages/database/migrations/0009_v3_runtime_media_research_and_auth_hardening.sql",
+    "packages/database/migrations/0010_v3_canonical_session_and_runtime_authority.sql",
+    "packages/database/migrations/0011_v3_auth_idempotency_and_token_lifecycle.sql",
+    "packages/database/migrations/0012_v3_worker_media_export_and_annotation_authority.sql",
+    "packages/database/migrations/0013_v3_research_and_label_authority.sql",
+    "packages/database/migrations/0014_v3_runtime_privilege_closure.sql",
+    "packages/database/migrations/0015_v4_auth_abuse_and_public_idempotency.sql",
+    "packages/database/migrations/0016_v4_selection_plan_scientific_snapshot.sql",
+    "packages/database/migrations/0017_v4_catalog_release_lifecycle.sql",
+    "packages/database/migrations/0018_v4_normalized_catalog_authoring.sql",
+    "packages/database/migrations/0019_v4_inventory_truth_and_exception_authority.sql",
+    "packages/database/migrations/0020_v4_observation_protocol_and_method_authority.sql",
+    "packages/database/migrations/0021_v4_selection_plan_lifecycle_and_outcomes.sql",
+    "packages/database/migrations/0022_v4_selection_plan_observed_reconciliation.sql"
+  ],
+  "runtime": {
+    "nodeObserved": "v22.16.0",
+    "requiredNode": ">=24.0.0",
+    "pnpmObserved": null,
+    "requiredPnpm": "10.14.0",
+    "registryDnsAvailable": false,
+    "postgresAvailable": false,
+    "dockerAvailable": false,
+    "rAvailable": false
+  },
+  "confirmedGaps": [
+    "Advanced linkage, maternal, conditional-rule, host-pathogen, and Monte Carlo paths are not unified behind one persisted laboratory contract.",
+    "Research sources can be reviewed and retrieved, but durable source ingestion and extraction jobs are inactive.",
+    "Media inspection does not create immutable derivatives or deterministic measurements and the Python worker is not part of the durable queue.",
+    "Breeding-ledger export materializes one JSON snapshot in memory before serialization.",
+    "Hosted AI lacks application-level provider policy and remains intentionally inactive.",
+    "MIAPPE conformance and complete browser/accessibility/runtime proof are absent."
+  ],
+  "executionOrder": [
+    "authority migrations and contracts",
+    "canonical application services",
+    "durable worker handlers",
+    "web workflows",
+    "tests and validator",
+    "release evidence and archives"
+  ]
+}

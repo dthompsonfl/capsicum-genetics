@@ -1,0 +1,16 @@
+[
+  [
+    "version",
+    "date",
+    "status",
+    "changes",
+    "known_gaps"
+  ],
+  [
+    "0.1",
+    "2026-07-22",
+    "Research seed release",
+    "Created evidence-governed schema and curated 22 high-priority locus/model records with 30 sources.",
+    "No complete allele sequence catalog, assembly lift-over, marker validation table, or independent scientific sign-off."
+  ]
+]

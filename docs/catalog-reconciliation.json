@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.1",
+  "scientificState": "draft_pending_review",
+  "files": [
+    {
+      "file": "Locus_Catalog.csv",
+      "sha256": "c5c609447c6dcb73776edb09f866ea3790cfdf98de16a670d34f9ec6a17192e4",
+      "recordCount": 22,
+      "normalizationStatus": "draft_requires_independent_review",
+      "activatedExecutableRules": 0
+    },
+    {
+      "file": "Evidence_Claims.csv",
+      "sha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "recordCount": 22,
+      "normalizationStatus": "draft_requires_independent_review",
+      "activatedExecutableRules": 0
+    },
+    {
+      "file": "Sources.csv",
+      "sha256": "d7ba676aa433db3eecbaadeb75d567f5bbc03a91b0af5a05d593adae28db966d",
+      "recordCount": 30,
+      "normalizationStatus": "draft_requires_independent_review",
+      "activatedExecutableRules": 0
+    }
+  ],
+  "issues": [],
+  "passed": true,
+  "activatedExecutableRules": 0,
+  "guardrails": [
+    "Spreadsheet prose is not executable scientific logic.",
+    "Independent review is required before catalog publication.",
+    "Phenotype rules remain disabled until separately modeled, reviewed, and versioned."
+  ]
+}

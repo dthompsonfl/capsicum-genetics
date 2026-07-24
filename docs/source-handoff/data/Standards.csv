@@ -1,0 +1,6 @@
+standard,domain,adoption,url,source_id
+MIAPPE 1.1,Phenotyping experiment metadata,"Adopt core concepts: Investigation, Study, Biological Material, Observation Unit, Observation Variable, Environment, Event.",https://www.miappe.org/,SRC027
+MCPD v2.1,Germplasm passport/provenance,"Map accession identifiers, institute codes, acquisition source, collecting data, biological status, and persistent identifiers.",https://alliancebioversityciat.org/publications-data/faobioversity-multi-crop-passport-descriptors-v21-mcpd-v21-december-2015,SRC028
+Descriptors for Capsicum,Crop characterization and evaluation,"Use as a vocabulary baseline, then map legacy terms to explicit modern observation variables and units.",https://alliancebioversityciat.org/publications-data/descriptors-capsicum-capsicum-spp,SRC029
+BrAPI,Breeding data interoperability,"Design identifiers and entities to permit later selective BrAPI endpoints for germplasm, studies, observations, and marker data.",https://brapi.org/,SRC030
+Pepper Genomics Database,Reference assemblies and variation,Store assembly name/version with every coordinate and gene identifier; maintain lift-over mappings rather than one canonical coordinate.,https://ted.bti.cornell.edu/cgi-bin/pepper/index,SRC026

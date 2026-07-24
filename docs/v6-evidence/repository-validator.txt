@@ -1,0 +1,3916 @@
+command=python3 scripts/validate_repository.py 
+{
+  "schemaVersion": "2.0",
+  "passed": true,
+  "releaseReady": false,
+  "summary": {
+    "checkCount": 778,
+    "issueCount": 0,
+    "warningCount": 5
+  },
+  "checks": [
+    {
+      "name": "package-names-unique",
+      "passed": true,
+      "detail": "19 manifests inspected"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/web",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/worker-node",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/ai",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/application",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/auth",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/breeding-domain",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/config",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/contracts",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/database",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/genetics-advanced",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/genetics-core",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/jobs",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/observability",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/observation-domain",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/scientific-catalog",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/simulation-domain",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/storage",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/test-utils",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependencies:@capsicum/vision",
+      "passed": true,
+      "detail": "undeclared workspace imports: []"
+    },
+    {
+      "name": "workspace-dependency-acyclic",
+      "passed": true,
+      "detail": "workspace graph must be acyclic"
+    },
+    {
+      "name": "no-compiled-js-in-source",
+      "passed": true,
+      "detail": "no emitted JS may live beside TypeScript source"
+    },
+    {
+      "name": "migration-manifest-present",
+      "passed": true,
+      "detail": "generated migration manifest is required"
+    },
+    {
+      "name": "migration-sequence",
+      "passed": true,
+      "detail": "migration directory and generated manifest must match exactly (29 files)"
+    },
+    {
+      "name": "migration-checksum:0001_foundation.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0002_operations_and_observations.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0003_authenticated_mvp.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0004_runtime_authority_guards.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0005_durable_worker_runtime.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0006_membership_bound_rls.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0007_v3_biological_identity_and_cross_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0008_v3_genotype_observation_and_simulation_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0009_v3_runtime_media_research_and_auth_hardening.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0010_v3_canonical_session_and_runtime_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0011_v3_auth_idempotency_and_token_lifecycle.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0012_v3_worker_media_export_and_annotation_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0013_v3_research_and_label_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0014_v3_runtime_privilege_closure.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0015_v4_auth_abuse_and_public_idempotency.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0016_v4_selection_plan_scientific_snapshot.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0017_v4_catalog_release_lifecycle.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0018_v4_normalized_catalog_authoring.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0019_v4_inventory_truth_and_exception_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0020_v4_observation_protocol_and_method_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0021_v4_selection_plan_lifecycle_and_outcomes.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0022_v4_selection_plan_observed_reconciliation.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0023_v5_governed_advanced_simulation_laboratory.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0024_v5_durable_research_ingestion.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0025_v5_durable_media_derivatives_and_measurements.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0026_v5_streaming_breeding_ledger_export.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0027_v5_phenotype_measurement_revision_authority.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0028_v6_pending_object_reconciliation.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-checksum:0029_v6_storage_cleanup_preview_and_reference_guard.sql",
+      "passed": true,
+      "detail": "generated migration checksum must match source SQL"
+    },
+    {
+      "name": "migration-generated-typescript",
+      "passed": true,
+      "detail": "runtime migration identity must use the generated manifest"
+    },
+    {
+      "name": "migration-present:0001_foundation.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0002_operations_and_observations.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0003_authenticated_mvp.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0004_runtime_authority_guards.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0005_durable_worker_runtime.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0006_membership_bound_rls.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0007_v3_biological_identity_and_cross_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0008_v3_genotype_observation_and_simulation_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0009_v3_runtime_media_research_and_auth_hardening.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0010_v3_canonical_session_and_runtime_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0011_v3_auth_idempotency_and_token_lifecycle.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0012_v3_worker_media_export_and_annotation_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0013_v3_research_and_label_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0014_v3_runtime_privilege_closure.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0015_v4_auth_abuse_and_public_idempotency.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0016_v4_selection_plan_scientific_snapshot.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0017_v4_catalog_release_lifecycle.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0018_v4_normalized_catalog_authoring.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0019_v4_inventory_truth_and_exception_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0020_v4_observation_protocol_and_method_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0021_v4_selection_plan_lifecycle_and_outcomes.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0022_v4_selection_plan_observed_reconciliation.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0023_v5_governed_advanced_simulation_laboratory.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0024_v5_durable_research_ingestion.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0025_v5_durable_media_derivatives_and_measurements.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0026_v5_streaming_breeding_ledger_export.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0027_v5_phenotype_measurement_revision_authority.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0028_v6_pending_object_reconciliation.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "migration-present:0029_v6_storage_cleanup_preview_and_reference_guard.sql",
+      "passed": true,
+      "detail": "required migration"
+    },
+    {
+      "name": "sql-transaction:0001_foundation.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:users",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:workspaces",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:workspace_memberships",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:audit_events",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:catalog_import_batches",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:scientific_sources",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:loci",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:evidence_assertions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:evidence_assertion_sources",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:scientific_reviews",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:catalog_releases",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:catalog_release_loci",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:catalog_release_assertions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:phenotype_rules",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:biological_materials",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:germplasm_accessions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:seed_lots",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:plants",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:material_origin_events",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:material_origin_parents",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:pedigree_edges",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:crosses",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:simulation_runs",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0001_foundation.sql:idempotency_records",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0002_operations_and_observations.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:jobs",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:job_attempts",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:job_logs",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:transactional_outbox",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:research_documents",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:research_passages",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:capture_protocols",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:media_objects",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:phenotype_captures",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:observation_definitions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:observations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:observation_revisions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0002_operations_and_observations.sql:model_versions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0003_authenticated_mvp.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:user_credentials",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:auth_sessions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:workspace_invitations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:material_locations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:inventory_events",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:material_labels",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:genotype_calls",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:cross_events",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:fruits",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:seed_harvests",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:progeny_families",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:family_members",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:selection_plans",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:experiments",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:observation_sessions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:phenotype_annotations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:ai_interactions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:ai_tool_calls",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:export_jobs",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0003_authenticated_mvp.sql:backup_restore_records",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0004_runtime_authority_guards.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0005_durable_worker_runtime.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0006_membership_bound_rls.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0007_v3_biological_identity_and_cross_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:cross_verifications",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:cross_verification_reviews",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:breeding_material_identities",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:inventory_reservations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:plant_inventory_allocations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:material_movements",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:material_current_locations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0007_v3_biological_identity_and_cross_authority.sql:label_generations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0008_v3_genotype_observation_and_simulation_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:reference_assemblies",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_alleles",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:allele_aliases",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:sequence_variants",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:structural_variants",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_markers",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_assays",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_release_alleles",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_release_sequence_variants",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_release_structural_variants",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_release_markers",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:catalog_release_assays",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:measurement_units",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:controlled_vocabularies",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0008_v3_genotype_observation_and_simulation_authority.sql:controlled_terms",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0009_v3_runtime_media_research_and_auth_hardening.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:password_reset_tokens",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:user_totp_credentials",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:user_recovery_codes",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:rate_limit_buckets",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:immutable_artifacts",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:job_contracts",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:worker_heartbeats",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:outbox_delivery_attempts",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:media_inspections",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:media_derivatives",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:phenotype_measurements",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:phenotype_measurement_revisions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0009_v3_runtime_media_research_and_auth_hardening.sql:research_extraction_artifacts",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0010_v3_canonical_session_and_runtime_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0011_v3_auth_idempotency_and_token_lifecycle.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0011_v3_auth_idempotency_and_token_lifecycle.sql:public_idempotency_records",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0012_v3_worker_media_export_and_annotation_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0013_v3_research_and_label_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0013_v3_research_and_label_authority.sql:research_document_reviews",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0013_v3_research_and_label_authority.sql:research_passage_reviews",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0014_v3_runtime_privilege_closure.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0015_v4_auth_abuse_and_public_idempotency.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0016_v4_selection_plan_scientific_snapshot.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0017_v4_catalog_release_lifecycle.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0017_v4_catalog_release_lifecycle.sql:catalog_release_sources",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0017_v4_catalog_release_lifecycle.sql:catalog_release_assemblies",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0017_v4_catalog_release_lifecycle.sql:catalog_release_passages",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0017_v4_catalog_release_lifecycle.sql:catalog_release_capture_protocols",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0017_v4_catalog_release_lifecycle.sql:catalog_release_observation_definitions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0018_v4_normalized_catalog_authoring.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0019_v4_inventory_truth_and_exception_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0019_v4_inventory_truth_and_exception_authority.sql:inventory_exception_requests",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0019_v4_inventory_truth_and_exception_authority.sql:inventory_exception_reviews",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0020_v4_observation_protocol_and_method_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:observation_methods",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:observation_quality_terms",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:observation_device_schemas",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:observation_definition_quality_terms",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:catalog_release_observation_methods",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:catalog_release_observation_quality_terms",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0020_v4_observation_protocol_and_method_authority.sql:catalog_release_observation_device_schemas",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0021_v4_selection_plan_lifecycle_and_outcomes.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0021_v4_selection_plan_lifecycle_and_outcomes.sql:selection_plan_transitions",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0022_v4_selection_plan_observed_reconciliation.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0022_v4_selection_plan_observed_reconciliation.sql:selection_plan_reconciliations",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0023_v5_governed_advanced_simulation_laboratory.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0023_v5_governed_advanced_simulation_laboratory.sql:simulation_requests",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0024_v5_durable_research_ingestion.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0025_v5_durable_media_derivatives_and_measurements.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0025_v5_durable_media_derivatives_and_measurements.sql:media_derivative_runs",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-columns-unique:0025_v5_durable_media_derivatives_and_measurements.sql:phenotype_measurement_runs",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0026_v5_streaming_breeding_ledger_export.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0027_v5_phenotype_measurement_revision_authority.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-transaction:0028_v6_pending_object_reconciliation.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-columns-unique:0028_v6_pending_object_reconciliation.sql:pending_object_uploads",
+      "passed": true,
+      "detail": "duplicate columns: []"
+    },
+    {
+      "name": "sql-transaction:0029_v6_storage_cleanup_preview_and_reference_guard.sql",
+      "passed": true,
+      "detail": "one explicit transaction"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:FORCE ROW LEVEL SECURITY",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:simulation_runs_immutable",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:pedigree_edges_reject_cycles",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:phenotype_rules_require_approved_evidence",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:require_independent_scientific_approval",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:scientific_reviews_append_only",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0001_foundation.sql:CREATE TYPE pollination_method",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0002_operations_and_observations.sql:CREATE TABLE jobs",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0002_operations_and_observations.sql:CREATE TABLE transactional_outbox",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0002_operations_and_observations.sql:CREATE TABLE observation_revisions",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0002_operations_and_observations.sql:CREATE TABLE model_versions",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0002_operations_and_observations.sql:jobs_claim_idx",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0002_operations_and_observations.sql:jobs_lease_expiry_idx",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE user_credentials",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE auth_sessions",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE workspace_invitations",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE genotype_calls",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE cross_events",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE phenotype_annotations",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE ai_interactions",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE TABLE export_jobs",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:CREATE ROLE capsicum_runtime",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:active_membership_visibility",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0003_authenticated_mvp.sql:membership_workspace_isolation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0004_runtime_authority_guards.sql:guard_runtime_catalog_record_write",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0004_runtime_authority_guards.sql:guard_runtime_scientific_review_write",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0004_runtime_authority_guards.sql:guard_runtime_catalog_publication_write",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0004_runtime_authority_guards.sql:phenotype_annotations_append_only",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0004_runtime_authority_guards.sql:model_versions_immutable_after_validation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0004_runtime_authority_guards.sql:REVOKE INSERT, UPDATE, DELETE ON catalog_import_batches",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:CREATE ROLE capsicum_worker",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:FOR UPDATE SKIP LOCKED",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:app_claim_job",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:app_heartbeat_job",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:app_recover_expired_jobs",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:app_claim_outbox",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:app_recover_expired_outbox",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0005_durable_worker_runtime.sql:REVOKE ALL ON FUNCTION app_claim_job(text, text[], integer) FROM capsicum_runtime",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:app_workspace_access_allowed",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:app_valid_invitation_context",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:app_membership_write_allowed",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:active_membership_workspace_isolation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:membership_insert_authority",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:guard_runtime_membership_mutation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0006_membership_bound_rls.sql:workspace membership identity is immutable",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:cross_operational_state",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:cross_verification_state",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:CREATE TABLE breeding_material_identities",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:CREATE TABLE inventory_reservations",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:app_record_cross_verification",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:app_review_cross_verification",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0007_v3_biological_identity_and_cross_authority.sql:app_complete_cross_harvest",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0008_v3_genotype_observation_and_simulation_authority.sql:CREATE TABLE catalog_alleles",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0008_v3_genotype_observation_and_simulation_authority.sql:CREATE TABLE catalog_assays",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0008_v3_genotype_observation_and_simulation_authority.sql:genotype_calls_current_locus_idx",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0008_v3_genotype_observation_and_simulation_authority.sql:guard_genotype_call_history",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0008_v3_genotype_observation_and_simulation_authority.sql:observation_authority",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0008_v3_genotype_observation_and_simulation_authority.sql:simulation_calculation_authority",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0009_v3_runtime_media_research_and_auth_hardening.sql:app_consume_rate_limit",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0009_v3_runtime_media_research_and_auth_hardening.sql:CREATE TABLE password_reset_tokens",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0009_v3_runtime_media_research_and_auth_hardening.sql:CREATE TABLE media_inspections",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0009_v3_runtime_media_research_and_auth_hardening.sql:CREATE TABLE immutable_artifacts",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0010_v3_canonical_session_and_runtime_authority.sql:app_transition_observation_session",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0010_v3_canonical_session_and_runtime_authority.sql:app_resolve_material_label",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0010_v3_canonical_session_and_runtime_authority.sql:guard_observation_session_authority",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0011_v3_auth_idempotency_and_token_lifecycle.sql:CREATE TABLE public_idempotency_records",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0011_v3_auth_idempotency_and_token_lifecycle.sql:delivery_state text",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0011_v3_auth_idempotency_and_token_lifecycle.sql:app_mark_password_reset_delivery",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0012_v3_worker_media_export_and_annotation_authority.sql:app_worker_record_heartbeat",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0012_v3_worker_media_export_and_annotation_authority.sql:app_worker_complete_media_inspection",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0012_v3_worker_media_export_and_annotation_authority.sql:app_worker_breeding_ledger_snapshot",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0012_v3_worker_media_export_and_annotation_authority.sql:app_worker_complete_export",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0012_v3_worker_media_export_and_annotation_authority.sql:guard_runtime_export_authority_mutation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0013_v3_research_and_label_authority.sql:public_token",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0013_v3_research_and_label_authority.sql:app_resolve_material_label_token",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0013_v3_research_and_label_authority.sql:app_review_research_document",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0013_v3_research_and_label_authority.sql:app_review_research_passage",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0013_v3_research_and_label_authority.sql:research_document_reviews_append_only",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0014_v3_runtime_privilege_closure.sql:ALTER DEFAULT PRIVILEGES",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0014_v3_runtime_privilege_closure.sql:REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0014_v3_runtime_privilege_closure.sql:REVOKE INSERT, UPDATE, DELETE ON TABLE media_inspections",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0014_v3_runtime_privilege_closure.sql:REVOKE INSERT, UPDATE, DELETE ON TABLE immutable_artifacts",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0014_v3_runtime_privilege_closure.sql:REVOKE INSERT, UPDATE, DELETE ON TABLE model_versions",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0015_v4_auth_abuse_and_public_idempotency.sql:app_record_failed_signin",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0015_v4_auth_abuse_and_public_idempotency.sql:public_idempotency_terminal_contract_check",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0015_v4_auth_abuse_and_public_idempotency.sql:rate_limit_buckets_hmac_key_check",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0015_v4_auth_abuse_and_public_idempotency.sql:last_successful_login_at",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0016_v4_selection_plan_scientific_snapshot.sql:target_expression",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0016_v4_selection_plan_scientific_snapshot.sql:population_calculation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0016_v4_selection_plan_scientific_snapshot.sql:generation_plan",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0016_v4_selection_plan_scientific_snapshot.sql:reject_selection_plan_snapshot_mutation",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0016_v4_selection_plan_scientific_snapshot.sql:selection_plans_probability_not_guarantee_check",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0017_v4_catalog_release_lifecycle.sql:release_review_state",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0017_v4_catalog_release_lifecycle.sql:catalog_release_sources",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0017_v4_catalog_release_lifecycle.sql:catalog_release_assemblies",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0017_v4_catalog_release_lifecycle.sql:catalog_release_passages",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0017_v4_catalog_release_lifecycle.sql:require_independent_catalog_release_review",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0017_v4_catalog_release_lifecycle.sql:every V4 release locus requires at least one normalized allele",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0018_v4_normalized_catalog_authoring.sql:guard_runtime_catalog_record_write",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0018_v4_normalized_catalog_authoring.sql:guard_runtime_allele_alias_write",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0018_v4_normalized_catalog_authoring.sql:scientific catalog versions are append-only",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0019_v4_inventory_truth_and_exception_authority.sql:remaining_quantity",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0019_v4_inventory_truth_and_exception_authority.sql:inventory_exception_requests",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0019_v4_inventory_truth_and_exception_authority.sql:guard_inventory_exception_request",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0019_v4_inventory_truth_and_exception_authority.sql:reservation_expired",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0020_v4_observation_protocol_and_method_authority.sql:CREATE TABLE observation_methods",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0020_v4_observation_protocol_and_method_authority.sql:CREATE TABLE observation_quality_terms",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0020_v4_observation_protocol_and_method_authority.sql:CREATE TABLE observation_device_schemas",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0020_v4_observation_protocol_and_method_authority.sql:validate_authoritative_observation_revision_v4",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0020_v4_observation_protocol_and_method_authority.sql:catalog_release_observation_methods",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0021_v4_selection_plan_lifecycle_and_outcomes.sql:CREATE TABLE selection_plan_transitions",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0021_v4_selection_plan_lifecycle_and_outcomes.sql:app_transition_selection_plan",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0021_v4_selection_plan_lifecycle_and_outcomes.sql:selection_plan_transitions_append_only",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0021_v4_selection_plan_lifecycle_and_outcomes.sql:selection plan author cannot approve their own plan",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0021_v4_selection_plan_lifecycle_and_outcomes.sql:selection plan lifecycle may only change through app_transition_selection_plan",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0022_v4_selection_plan_observed_reconciliation.sql:CREATE TABLE selection_plan_reconciliations",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0022_v4_selection_plan_observed_reconciliation.sql:selection_plan_reconciliations_immutable",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0022_v4_selection_plan_observed_reconciliation.sql:observed segregation reconciliations are immutable",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "sql-marker:0022_v4_selection_plan_observed_reconciliation.sql:source_simulation_content_hash",
+      "passed": true,
+      "detail": "required authority/operability marker"
+    },
+    {
+      "name": "expected-migration-manifest",
+      "passed": true,
+      "detail": "runtime readiness must derive exact migration identity from the generated manifest"
+    },
+    {
+      "name": "catalog-reconciliation",
+      "passed": true,
+      "detail": "catalog staging validation must pass"
+    },
+    {
+      "name": "catalog-loci-count",
+      "passed": true,
+      "detail": "expected 22 locus records"
+    },
+    {
+      "name": "catalog-claims-count",
+      "passed": true,
+      "detail": "expected 22 evidence claims"
+    },
+    {
+      "name": "catalog-sources-count",
+      "passed": true,
+      "detail": "expected 30 sources"
+    },
+    {
+      "name": "catalog-rules-disabled",
+      "passed": true,
+      "detail": "seed catalog must activate zero executable rules"
+    },
+    {
+      "name": "auth-helper:export function hasPermission",
+      "passed": true,
+      "detail": "authorization helper required by application and web boundaries"
+    },
+    {
+      "name": "auth-helper:export function requirePermission",
+      "passed": true,
+      "detail": "authorization helper required by application and web boundaries"
+    },
+    {
+      "name": "auth-helper:export function isIndependentCatalogReviewer",
+      "passed": true,
+      "detail": "authorization helper required by application and web boundaries"
+    },
+    {
+      "name": "segregation-analysis:exact_binomial",
+      "passed": true,
+      "detail": "bounded observed-segregation analysis marker"
+    },
+    {
+      "name": "segregation-analysis:chi_square",
+      "passed": true,
+      "detail": "bounded observed-segregation analysis marker"
+    },
+    {
+      "name": "segregation-analysis:insufficient_for_supported_test",
+      "passed": true,
+      "detail": "bounded observed-segregation analysis marker"
+    },
+    {
+      "name": "segregation-analysis:adjustPValuesHolm",
+      "passed": true,
+      "detail": "bounded observed-segregation analysis marker"
+    },
+    {
+      "name": "segregation-no-locale-ordering",
+      "passed": true,
+      "detail": "scientific serialization and test ordering must not depend on process locale"
+    },
+    {
+      "name": "route:.",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:accept-invitation",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:admin/audit",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:admin/jobs",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:admin/models",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:admin/system",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:ai",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:annotations",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:breeding-ledger",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:catalog",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:catalog/claims/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:catalog/loci/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:catalog/releases/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:crosses",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:crosses/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:crosses/new",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:dashboard",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:experiments",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:experiments/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:families/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:germplasm",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:germplasm/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:germplasm/new",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:observations/session/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:onboarding",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:pedigrees/[materialId]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:phenotype-capture",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:phenotype-capture/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:phenotypes/images",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:phenotypes/images/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:plants",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:plants/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:reports",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:research-assistant",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:research/review",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:research/sources/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:scientific-catalog",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:seed-lots",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:seed-lots/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:selection-plans",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:selection-plans/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:settings/users",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:settings/workspace",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:sign-in",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:simulation-lab",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:simulations",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:simulations/[id]",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route:simulations/new",
+      "passed": true,
+      "detail": "required product route"
+    },
+    {
+      "name": "route-map-complete",
+      "passed": true,
+      "detail": "48 required; 54 total"
+    },
+    {
+      "name": "api-route:api/exports/[id]",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/exports/breeding-ledger",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/health",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/health/liveness",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/health/readiness",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/media/[id]",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/media/[id]/derivative/[type]",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/media/upload",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/research/upload",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/simulations/advanced",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/simulations/exact",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "api-route:api/system/readiness",
+      "passed": true,
+      "detail": "required API boundary"
+    },
+    {
+      "name": "security-file:session",
+      "passed": true,
+      "detail": "apps/web/src/lib/session.ts"
+    },
+    {
+      "name": "security-file:proxy",
+      "passed": true,
+      "detail": "apps/web/src/proxy.ts"
+    },
+    {
+      "name": "security-file:readiness",
+      "passed": true,
+      "detail": "apps/web/src/lib/environment.ts"
+    },
+    {
+      "name": "security-file:storage",
+      "passed": true,
+      "detail": "packages/storage/src/index.ts"
+    },
+    {
+      "name": "proxy-security:Content-Security-Policy",
+      "passed": true,
+      "detail": "required browser security control"
+    },
+    {
+      "name": "proxy-security:Strict-Transport-Security",
+      "passed": true,
+      "detail": "required browser security control"
+    },
+    {
+      "name": "proxy-security:frame-ancestors 'none'",
+      "passed": true,
+      "detail": "required browser security control"
+    },
+    {
+      "name": "proxy-security:capsicum_session",
+      "passed": true,
+      "detail": "required browser security control"
+    },
+    {
+      "name": "proxy-public-path:/forgot-password",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "proxy-public-path:/reset-password",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "proxy-public-path:/api/auth/invitation/exchange",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "proxy-public-path:/api/auth/password-reset/exchange",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "proxy-public-path:/api/health",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "proxy-public-path:/api/health/liveness",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "proxy-public-path:/api/health/readiness",
+      "passed": true,
+      "detail": "public recovery or health path must not be intercepted by session redirects"
+    },
+    {
+      "name": "session-cookie:httpOnly: true",
+      "passed": true,
+      "detail": "required secure cookie attribute"
+    },
+    {
+      "name": "session-cookie:sameSite: 'strict'",
+      "passed": true,
+      "detail": "required secure cookie attribute"
+    },
+    {
+      "name": "session-cookie:secure: process.env.NODE_ENV === 'production'",
+      "passed": true,
+      "detail": "required secure cookie attribute"
+    },
+    {
+      "name": "readiness-no-secret-serialization",
+      "passed": true,
+      "detail": "readiness output must not serialize parsed environment values"
+    },
+    {
+      "name": "credential-delivery:flag: 'wx'",
+      "passed": true,
+      "detail": "protected deterministic local/test credential spool"
+    },
+    {
+      "name": "credential-delivery:mode: 0o600",
+      "passed": true,
+      "detail": "protected deterministic local/test credential spool"
+    },
+    {
+      "name": "credential-delivery:chmod(spoolRoot, 0o700)",
+      "passed": true,
+      "detail": "protected deterministic local/test credential spool"
+    },
+    {
+      "name": "credential-delivery:local_adapter_forbidden",
+      "passed": true,
+      "detail": "protected deterministic local/test credential spool"
+    },
+    {
+      "name": "credential-delivery-no-browser-url-state",
+      "passed": true,
+      "detail": "one-time credentials must not be reflected into browser state"
+    },
+    {
+      "name": "credential-delivery-preflight",
+      "passed": true,
+      "detail": "invitation mutations fail before authority changes when delivery is unavailable"
+    },
+    {
+      "name": "persistent-node-worker",
+      "passed": true,
+      "detail": "persistent bounded worker loop"
+    },
+    {
+      "name": "worker-contract-version-gate",
+      "passed": true,
+      "detail": "unknown payload versions are rejected"
+    },
+    {
+      "name": "worker-separate-database-url",
+      "passed": true,
+      "detail": "worker uses separate credentials"
+    },
+    {
+      "name": "scanner-contract:MEDIA_SCANNER_URL",
+      "passed": true,
+      "detail": "worker, Compose, and environment contract must use the same scanner variable"
+    },
+    {
+      "name": "scanner-contract:MEDIA_SCANNER_BEARER_TOKEN",
+      "passed": true,
+      "detail": "worker, Compose, and environment contract must use the same scanner variable"
+    },
+    {
+      "name": "compose:service_completed_successfully",
+      "passed": true,
+      "detail": "required local-stack boundary"
+    },
+    {
+      "name": "compose:capsicum_runtime_login",
+      "passed": true,
+      "detail": "required local-stack boundary"
+    },
+    {
+      "name": "compose:capsicum_worker_login",
+      "passed": true,
+      "detail": "required local-stack boundary"
+    },
+    {
+      "name": "compose:minio-init",
+      "passed": true,
+      "detail": "required local-stack boundary"
+    },
+    {
+      "name": "compose:worker-node",
+      "passed": true,
+      "detail": "required local-stack boundary"
+    },
+    {
+      "name": "docker-frozen:apps/web/Dockerfile",
+      "passed": true,
+      "detail": "Docker must use frozen dependency graph"
+    },
+    {
+      "name": "docker-non-root:apps/web/Dockerfile",
+      "passed": true,
+      "detail": "runtime must be non-root"
+    },
+    {
+      "name": "docker-frozen:apps/worker-node/Dockerfile",
+      "passed": true,
+      "detail": "Docker must use frozen dependency graph"
+    },
+    {
+      "name": "docker-non-root:apps/worker-node/Dockerfile",
+      "passed": true,
+      "detail": "runtime must be non-root"
+    },
+    {
+      "name": "python-syntax:scripts/import_catalog.py",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "python-syntax:scripts/validate_repository.py",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "python-syntax:apps/worker-python/worker.py",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/import-catalog.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/migrate.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/migration-utils.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/migration-utils.test.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/provision-roles.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/verify-authority.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/verify-migration-atomicity.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "node-syntax:packages/database/scripts/verify-v6-integration.mjs",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "authority-verifier:ALLOW_AUTHORITY_TEST",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "authority-verifier:routine-grants.json",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "authority-verifier:migrationManifest",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "authority-verifier:forged workspace context",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "authority-verifier:workspace membership identity is immutable",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "authority-verifier:all workspace-scoped tables",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "authority-verifier:worker-only function",
+      "passed": true,
+      "detail": "destructive-gated PostgreSQL authority proof"
+    },
+    {
+      "name": "backup-script:infra/backup/backup.sh",
+      "passed": true,
+      "detail": "required backup/restore evidence path"
+    },
+    {
+      "name": "shell-syntax:infra/backup/backup.sh",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "backup-script:infra/backup/restore-test.sh",
+      "passed": true,
+      "detail": "required backup/restore evidence path"
+    },
+    {
+      "name": "shell-syntax:infra/backup/restore-test.sh",
+      "passed": true,
+      "detail": "parsed"
+    },
+    {
+      "name": "no-placeholder:scripts/import_catalog.py",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/next-env.d.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/playwright.config.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/next.config.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-python/worker.py",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-r/worker.R",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-node/src/malware-scanner.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-node/src/worker.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-node/src/malware-scanner.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-node/src/media-processing.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-node/src/clamav.integration.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-node/src/monte-carlo-task.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/worker-python/tests/test_worker.py",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/e2e/authenticated-journeys.spec.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/e2e/public-boundary.spec.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/e2e/accessibility.spec.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/proxy.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/proxy.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/actions.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/layout.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/credential-delivery.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/environment.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/database.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/safe-redirect.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/safe-redirect.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/storage.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/presentation.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/session.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/bounded-upload.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/lib/credential-delivery.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/mutation-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/streaming-research-upload-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/streaming-media-upload-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/page-primitives.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/research-assistant-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/capability-page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/components/invitation-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/accept-invitation/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/seed-lots/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/onboarding/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulation-lab/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulation-lab/advanced-simulation-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulation-lab/weighted-simulation-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulation-lab/simulation-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/scientific-catalog/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/research-assistant/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/phenotype-capture/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/sign-in/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/selection-plans/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/dashboard/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/reset-password/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/annotations/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/plants/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/ai/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/forgot-password/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/research/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/catalog/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/breeding-ledger/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/crosses/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulations/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/germplasm/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/reports/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/experiments/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/experiments/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/germplasm/new/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/germplasm/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulations/new/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/simulations/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/health/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/health/liveness/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/health/readiness/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/simulations/advanced/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/simulations/exact/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/system/readiness/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/research/upload/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/auth/password-reset/exchange/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/auth/invitation/exchange/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/media/upload/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/media/[id]/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/media/[id]/derivative/[type]/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/exports/breeding-ledger/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/api/exports/[id]/route.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/crosses/new/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/crosses/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/admin/models/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/admin/jobs/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/admin/audit/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/admin/system/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/catalog/normalized/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/catalog/claims/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/catalog/releases/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/catalog/loci/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/research/review/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/research/sources/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/phenotypes/images/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/phenotypes/images/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/scan/[token]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/pedigrees/[materialId]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/families/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/observations/session/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/plants/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/settings/workspace/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/settings/users/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/settings/sessions/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/selection-plans/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/selection-plans/[id]/segregation-form.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/phenotype-capture/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:apps/web/src/app/seed-lots/[id]/page.tsx",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:infra/backup/checksum-portability.test.sh",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:infra/backup/authority-snapshot.sh",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:infra/backup/backup.sh",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:infra/backup/restore-test.sh",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/catalog-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/operations-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/observation-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/upload-reconciliation-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/export-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/research-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/phenotype-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/simulation-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/media-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/internal.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/auth-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/postgres.integration.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/admission-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/breeding-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/application/src/advanced-simulation-service.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/contracts/src/platform.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/contracts/src/research-ingestion.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/contracts/src/advanced-simulation.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/contracts/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/contracts/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/observation-domain/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/observation-domain/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/ai/src/evaluation.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/ai/src/hosted.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/ai/src/evaluation.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/ai/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/ai/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/src/migration-manifest.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0018_v4_normalized_catalog_authoring.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0025_v5_durable_media_derivatives_and_measurements.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0019_v4_inventory_truth_and_exception_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0029_v6_storage_cleanup_preview_and_reference_guard.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0007_v3_biological_identity_and_cross_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0006_membership_bound_rls.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0003_authenticated_mvp.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0013_v3_research_and_label_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0004_runtime_authority_guards.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0011_v3_auth_idempotency_and_token_lifecycle.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0024_v5_durable_research_ingestion.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0028_v6_pending_object_reconciliation.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0005_durable_worker_runtime.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0015_v4_auth_abuse_and_public_idempotency.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0022_v4_selection_plan_observed_reconciliation.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0009_v3_runtime_media_research_and_auth_hardening.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0008_v3_genotype_observation_and_simulation_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0001_foundation.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0023_v5_governed_advanced_simulation_laboratory.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0012_v3_worker_media_export_and_annotation_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0017_v4_catalog_release_lifecycle.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0026_v5_streaming_breeding_ledger_export.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0010_v3_canonical_session_and_runtime_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0002_operations_and_observations.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0016_v4_selection_plan_scientific_snapshot.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0014_v3_runtime_privilege_closure.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0020_v4_observation_protocol_and_method_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0021_v4_selection_plan_lifecycle_and_outcomes.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/database/migrations/0027_v5_phenotype_measurement_revision_authority.sql",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/observability/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/observability/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/breeding-domain/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/breeding-domain/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-advanced/src/monte-carlo.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-advanced/src/host-pathogen.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-advanced/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-advanced/src/segregation.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-advanced/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-advanced/src/rule-graph.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/simulation-domain/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/simulation-domain/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/test-utils/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/storage/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/storage/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/storage/src/minio.integration.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/jobs/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/jobs/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/scientific-catalog/src/governance.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/scientific-catalog/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/scientific-catalog/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/auth/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/auth/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/config/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/config/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/exact.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/types.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/rational.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/target-recovery.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/invariants.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/genetics-core/src/exact.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/vision/src/index.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "no-placeholder:packages/vision/src/index.test.ts",
+      "passed": true,
+      "detail": "no unresolved source placeholder"
+    },
+    {
+      "name": "v6-sigv4-actual-method",
+      "passed": true,
+      "detail": "SigV4 canonical request must use the actual HTTP method"
+    },
+    {
+      "name": "v6-s3-integration-test",
+      "passed": true,
+      "detail": "MinIO round-trip integration suite is required"
+    },
+    {
+      "name": "v6-upload-streaming:apps/web/src/app/api/media/upload/route.ts",
+      "passed": true,
+      "detail": "uploads must use bounded disk-backed request streaming"
+    },
+    {
+      "name": "v6-upload-streaming:apps/web/src/app/api/research/upload/route.ts",
+      "passed": true,
+      "detail": "uploads must use bounded disk-backed request streaming"
+    },
+    {
+      "name": "v6-worker-streamed-malware",
+      "passed": true,
+      "detail": "worker inspection must stream object bytes to disk and malware scanner"
+    },
+    {
+      "name": "v6-pending-object-reconciliation",
+      "passed": true,
+      "detail": "orphaned object writes require durable reconciliation"
+    },
+    {
+      "name": "v6-cleanup-dry-run",
+      "passed": true,
+      "detail": "storage cleanup exposes a non-destructive preview"
+    },
+    {
+      "name": "v6-cleanup-reference-guard",
+      "passed": true,
+      "detail": "cleanup rechecks authoritative references and retention before deletion"
+    },
+    {
+      "name": "v6-migration-atomicity",
+      "passed": true,
+      "detail": "migration body and ledger insertion must commit atomically"
+    },
+    {
+      "name": "v6-safe-redirect",
+      "passed": true,
+      "detail": "internal redirects and redirect responses require origin-safe handling"
+    },
+    {
+      "name": "v6-backup-relative-checksums",
+      "passed": true,
+      "detail": "backup checksums must be bundle-relative"
+    },
+    {
+      "name": "v6-ai-evaluation-corpus",
+      "passed": true,
+      "detail": "hosted AI requires a versioned adversarial safety corpus"
+    },
+    {
+      "name": "v6-resource-envelope",
+      "passed": true,
+      "detail": "production media processing requires explicit process and container resource limits"
+    },
+    {
+      "name": "v6-environment-contract-reconciliation",
+      "passed": true,
+      "detail": "production environment contracts must be reconciled across config and Compose"
+    },
+    {
+      "name": "v6-release-evidence-policy",
+      "passed": true,
+      "detail": "local reports must be distinguished from commit-bound CI release evidence"
+    },
+    {
+      "name": "v6-runtime-smoke",
+      "passed": true,
+      "detail": "deterministic storage and redirect runtime smoke is required"
+    },
+    {
+      "name": "v6-genetics-runtime-smoke",
+      "passed": true,
+      "detail": "exact and advanced genetics runtime smoke is required"
+    },
+    {
+      "name": "v6-security-ci",
+      "passed": true,
+      "detail": "dependency, secret, SAST, SBOM, and container scan jobs are required"
+    },
+    {
+      "name": "v6-backup-restore-ci",
+      "passed": true,
+      "detail": "CI must execute a relocated isolated backup/restore reconciliation"
+    },
+    {
+      "name": "frozen-lockfile",
+      "passed": false,
+      "blocking": false,
+      "detail": "pnpm-lock.yaml requires a registry-enabled clean install"
+    },
+    {
+      "name": "runtime-node-24",
+      "passed": false,
+      "blocking": false,
+      "detail": "validation host: v22.16.0; Node 24+ required"
+    },
+    {
+      "name": "postgres-runtime-validation",
+      "passed": false,
+      "blocking": false,
+      "detail": "PostgreSQL psql unavailable on validation host"
+    },
+    {
+      "name": "docker-runtime-validation",
+      "passed": false,
+      "blocking": false,
+      "detail": "Docker CLI unavailable on validation host"
+    },
+    {
+      "name": "r-runtime-validation",
+      "passed": false,
+      "blocking": false,
+      "detail": "Rscript unavailable on validation host"
+    },
+    {
+      "name": "v4-auth-constant-cost-unknown-account",
+      "passed": true,
+      "detail": "unknown accounts must execute the same password KDF path"
+    },
+    {
+      "name": "v4-auth-durable-rate-limit",
+      "passed": true,
+      "detail": "rate-limit decisions must commit outside rejected business transactions"
+    },
+    {
+      "name": "v4-public-idempotency-savepoint",
+      "passed": true,
+      "detail": "terminal outcomes must survive business rollback"
+    },
+    {
+      "name": "v4-selection-persists:target_expression",
+      "passed": true,
+      "detail": "selection plans must preserve the scientific field"
+    },
+    {
+      "name": "v4-selection-persists:target_model_version",
+      "passed": true,
+      "detail": "selection plans must preserve the scientific field"
+    },
+    {
+      "name": "v4-selection-persists:scenario_type",
+      "passed": true,
+      "detail": "selection plans must preserve the scientific field"
+    },
+    {
+      "name": "v4-selection-persists:population_calculation",
+      "passed": true,
+      "detail": "selection plans must preserve the scientific field"
+    },
+    {
+      "name": "v4-selection-persists:generation_plan",
+      "passed": true,
+      "detail": "selection plans must preserve the scientific field"
+    },
+    {
+      "name": "v4-catalog-lifecycle:createCatalogReleaseDraft",
+      "passed": true,
+      "detail": "normalized independently reviewed release lifecycle is required"
+    },
+    {
+      "name": "v4-catalog-lifecycle:submitCatalogReleaseForReview",
+      "passed": true,
+      "detail": "normalized independently reviewed release lifecycle is required"
+    },
+    {
+      "name": "v4-catalog-lifecycle:reviewCatalogRelease",
+      "passed": true,
+      "detail": "normalized independently reviewed release lifecycle is required"
+    },
+    {
+      "name": "v4-catalog-lifecycle:publishCatalogRelease",
+      "passed": true,
+      "detail": "normalized independently reviewed release lifecycle is required"
+    },
+    {
+      "name": "v4-catalog-lifecycle:catalog_release_alleles",
+      "passed": true,
+      "detail": "normalized independently reviewed release lifecycle is required"
+    },
+    {
+      "name": "v4-catalog-lifecycle:catalog_release_sources",
+      "passed": true,
+      "detail": "normalized independently reviewed release lifecycle is required"
+    },
+    {
+      "name": "v4-media-clamd-streaming",
+      "passed": true,
+      "detail": "default worker must support a bounded streaming malware scanner"
+    },
+    {
+      "name": "v4-compose-malware-scanner",
+      "passed": true,
+      "detail": "default Compose must provide an accepted-media scanner path"
+    },
+    {
+      "name": "v4-observation-authority:protocol_snapshot",
+      "passed": true,
+      "detail": "version-bound observation authority and linear correction required"
+    },
+    {
+      "name": "v4-observation-authority:method_record_id",
+      "passed": true,
+      "detail": "version-bound observation authority and linear correction required"
+    },
+    {
+      "name": "v4-observation-authority:quality_term_ids",
+      "passed": true,
+      "detail": "version-bound observation authority and linear correction required"
+    },
+    {
+      "name": "v4-observation-authority:device_schema_id",
+      "passed": true,
+      "detail": "version-bound observation authority and linear correction required"
+    },
+    {
+      "name": "v4-observation-authority:FOR UPDATE",
+      "passed": true,
+      "detail": "version-bound observation authority and linear correction required"
+    },
+    {
+      "name": "v4-storage-streaming:export async function openObject",
+      "passed": true,
+      "detail": "downloads must stream with bounded memory and byte-range support"
+    },
+    {
+      "name": "v4-storage-streaming:Readable.toWeb",
+      "passed": true,
+      "detail": "downloads must stream with bounded memory and byte-range support"
+    },
+    {
+      "name": "v4-storage-streaming:contentRange",
+      "passed": true,
+      "detail": "downloads must stream with bounded memory and byte-range support"
+    },
+    {
+      "name": "v4-storage-streaming:parseByteRange",
+      "passed": true,
+      "detail": "downloads must stream with bounded memory and byte-range support"
+    },
+    {
+      "name": "v4-file-intent-content-hash",
+      "passed": true,
+      "detail": "file mutation intent must include the content digest"
+    },
+    {
+      "name": "v4-simulation-authority-dimensions",
+      "passed": true,
+      "detail": "simulation UI must not collapse scientific authority dimensions"
+    },
+    {
+      "name": "v5-advanced-mode:linked_two_locus",
+      "passed": true,
+      "detail": "all advanced modes require one governed contract and service"
+    },
+    {
+      "name": "v5-advanced-mode:maternal_state",
+      "passed": true,
+      "detail": "all advanced modes require one governed contract and service"
+    },
+    {
+      "name": "v5-advanced-mode:conditional_rule_graph",
+      "passed": true,
+      "detail": "all advanced modes require one governed contract and service"
+    },
+    {
+      "name": "v5-advanced-mode:host_pathogen",
+      "passed": true,
+      "detail": "all advanced modes require one governed contract and service"
+    },
+    {
+      "name": "v5-advanced-mode:direct_monte_carlo",
+      "passed": true,
+      "detail": "all advanced modes require one governed contract and service"
+    },
+    {
+      "name": "v5-advanced-release-locus-allele-pairs",
+      "passed": true,
+      "detail": "approved-release premises require exact locus\u2013allele membership"
+    },
+    {
+      "name": "v5-monte-carlo-premise:Parent hypothesis probabilities must sum exactly to one.",
+      "passed": true,
+      "detail": "invalid stochastic premises must fail before durable enqueue"
+    },
+    {
+      "name": "v5-monte-carlo-premise:A parent hypothesis cannot repeat a locus.",
+      "passed": true,
+      "detail": "invalid stochastic premises must fail before durable enqueue"
+    },
+    {
+      "name": "v5-monte-carlo-premise:Every hypothesis for one parent must describe the same locus set.",
+      "passed": true,
+      "detail": "invalid stochastic premises must fail before durable enqueue"
+    },
+    {
+      "name": "v5-monte-carlo-premise:Maternal and paternal hypotheses must describe the same locus set.",
+      "passed": true,
+      "detail": "invalid stochastic premises must fail before durable enqueue"
+    },
+    {
+      "name": "v5-research-ingestion:research.ingest.v1",
+      "passed": true,
+      "detail": "durable immutable research ingestion boundary"
+    },
+    {
+      "name": "v5-research-ingestion:app_worker_complete_research_ingestion",
+      "passed": true,
+      "detail": "durable immutable research ingestion boundary"
+    },
+    {
+      "name": "v5-research-ingestion:sourceSha256",
+      "passed": true,
+      "detail": "durable immutable research ingestion boundary"
+    },
+    {
+      "name": "v5-research-ingestion:passages",
+      "passed": true,
+      "detail": "durable immutable research ingestion boundary"
+    },
+    {
+      "name": "v5-media-processing:metadata: 'stripped'",
+      "passed": true,
+      "detail": "deterministic media processing with independent decoder parity"
+    },
+    {
+      "name": "v5-media-processing:independentPythonImageFacts",
+      "passed": true,
+      "detail": "deterministic media processing with independent decoder parity"
+    },
+    {
+      "name": "v5-media-processing:sourceSha256",
+      "passed": true,
+      "detail": "deterministic media processing with independent decoder parity"
+    },
+    {
+      "name": "v5-media-processing:image_fact_parity_mismatch",
+      "passed": true,
+      "detail": "deterministic media processing with independent decoder parity"
+    },
+    {
+      "name": "v5-media-processing:sharp-libvips-oriented-grayscale-buffer",
+      "passed": true,
+      "detail": "deterministic media processing with independent decoder parity"
+    },
+    {
+      "name": "v5-media-hostile-fixture:test_image_facts_rejects_hash_mismatch",
+      "passed": true,
+      "detail": "hostile and orientation-aware deterministic image fixtures are required"
+    },
+    {
+      "name": "v5-media-hostile-fixture:test_image_facts_rejects_path_escape",
+      "passed": true,
+      "detail": "hostile and orientation-aware deterministic image fixtures are required"
+    },
+    {
+      "name": "v5-media-hostile-fixture:test_image_facts_rejects_multiframe_input",
+      "passed": true,
+      "detail": "hostile and orientation-aware deterministic image fixtures are required"
+    },
+    {
+      "name": "v5-media-hostile-fixture:test_image_facts_applies_exif_orientation_before_dimensions",
+      "passed": true,
+      "detail": "hostile and orientation-aware deterministic image fixtures are required"
+    },
+    {
+      "name": "v5-measurement-correction:correctPhenotypeMeasurement",
+      "passed": true,
+      "detail": "linear immutable phenotype measurement correction authority"
+    },
+    {
+      "name": "v5-measurement-correction:expectedCurrentRevisionId",
+      "passed": true,
+      "detail": "linear immutable phenotype measurement correction authority"
+    },
+    {
+      "name": "v5-measurement-correction:app_correct_phenotype_measurement",
+      "passed": true,
+      "detail": "linear immutable phenotype measurement correction authority"
+    },
+    {
+      "name": "v5-measurement-correction:phenotype measurement revision is stale",
+      "passed": true,
+      "detail": "linear immutable phenotype measurement correction authority"
+    },
+    {
+      "name": "v5-measurement-correction:phenotype_measurement_correction",
+      "passed": true,
+      "detail": "linear immutable phenotype measurement correction authority"
+    },
+    {
+      "name": "v5-streaming-export:app_worker_breeding_ledger_page",
+      "passed": true,
+      "detail": "streaming immutable export generation"
+    },
+    {
+      "name": "v5-streaming-export:putImmutableFile",
+      "passed": true,
+      "detail": "streaming immutable export generation"
+    },
+    {
+      "name": "v5-streaming-export:createHash('sha256')",
+      "passed": true,
+      "detail": "streaming immutable export generation"
+    },
+    {
+      "name": "v5-streaming-export:REPEATABLE READ",
+      "passed": true,
+      "detail": "streaming immutable export generation"
+    },
+    {
+      "name": "v5-hosted-ai:AbortController",
+      "passed": true,
+      "detail": "hosted generation must be bounded and citation-revalidated"
+    },
+    {
+      "name": "v5-hosted-ai:maxOutputTokens",
+      "passed": true,
+      "detail": "hosted generation must be bounded and citation-revalidated"
+    },
+    {
+      "name": "v5-hosted-ai:maxRetries",
+      "passed": true,
+      "detail": "hosted generation must be bounded and citation-revalidated"
+    },
+    {
+      "name": "v5-hosted-ai:validateAnswerCitations",
+      "passed": true,
+      "detail": "hosted generation must be bounded and citation-revalidated"
+    }
+  ],
+  "issues": [],
+  "environmentWarnings": [
+    "frozen-lockfile: pnpm-lock.yaml requires a registry-enabled clean install",
+    "runtime-node-24: validation host: v22.16.0; Node 24+ required",
+    "postgres-runtime-validation: PostgreSQL psql unavailable on validation host",
+    "docker-runtime-validation: Docker CLI unavailable on validation host",
+    "r-runtime-validation: Rscript unavailable on validation host"
+  ]
+}

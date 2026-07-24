@@ -1,0 +1,348 @@
+diff --git a/README.md b/README.md
+index 4fc2a40f1e0232cfba6d1e6af42e5a2a8b9e9124..c5237c22b2cbca45ce2265d559aaae43d0b928be 100644
+--- a/README.md
++++ b/README.md
+@@ -99,6 +99,12 @@ pnpm db:provision-roles
+ pnpm db:seed-catalog
+ ```
+ 
++Database administration scripts load `.env.local` and then `.env` from the repository root;
++values already supplied by the shell retain precedence. Configure `MIGRATION_DATABASE_URL` or
++`DATABASE_ADMIN_URL` in `.env.local` before running migrations. Local development may fall back to
++`DATABASE_URL`, but production migrations reject the restricted runtime role. The example environment
++file is never loaded automatically because its placeholder credentials are not valid secrets.
++
+ Run the destructive-gated authority proof only against a disposable database whose name includes `test`, `authority`, or `ci`:
+ 
+ ```bash
+diff --git a/package.json b/package.json
+index 095c5cd63c3c78bb00e58039b3fd09cb69e2d67f..596041a3635e3094b4e1f7cc44713d493a510687 100644
+--- a/package.json
++++ b/package.json
+@@ -14,7 +14,7 @@
+     "lint": "turbo lint",
+     "format:check": "prettier --check .",
+     "format": "prettier --write .",
+-    "validate": "pnpm validate:lockfile && pnpm validate:manifests && pnpm validate:environment && pnpm validate:toolchain && pnpm validate:workspace-dependencies && pnpm validate:next-contracts && pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm validate:catalog && pnpm validate:smoke && pnpm test:python && pnpm validate:repository",
++    "validate": "pnpm validate:lockfile && pnpm validate:manifests && pnpm validate:environment && pnpm validate:toolchain && pnpm validate:workspace-dependencies && pnpm validate:next-contracts && pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:migrator && pnpm build && pnpm validate:catalog && pnpm validate:smoke && pnpm test:python && pnpm validate:repository",
+     "validate:catalog": "python3 scripts/import_catalog.py --check",
+     "validate:repository": "python3 scripts/validate_repository.py",
+     "test:python": "python3 -m pytest apps/worker-python/tests -q",
+diff --git a/packages/database/package.json b/packages/database/package.json
+index a6457c75ac069216de6eff069c4037f26a2885f5..f7a12c1e00bc2f4b653a30fab1a572cd496b8f03 100644
+--- a/packages/database/package.json
++++ b/packages/database/package.json
+@@ -19,7 +19,7 @@
+     "seed:catalog": "node scripts/import-catalog.mjs",
+     "provision:roles": "node scripts/provision-roles.mjs",
+     "verify:authority": "node scripts/verify-authority.mjs",
+-    "test:migrator": "node --test scripts/migration-utils.test.mjs",
++    "test:migrator": "node --test scripts/*.test.mjs",
+     "verify:v6-integration": "node scripts/verify-v6-integration.mjs",
+     "verify:migration-atomicity": "node scripts/verify-migration-atomicity.mjs"
+   },
+diff --git a/packages/database/scripts/migrate.mjs b/packages/database/scripts/migrate.mjs
+index 585945299f5babc3a00f561f179e67d1f5b23366..f5d7629250c140cd78453f9e68cf655edcf927e5 100644
+--- a/packages/database/scripts/migrate.mjs
++++ b/packages/database/scripts/migrate.mjs
+@@ -3,18 +3,35 @@ import { readdir, readFile } from 'node:fs/promises';
+ import { dirname, resolve } from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ import pg from 'pg';
+-import { applyMigrationAtomically, requestedFaultPoint, stripSingleOuterTransaction } from './migration-utils.mjs';
++import {
++  applyMigrationAtomically,
++  requestedFaultPoint,
++  stripSingleOuterTransaction,
++} from './migration-utils.mjs';
++import { requireMigrationDatabaseUrl } from './repository-env.mjs';
+ 
+ const { Client } = pg;
+-const databaseUrl = process.env.MIGRATION_DATABASE_URL ?? process.env.DATABASE_URL;
+-if (!databaseUrl) throw new Error('MIGRATION_DATABASE_URL or DATABASE_URL is required.');
+-
+ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
++const repositoryRoot = resolve(root, '../..');
++const {
++  connectionString: databaseUrl,
++  source: databaseUrlSource,
++  loadedFiles,
++} = requireMigrationDatabaseUrl(repositoryRoot);
++process.stdout.write(
++  `migration database configured by ${databaseUrlSource}; ` +
++    `loaded ${loadedFiles.length} repository environment file(s)\n`,
++);
++
+ const migrationsDirectory = resolve(root, 'migrations');
+-const files = (await readdir(migrationsDirectory)).filter((name) => /^\d{4}_[a-z0-9_]+\.sql$/.test(name)).sort();
++const files = (await readdir(migrationsDirectory))
++  .filter((name) => /^\d{4}_[a-z0-9_]+\.sql$/.test(name))
++  .sort();
+ for (const [index, file] of files.entries()) {
+   const expected = String(index + 1).padStart(4, '0');
+-  if (!file.startsWith(`${expected}_`)) throw new Error(`Migration sequence is not contiguous at ${file}; expected ${expected}.`);
++  if (!file.startsWith(`${expected}_`)) {
++    throw new Error(`Migration sequence is not contiguous at ${file}; expected ${expected}.`);
++  }
+ }
+ 
+ const client = new Client({ connectionString: databaseUrl, application_name: 'capsicum-migrator' });
+diff --git a/packages/database/scripts/repository-env.mjs b/packages/database/scripts/repository-env.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba056d4a2f5064e1eb81fcc131d22ffb1c933701
+--- /dev/null
++++ b/packages/database/scripts/repository-env.mjs
+@@ -0,0 +1,73 @@
++import { existsSync } from 'node:fs';
++import { resolve } from 'node:path';
++import { loadEnvFile } from 'node:process';
++
++const POSTGRES_PROTOCOLS = new Set(['postgres:', 'postgresql:']);
++
++function nonEmpty(value) {
++  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
++}
++
++export function loadRepositoryEnvironment(repositoryRoot) {
++  const loadedFiles = [];
++  const candidates = [resolve(repositoryRoot, '.env.local'), resolve(repositoryRoot, '.env')];
++
++  for (const candidate of candidates) {
++    if (!existsSync(candidate)) continue;
++    loadEnvFile(candidate);
++    loadedFiles.push(candidate);
++  }
++
++  return loadedFiles;
++}
++
++export function resolveMigrationDatabaseUrl(environment = process.env) {
++  const migrationUrl = nonEmpty(environment.MIGRATION_DATABASE_URL);
++  const adminUrl = nonEmpty(environment.DATABASE_ADMIN_URL);
++  const runtimeUrl = nonEmpty(environment.DATABASE_URL);
++  const selected = migrationUrl
++    ? { connectionString: migrationUrl, source: 'MIGRATION_DATABASE_URL' }
++    : adminUrl
++      ? { connectionString: adminUrl, source: 'DATABASE_ADMIN_URL' }
++      : runtimeUrl
++        ? { connectionString: runtimeUrl, source: 'DATABASE_URL' }
++        : undefined;
++
++  if (!selected) return undefined;
++
++  let parsed;
++  try {
++    parsed = new URL(selected.connectionString);
++  } catch {
++    throw new Error(`${selected.source} must be a valid PostgreSQL connection URL.`);
++  }
++  if (!POSTGRES_PROTOCOLS.has(parsed.protocol)) {
++    throw new Error(`${selected.source} must use the postgresql:// or postgres:// protocol.`);
++  }
++
++  const production = environment.APP_MODE === 'production' || environment.NODE_ENV === 'production';
++  if (production && selected.source === 'DATABASE_URL') {
++    throw new Error(
++      'Production migrations require MIGRATION_DATABASE_URL or DATABASE_ADMIN_URL. ' +
++        'Refusing to use the restricted DATABASE_URL runtime role.',
++    );
++  }
++
++  return selected;
++}
++
++export function requireMigrationDatabaseUrl(repositoryRoot) {
++  const loadedFiles = loadRepositoryEnvironment(repositoryRoot);
++  const selected = resolveMigrationDatabaseUrl(process.env);
++  if (selected) return { ...selected, loadedFiles };
++
++  const localEnvPath = resolve(repositoryRoot, '.env.local');
++  throw new Error(
++    [
++      'Database migration credentials are not configured.',
++      `Set MIGRATION_DATABASE_URL (preferred) or DATABASE_ADMIN_URL in the shell or in ${localEnvPath}.`,
++      'For local development only, DATABASE_URL is accepted as a fallback.',
++      'Copy .env.example to .env.local and replace every placeholder; the example file is never loaded automatically.',
++    ].join(' '),
++  );
++}
+diff --git a/packages/database/scripts/repository-env.test.mjs b/packages/database/scripts/repository-env.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..d9a4c3b103a0d3a2b7f5a65055e1f8ec50e097f5
+--- /dev/null
++++ b/packages/database/scripts/repository-env.test.mjs
+@@ -0,0 +1,107 @@
++import assert from 'node:assert/strict';
++import { mkdtemp, rm, writeFile } from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++import test from 'node:test';
++import { requireMigrationDatabaseUrl, resolveMigrationDatabaseUrl } from './repository-env.mjs';
++
++const keys = [
++  'APP_MODE',
++  'NODE_ENV',
++  'MIGRATION_DATABASE_URL',
++  'DATABASE_ADMIN_URL',
++  'DATABASE_URL',
++];
++
++async function withEnvironment(values, operation) {
++  const previous = Object.fromEntries(keys.map((key) => [key, process.env[key]]));
++  for (const key of keys) delete process.env[key];
++  Object.assign(process.env, values);
++  try {
++    return await operation();
++  } finally {
++    for (const key of keys) {
++      const value = previous[key];
++      if (value === undefined) delete process.env[key];
++      else process.env[key] = value;
++    }
++  }
++}
++
++test('loads root .env.local for repo-root migration commands without overriding shell values', async () => {
++  const repositoryRoot = await mkdtemp(join(tmpdir(), 'capsicum-env-'));
++  try {
++    await writeFile(
++      join(repositoryRoot, '.env.local'),
++      'MIGRATION_DATABASE_URL=postgresql://file-user:file-password@localhost:5432/capsicum\n',
++    );
++    await withEnvironment(
++      {
++        MIGRATION_DATABASE_URL:
++          'postgresql://shell-user:shell-password@localhost:5432/capsicum',
++      },
++      () => {
++        const selected = requireMigrationDatabaseUrl(repositoryRoot);
++        assert.equal(selected.source, 'MIGRATION_DATABASE_URL');
++        assert.match(selected.connectionString, /shell-user/);
++        assert.deepEqual(selected.loadedFiles, [join(repositoryRoot, '.env.local')]);
++      },
++    );
++  } finally {
++    await rm(repositoryRoot, { recursive: true, force: true });
++  }
++});
++
++test('uses migration then admin then local-development runtime credentials', () => {
++  assert.equal(
++    resolveMigrationDatabaseUrl({
++      MIGRATION_DATABASE_URL: 'postgresql://migration:password@localhost:5432/capsicum',
++      DATABASE_ADMIN_URL: 'postgresql://admin:password@localhost:5432/capsicum',
++      DATABASE_URL: 'postgresql://runtime:password@localhost:5432/capsicum',
++    })?.source,
++    'MIGRATION_DATABASE_URL',
++  );
++  assert.equal(
++    resolveMigrationDatabaseUrl({
++      DATABASE_ADMIN_URL: 'postgresql://admin:password@localhost:5432/capsicum',
++    })?.source,
++    'DATABASE_ADMIN_URL',
++  );
++  assert.equal(
++    resolveMigrationDatabaseUrl({
++      DATABASE_URL: 'postgresql://runtime:password@localhost:5432/capsicum',
++    })?.source,
++    'DATABASE_URL',
++  );
++});
++
++test('rejects runtime-role fallback in production and invalid protocols', () => {
++  assert.throws(
++    () =>
++      resolveMigrationDatabaseUrl({
++        APP_MODE: 'production',
++        DATABASE_URL: 'postgresql://runtime:password@localhost:5432/capsicum',
++      }),
++    /Production migrations require/,
++  );
++  assert.throws(
++    () => resolveMigrationDatabaseUrl({ MIGRATION_DATABASE_URL: 'https://localhost/capsicum' }),
++    /postgresql:\/\//,
++  );
++});
++
++test('reports the expected root configuration path when credentials are absent', async () => {
++  const repositoryRoot = await mkdtemp(join(tmpdir(), 'capsicum-env-'));
++  try {
++    await withEnvironment({}, () => {
++      assert.throws(
++        () => requireMigrationDatabaseUrl(repositoryRoot),
++        new RegExp(
++          join(repositoryRoot, '.env.local').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
++        ),
++      );
++    });
++  } finally {
++    await rm(repositoryRoot, { recursive: true, force: true });
++  }
++});
+diff --git a/packages/genetics-core/src/exact.test.ts b/packages/genetics-core/src/exact.test.ts
+index d3dd570d6419072fb7035b49163c05270667bc28..ecb26792e72b1b2fc82af2f880d17e5f4dab3d55 100644
+--- a/packages/genetics-core/src/exact.test.ts
++++ b/packages/genetics-core/src/exact.test.ts
+@@ -128,8 +128,19 @@ describe('target recovery', () => {
+     expect(plan.geneticReachable).toBe(false);
+   });
+   it('keeps operational attrition explicit', () => {
+-    const plan = planTargetRecovery(0.25, 0.95, { germination: 0.9, survival: 0.8, observationSuccess: 0.95, assaySuccess: 1 });
++    const plan = planTargetRecovery(0.25, 0.95, {
++      germination: 0.9,
++      survival: 0.8,
++      observationSuccess: 0.95,
++      assaySuccess: 1,
++    });
+     expect(plan.geneticPopulation).toBe(11);
++    expect(plan.practicalPopulation).not.toBeNull();
++    if (plan.geneticPopulation === null || plan.practicalPopulation === null) {
++      throw new Error(
++        'A reachable target with non-zero operational success must produce finite population sizes.',
++      );
++    }
+     expect(plan.practicalPopulation).toBeGreaterThan(plan.geneticPopulation);
+   });
+ });
+diff --git a/scripts/validate_repository.py b/scripts/validate_repository.py
+index 59300610c0faa84fcf5ce30c4dbaf038108b3362..452a0092cd66f2ef6243056b24bd5663d412711f 100644
+--- a/scripts/validate_repository.py
++++ b/scripts/validate_repository.py
+@@ -589,6 +589,37 @@ check(
+     "Next.js proxy files may export only the proxy function and optional config",
+ )
+ 
++# V10 repository-root migration and exact test typing checks.
++migration_script = text(ROOT / "packages/database/scripts/migrate.mjs")
++migration_environment = text(ROOT / "packages/database/scripts/repository-env.mjs")
++migration_manifest = json.loads(text(ROOT / "packages/database/package.json"))
++genetics_exact_tests = text(ROOT / "packages/genetics-core/src/exact.test.ts")
++check(
++    "v10-repository-root-migration-environment",
++    "requireMigrationDatabaseUrl(repositoryRoot)" in migration_script
++    and "resolve(repositoryRoot, '.env.local')" in migration_environment
++    and "DATABASE_ADMIN_URL" in migration_environment,
++    "repo-root migration commands must load private local configuration and accept the documented admin credential",
++)
++check(
++    "v10-production-migration-role-boundary",
++    "Production migrations require MIGRATION_DATABASE_URL or DATABASE_ADMIN_URL" in migration_environment
++    and "selected.source === 'DATABASE_URL'" in migration_environment,
++    "production migrations must not silently elevate the restricted web runtime credential",
++)
++check(
++    "v10-migrator-regression-tests",
++    migration_manifest.get("scripts", {}).get("test:migrator") == "node --test scripts/*.test.mjs"
++    and "pnpm test:migrator" in root_manifest.get("scripts", {}).get("validate", ""),
++    "migration environment and atomicity tests must run through the release validation ladder",
++)
++check(
++    "v10-target-recovery-null-narrowing",
++    "plan.geneticPopulation === null || plan.practicalPopulation === null" in genetics_exact_tests
++    and "toBeGreaterThan(plan.geneticPopulation)" in genetics_exact_tests,
++    "nullable target-recovery results must be narrowed before numeric matcher comparison",
++)
++
+ report = {
+     "schemaVersion": "2.0",
+     "passed": not issues,

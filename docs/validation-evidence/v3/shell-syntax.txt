@@ -1,0 +1,2 @@
+PASS infra/backup/backup.sh
+PASS infra/backup/restore-test.sh

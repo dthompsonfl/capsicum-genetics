@@ -1,0 +1,9 @@
+PASS packages/database/scripts/import-catalog.mjs
+PASS packages/database/scripts/migrate.mjs
+PASS packages/database/scripts/provision-roles.mjs
+PASS packages/database/scripts/verify-authority.mjs
+PASS scripts/ci/parse-typescript.mjs
+PASS scripts/ci/verify-compiled-artifacts.mjs
+PASS scripts/ci/verify-standalone.mjs
+PASS scripts/clean.mjs
+PASS scripts/fix-esm-imports.mjs

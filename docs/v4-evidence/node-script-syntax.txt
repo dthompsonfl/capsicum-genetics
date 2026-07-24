@@ -1,0 +1,18 @@
+$ node --check packages/database/scripts/import-catalog.mjs
+exit_code=0
+$ node --check packages/database/scripts/migrate.mjs
+exit_code=0
+$ node --check packages/database/scripts/provision-roles.mjs
+exit_code=0
+$ node --check packages/database/scripts/verify-authority.mjs
+exit_code=0
+$ node --check scripts/ci/parse-typescript.mjs
+exit_code=0
+$ node --check scripts/ci/verify-compiled-artifacts.mjs
+exit_code=0
+$ node --check scripts/ci/verify-standalone.mjs
+exit_code=0
+$ node --check scripts/clean.mjs
+exit_code=0
+$ node --check scripts/fix-esm-imports.mjs
+exit_code=0

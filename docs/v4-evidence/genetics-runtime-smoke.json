@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "singleLocusStates": 3,
+  "independentStates": 9,
+  "linkedStates": 3,
+  "maternalDirection": "maternal",
+  "monteCarloMaximumStandardError": 0.0015811218093492985,
+  "segregationMethod": "chi_square",
+  "segregationPValue": 1
+}

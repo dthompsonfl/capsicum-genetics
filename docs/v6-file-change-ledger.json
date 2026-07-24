@@ -1,0 +1,1021 @@
+{
+  "schemaVersion": "1.0",
+  "baselineFileCount": 500,
+  "currentFileCount": 587,
+  "summary": {
+    "created": 87,
+    "modified": 39,
+    "deleted": 0
+  },
+  "selfHashPolicy": "Ledger files omit their own final afterSha256 to avoid recursive self-hashing.",
+  "entries": [
+    {
+      "status": "created",
+      "path": "apps/web/e2e/authenticated-journeys.spec.ts",
+      "owner": "Web experience / security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": null,
+      "afterSha256": "36d7ecc9f7b064f09f234bce8a49c90742c731795db546fa1d79f2841378720f"
+    },
+    {
+      "status": "created",
+      "path": "apps/web/src/components/streaming-media-upload-form.tsx",
+      "owner": "Storage / worker security",
+      "rationale": "Replaces buffered uploads with bounded disk-backed streaming.",
+      "beforeSha256": null,
+      "afterSha256": "3e9d5cd56f79db0c6addde5158b3beb452b0292dfc1df0b0ba9f3c60378923fb"
+    },
+    {
+      "status": "created",
+      "path": "apps/web/src/components/streaming-research-upload-form.tsx",
+      "owner": "Storage / worker security",
+      "rationale": "Replaces buffered uploads with bounded disk-backed streaming.",
+      "beforeSha256": null,
+      "afterSha256": "745183259414aa4139e126123d7121218a00be94be787969927b37418fd85e2c"
+    },
+    {
+      "status": "created",
+      "path": "apps/web/src/lib/bounded-upload.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Replaces buffered uploads with bounded disk-backed streaming.",
+      "beforeSha256": null,
+      "afterSha256": "aca4f3a9cf443f315611263907315382e4c6b5a1ee7dfec65ec9a36696c16331"
+    },
+    {
+      "status": "created",
+      "path": "apps/web/src/lib/safe-redirect.test.ts",
+      "owner": "Web experience / security",
+      "rationale": "Closes redirect and response-hardening defects.",
+      "beforeSha256": null,
+      "afterSha256": "1565f0f1f17d0880dc1d0cdc0baab8be32829f0a46224a98ec40a8a22d059469"
+    },
+    {
+      "status": "created",
+      "path": "apps/web/src/lib/safe-redirect.ts",
+      "owner": "Web experience / security",
+      "rationale": "Closes redirect and response-hardening defects.",
+      "beforeSha256": null,
+      "afterSha256": "fd442601d58286fff69ab7937546ff1f7c0faa2ae4955526849156c5fb1db6bf"
+    },
+    {
+      "status": "created",
+      "path": "apps/web/src/proxy.test.ts",
+      "owner": "Web experience / security",
+      "rationale": "Closes redirect and response-hardening defects.",
+      "beforeSha256": null,
+      "afterSha256": "0f47c05a1030882c00d2edc38309c2f0598c552655cb75b36887a38b59eb22a9"
+    },
+    {
+      "status": "created",
+      "path": "apps/worker-node/src/clamav.integration.test.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Defines real object-storage/malware integration evidence.",
+      "beforeSha256": null,
+      "afterSha256": "26dbff4deef35b597615cc412ebc8722cf5e47dced66518a7730c6fd89b26ea7"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_ACCEPTANCE_TRACEABILITY.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "35d5352db6727f87286dc54269c762260769418b7b36ce379600c5f66134ae33"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_BASELINE_REPORT.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "256cc3b6b7d0ebf1ed190f0b5c1f97a244650450170dc3a4a963493038e20b33"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_DATA_MODEL_AND_MIGRATION_REPORT.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "1fd55de5bb42b35a3d44ca23c6d8ef4abb8746633a40872fe7c3d3d206b078d1"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_FILE_CHANGE_LEDGER.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Human-readable V5-to-V6 change ledger.",
+      "beforeSha256": null,
+      "afterSha256": null
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_FINAL_REPORT.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "45fdbb125ff11e03a3f1f08dfe454d0f2c1dadced228242988c29738d1dbf94f"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_OPERATIONS_BACKUP_RESTORE_RUNBOOK.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "9d232cddf22a619b4d0a1b8ac482636853068ddbd1906289a5287d4bcca2f8df"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_RELEASE_BLOCKERS.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "35153705968765c69844f829b17f53ba7a6ddc9f78a430acdf2b5e51f97bbe42"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_SCIENTIFIC_AUTHORITY_AND_MODEL_GATES.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "cf37dd738b8b37a6d2b28a2a8907f698e1e86c4eeac7669bd859f34a98879c1c"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_SECURITY_AND_THREAT_MODEL.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "1858ed447acb917265c06fac9ca0a0347752f7572ef0162313f963c721c6d484"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_SHA256SUMS.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Final repository SHA-256 manifest; excludes itself.",
+      "beforeSha256": null,
+      "afterSha256": "bde519ee09899a6cc2900d26b30321ff7a386bf31c4fee0f00c2a4d40f04dd32"
+    },
+    {
+      "status": "created",
+      "path": "docs/V6_VALIDATION_REPORT.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "63052d401b207168ae11ff006838a8eefa333da85e6d472878e232675e818fca"
+    },
+    {
+      "status": "created",
+      "path": "docs/evidence/README.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Created for V6 correctness and production-proof scope.",
+      "beforeSha256": null,
+      "afterSha256": "3902029e4a8a79f8307f136b554063f465586f461d06e1b85d238f62be6a9ba2"
+    },
+    {
+      "status": "created",
+      "path": "docs/v4-evidence/README.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Created for V6 correctness and production-proof scope.",
+      "beforeSha256": null,
+      "afterSha256": "32cbebed14d1b2ac54df2d3e2495f78f133fc30bddb9f25f891fec15ff6331bd"
+    },
+    {
+      "status": "created",
+      "path": "docs/v5-evidence/README.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Created for V6 correctness and production-proof scope.",
+      "beforeSha256": null,
+      "afterSha256": "32cbebed14d1b2ac54df2d3e2495f78f133fc30bddb9f25f891fec15ff6331bd"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-acceptance-traceability.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "7f1beb4e4ed0828a8d4ed9fdd7973e8be0d3764a888570c415a7c7e003d503e8"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-baseline.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "79977746b0a6ed6c062e3e9ff9384504466bfe70bf87abf10cb59407826d2585"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-deletion-manifest.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Machine-readable confirmation that V6 deletes no V5 paths.",
+      "beforeSha256": null,
+      "afterSha256": "1f8d0a88247dfbcdcf24b0bde405b55c6c3e044e34509224356342b2346a18f6"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/README.md",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "3680cb7dc40777c6b43cc755a4544841ba6453f7d8b65a66674644dd27348442"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/backup-portability.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/backup-portability.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": null,
+      "afterSha256": "db22b73b4c6ed9ea0bfba36ef7d3b80c523eec10cfb4627a2a031b47d12aa4d7"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/catalog-reconciliation.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/catalog-reconciliation.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "85ba1e0a338ec1852267e1d13225c18ea0ef4ee824c96ee316345c14d35fcaf0"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/environment-contracts.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/environment-contracts.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9227ec61dcae68cd4616d66ba8857aa27160539d489c4c47040d49c6e0c01239"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/environment.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "37153fa48c4e0471420bc30a9505200e936ff4388035fda27979af373335495b"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/genetics-smoke.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/genetics-smoke.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "e44ae33bd0efc3104976f9532869933fdb1e4a016f9b115938b2fdba4f750932"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/migration-manifest.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated canonical migration/routine identity used by runtime validation.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/migration-manifest.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated canonical migration/routine identity used by runtime validation.",
+      "beforeSha256": null,
+      "afterSha256": "d9157bd0c9c36af918bc92506c769d4d6e2a93d7fb6b0cd81109380caa4d5006"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/migration-utils.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/migration-utils.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "d770c52e7e34dc2e5e370acddcfdec1017d708adff14f2f70cd796b34526347f"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/node-script-syntax.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/node-script-syntax.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "e5a9c73dc9456cb2205343e18c8daf19b8995723229cc309f3fd66aac3d7fdc0"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/python-worker.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/python-worker.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "796818f300dd6d5868b01759026ad6325d2b222776f24da2be49538d3d569866"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/registry-install.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/registry-install.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "fdb72d2aafe04aa1608c6989c7411474861233e6d72adbc6b5f782bf65da348f"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/repository-validator.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/repository-validator.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "5c3b7018f437bb325b2a23b7b1c2df36ffeb19117955ed27ce84473dfac7e7a3"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/routine-manifest.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/routine-manifest.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "596e1bf27d0bc59ef1b7504b49b46246b210919d88ac78ba387d4fc72521438a"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/runtime-smoke.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/runtime-smoke.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "b42df47526f22e95de6a61a409c64ecdcbf60d7bdd7b557ca0af0769e5b3c218"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/shell-syntax.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/shell-syntax.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "8f89f5ecae6ddf568094b3f45eb82a0938f05ac6219ad54d12d52ccfc687c890"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/typescript-parser.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/typescript-parser.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "30b97bc4f8fe0178db166a1394c26d21dd5022ffa58496dbe87e420638d2ebc6"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/yaml-validation.exit",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-evidence/yaml-validation.txt",
+      "owner": "Release evidence / documentation",
+      "rationale": "Generated local validation evidence; explicitly non-release-authoritative.",
+      "beforeSha256": null,
+      "afterSha256": "2a3cba0b2065426ff1e9182a83ddc86f3a11aa9670a3178a57826d82496cab08"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-file-change-ledger.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Machine-readable V5-to-V6 change ledger.",
+      "beforeSha256": null,
+      "afterSha256": null
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-file-inventory.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Machine-readable final file inventory; excludes itself and checksum manifest.",
+      "beforeSha256": null,
+      "afterSha256": "e0fb3fe554c94f7b77a6a389eb43486dce8d46dd6ffd6b45756007c39614b4cc"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-repository-manifest.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Machine-readable release scope and verdict.",
+      "beforeSha256": null,
+      "afterSha256": "293f5ea4effdf089cd8cdde83d9c30626cae200d1e178bef0a01330635022572"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-route-inventory.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Machine-readable web page/API route inventory.",
+      "beforeSha256": null,
+      "afterSha256": "01faa4fb262bc2987e2790d72a0c5e7c477fab6f53dcb0f099da5edb823810a2"
+    },
+    {
+      "status": "created",
+      "path": "docs/v6-validation-results.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Required V6 report or machine-readable release evidence.",
+      "beforeSha256": null,
+      "afterSha256": "06082a9efdf7d61fbd2259e1d3395b56fc74049e81a63db68d3f1b94e8ba27ad"
+    },
+    {
+      "status": "created",
+      "path": "infra/backup/authoritative-tables.tsv",
+      "owner": "Database / operations",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": null,
+      "afterSha256": "9e577727a7e51a602291a428fe83dc9c7918ba06913ca9b768dd4ad4e0806d44"
+    },
+    {
+      "status": "created",
+      "path": "infra/backup/authority-snapshot.sh",
+      "owner": "Database / operations",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": null,
+      "afterSha256": "5eefca335ad028f1f3440fe9875b39978a5590c14fa4584862a2daf81e026202"
+    },
+    {
+      "status": "created",
+      "path": "infra/backup/checksum-portability.test.sh",
+      "owner": "Database / operations",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": null,
+      "afterSha256": "e6294dc3b85a7447fc1cda7a6d56a1a51aae8ad3ed6383524da7c0c15eb3e13f"
+    },
+    {
+      "status": "created",
+      "path": "packages/ai/src/evaluation-corpus.json",
+      "owner": "AI governance",
+      "rationale": "Adds versioned adversarial hosted-AI evaluation and support checks.",
+      "beforeSha256": null,
+      "afterSha256": "5bd1167f339f36a141123ddd87204d4fe2cbfb056c2c89be206d7759492b7f1e"
+    },
+    {
+      "status": "created",
+      "path": "packages/ai/src/evaluation.test.ts",
+      "owner": "AI governance",
+      "rationale": "Adds versioned adversarial hosted-AI evaluation and support checks.",
+      "beforeSha256": null,
+      "afterSha256": "8d1c0954275786f8277ea860023144fb8771f547221417b64f87754ca2fe664a"
+    },
+    {
+      "status": "created",
+      "path": "packages/ai/src/evaluation.ts",
+      "owner": "AI governance",
+      "rationale": "Adds versioned adversarial hosted-AI evaluation and support checks.",
+      "beforeSha256": null,
+      "afterSha256": "0bd119b3af2cc7478b90d744aff96dd29e23687bd898995589d213c512b5041b"
+    },
+    {
+      "status": "created",
+      "path": "packages/application/src/admission-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": null,
+      "afterSha256": "0d9d3deb7fad47e14b44ac9b7f3f62eaff309027c3af272ee82e47e4d6fcf293"
+    },
+    {
+      "status": "created",
+      "path": "packages/application/src/postgres.integration.test.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": null,
+      "afterSha256": "32b682596f48ac684045e5633acd2ef5a5bf0ea438d9aea6cfed9bad0ef5287b"
+    },
+    {
+      "status": "created",
+      "path": "packages/application/src/upload-reconciliation-service.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": null,
+      "afterSha256": "384e729262c1d9873a9bdb744c31d0eed48e8deaaaabf1ab75c3f4b89b5e6520"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/migrations/0028_v6_pending_object_reconciliation.sql",
+      "owner": "Database / operations",
+      "rationale": "Adds pending-object authority and durable reconciliation.",
+      "beforeSha256": null,
+      "afterSha256": "aa375a382d0b477614783e27ad32c57c0d4f14ad2352741a8ec76811dc1472ef"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/migrations/0029_v6_storage_cleanup_preview_and_reference_guard.sql",
+      "owner": "Database / operations",
+      "rationale": "Adds dry-run cleanup, bounded prefix discovery, retention and authoritative-reference guards.",
+      "beforeSha256": null,
+      "afterSha256": "89d0ab8834053cb768bba8d2d10ddef8845aa186a15654713516f06a349527ca"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/scripts/migration-utils.mjs",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": null,
+      "afterSha256": "c8d443e4e9ea16b0e4cbe071766569a647e2272bb34234a476d2852179403f9c"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/scripts/migration-utils.test.mjs",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": null,
+      "afterSha256": "079adaf6bac98589766fd5c2b23ef10938add302f4ca1f9d4566ee207224aed2"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/scripts/verify-migration-atomicity.mjs",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": null,
+      "afterSha256": "5b4c3e62b957711606058ec0d2414607c86d59db3cbb6cdf2dade6d75c4314ca"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/scripts/verify-v6-integration.mjs",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": null,
+      "afterSha256": "f9338b9b262180f9ea03f8143549cf00cd22eeda7bb49ce4d3039f2009f11873"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/src/generated/migration-manifest.json",
+      "owner": "Database / operations",
+      "rationale": "Generated canonical migration/routine identity used by runtime validation.",
+      "beforeSha256": null,
+      "afterSha256": "a37dbe839b08b84baa842efceb0b0577b47bbc11194b5dfc75b505633a758e83"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/src/generated/routine-grants.json",
+      "owner": "Database / operations",
+      "rationale": "Generated canonical migration/routine identity used by runtime validation.",
+      "beforeSha256": null,
+      "afterSha256": "94a924b703b0bc6ecf2326b17324cbdd764709b03043f1a50cc6c4b8c423f350"
+    },
+    {
+      "status": "created",
+      "path": "packages/database/src/migration-manifest.ts",
+      "owner": "Database / operations",
+      "rationale": "Generated canonical migration/routine identity used by runtime validation.",
+      "beforeSha256": null,
+      "afterSha256": "70bf52d3b66f5682b4f20d6d2021725189711022d30902b5d488a82501163861"
+    },
+    {
+      "status": "created",
+      "path": "packages/storage/src/minio.integration.test.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Defines real object-storage/malware integration evidence.",
+      "beforeSha256": null,
+      "afterSha256": "fd434cadcbbade5f4023d8d15fca54db277c139054ed9710abb5e5d424735f8b"
+    },
+    {
+      "status": "created",
+      "path": "scripts/ci/check-environment-contracts.mjs",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Adds behavioral validation or generated manifest/evidence tooling.",
+      "beforeSha256": null,
+      "afterSha256": "5b3535aeedf84ce3a80bfc4badadf2ff543a8e268d0270e6270e26df4733e0f6"
+    },
+    {
+      "status": "created",
+      "path": "scripts/ci/generate-release-evidence.mjs",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Adds behavioral validation or generated manifest/evidence tooling.",
+      "beforeSha256": null,
+      "afterSha256": "74065a9fb72cc750ff01488221c1693d4e53ced0a96071d36c2c870e837cec43"
+    },
+    {
+      "status": "created",
+      "path": "scripts/ci/run-genetics-runtime-smoke.mjs",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Adds behavioral validation or generated manifest/evidence tooling.",
+      "beforeSha256": null,
+      "afterSha256": "5c0da82918fe8d381b7a49f36fc5a9c2c2acaedee691b8ca86f52d22fbff8a49"
+    },
+    {
+      "status": "created",
+      "path": "scripts/ci/run-v6-runtime-smoke.mjs",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Adds behavioral validation or generated manifest/evidence tooling.",
+      "beforeSha256": null,
+      "afterSha256": "91b770a03958797ae4fb2a0d3652b797e91b555c3e02ae0a15eade4676df2fca"
+    },
+    {
+      "status": "created",
+      "path": "scripts/generate-migration-manifest.mjs",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Generated canonical migration/routine identity used by runtime validation.",
+      "beforeSha256": null,
+      "afterSha256": "4adcbbad496fe069526a4b4e342318c810bb7ddd71ab8571afdd07c4b913975b"
+    },
+    {
+      "status": "created",
+      "path": "scripts/generate-routine-manifest.mjs",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Adds behavioral validation or generated manifest/evidence tooling.",
+      "beforeSha256": null,
+      "afterSha256": "3cba819c269573f477566f5b02fa396163412d90238c04130dfc292784ca4990"
+    },
+    {
+      "status": "modified",
+      "path": ".env.example",
+      "owner": "Platform",
+      "rationale": "Modified for V6 correctness and production-proof scope.",
+      "beforeSha256": "67f62dab88e77e18308888374cb593827f09d7602923aeca7d815d8bb7fed695",
+      "afterSha256": "18e4defff0e7bdb25533284840e992e704efd721666d111e3348018773693f22"
+    },
+    {
+      "status": "modified",
+      "path": ".github/workflows/ci.yml",
+      "owner": "CI / deployment",
+      "rationale": "Expands reproducible CI, integration, browser, scan, SBOM and restore gates.",
+      "beforeSha256": "4cf72e9abbf4d1b310a2d481ed1db0f60e2ec7a276c714f50d977a34a7f7bd41",
+      "afterSha256": "d1e4eb9b721a97b1fe6575ab4bf89747b0e6f284516bce8e6bd4505cb5156bfa"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/actions.ts",
+      "owner": "Web experience / security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "3a2eb2842a7a7a89764dcb639b87837d98f03109649b1dc2728c12cc5631d453",
+      "afterSha256": "ef4150e1795201adfc4a7a9948f003a53dc35cdd54970df4d3d16842ef36dba6"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/admin/jobs/page.tsx",
+      "owner": "Web experience / security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "7f880ec88c7ed8d8e5d88663c46ccab3a3aaa4a167d4bfdceaae6787b9d47b80",
+      "afterSha256": "8818e5db161e0aa8de3bc1ccd6dc420b8c5d361d259d27e196bc915f0f35e970"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/api/media/upload/route.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "19ab4c5d888d4f31be058c4daa132a5751d1aa4ac42677feb93106d27213ad86",
+      "afterSha256": "6fa8da157950e63f0b255e44ce8f212e0913821d8c3e96eb91a04c5fde8554dc"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/api/research/upload/route.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "ccbf3fa305b92f709dd7560abe1bc719da3fdb6da89e1f4939a99a89caf9d856",
+      "afterSha256": "47916c887fa8d5a113450a1d6bd5135ee8e4de698dc4157833afc8935140cb71"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/phenotypes/images/page.tsx",
+      "owner": "Web experience / security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "591308a5beb823832676a6f937f62a63d742169bfe1a753f93708bc6f8925ce0",
+      "afterSha256": "6bf4c0f92d3cc81144c44d729670a87314c4d85dd3c403272b27782be2276d74"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/research/page.tsx",
+      "owner": "Web experience / security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "b117f38cc2a6fb1b9c777152197502411f1f25361929b94660cf7f1c951fc473",
+      "afterSha256": "a167a4bf554fdf7c6466ea8b7d0b9d5b76e67234d860d750d06b770b792b2a6f"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/lib/environment.ts",
+      "owner": "Web experience / security",
+      "rationale": "Connects secure browser workflows and bounded mutation/upload paths.",
+      "beforeSha256": "1e4841d1ec60322ceef811490a1e40d423280da673c2829f5f58dd30b9a710ff",
+      "afterSha256": "221eec04f9c7d0228d08fb7e594d0eb7fccaa2a18880e218c31e7db62189a5a4"
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/proxy.ts",
+      "owner": "Web experience / security",
+      "rationale": "Closes redirect and response-hardening defects.",
+      "beforeSha256": "a37b9428c2fa7c97687f3a941584989af1e8fabd0384cba1ad6c9ff46cf85780",
+      "afterSha256": "820e192d6c94d484fd1234382d948798130f56989e0d1049295c91fb4d9829d3"
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-node/package.json",
+      "owner": "Storage / worker security",
+      "rationale": "Adds bounded streaming, cleanup, scanner and durable worker behavior.",
+      "beforeSha256": "741489094527e77b9fa1d3a1d2a0fdd8850d74c4c173260f706c0922ad588ba1",
+      "afterSha256": "a932939273fc489a5fc551430613476e9e3e5421de96d485e5f5383612e0c9d9"
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-node/src/media-processing.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Adds bounded streaming, cleanup, scanner and durable worker behavior.",
+      "beforeSha256": "e9018c5a3d472d4ef96ca4dc3882bc29271980353e2b9ae2e1842369972c6014",
+      "afterSha256": "2c671f8dfd742c0768c25c27da942d4ee6b8594c8cac1cf6dc256aef99d992ed"
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-node/src/worker.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Adds bounded streaming, cleanup, scanner and durable worker behavior.",
+      "beforeSha256": "af6e8925990afeb9ea7a4d624b77f86fbd19d8b07bdbd337b30efd26c5a0cecd",
+      "afterSha256": "40e6c26576b09cb0cfa878453c06ad93058bc54787745c604f74f5eb96c57097"
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-python/worker.py",
+      "owner": "Platform",
+      "rationale": "Hardens isolated deterministic vision resource limits.",
+      "beforeSha256": "b238180b196baf9be5083009403c0553073933a9eb3c7addf6073539dacbcfe9",
+      "afterSha256": "f6436be0effb80b1cc0e68fc7113b1df133740c093037234ea00c37ac67d457a"
+    },
+    {
+      "status": "modified",
+      "path": "docs/repository-validation.json",
+      "owner": "Release evidence / documentation",
+      "rationale": "Modified for V6 correctness and production-proof scope.",
+      "beforeSha256": "9e31bb300e23ddf5a2098767166afed48c9cc91e004d121bb1c170a665dcc54f",
+      "afterSha256": "7e185b6c8287d02ea667d84562cff88c1ee275f699f6ca0ee6dde706ad9aa209"
+    },
+    {
+      "status": "modified",
+      "path": "infra/backup/backup.sh",
+      "owner": "Database / operations",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": "44830cce645136c030eda1bcafb8445f4c4db1de6eecbc95454037081f0e366a",
+      "afterSha256": "d031e0b68e0542b8d94fd7a390066b2882e45c047beebcef57398d9a209da2ad"
+    },
+    {
+      "status": "modified",
+      "path": "infra/backup/restore-test.sh",
+      "owner": "Database / operations",
+      "rationale": "Makes backup/restore relocatable and content-reconciled.",
+      "beforeSha256": "8a635b1a35174b5ef57a3733d8118254a18c287494ad7fbeb44e6d4810ddc2c6",
+      "afterSha256": "dee445ed527ebdd0905d6412b4942818a0deaef82b8e21237229955dba7d9a49"
+    },
+    {
+      "status": "modified",
+      "path": "infra/compose/docker-compose.yml",
+      "owner": "CI / deployment",
+      "rationale": "Modified for V6 correctness and production-proof scope.",
+      "beforeSha256": "d75c65050fc703862dbd52dce168321ce76ee336a6f700864f20939b4ac4efe5",
+      "afterSha256": "70707deda4840cd82dd9950196fc313d0f5ab09a3b0ccf28c964add9c8de3d1d"
+    },
+    {
+      "status": "modified",
+      "path": "package.json",
+      "owner": "Platform",
+      "rationale": "Modified for V6 correctness and production-proof scope.",
+      "beforeSha256": "2bbf42f268445c5a3e7a474058a00bd760d7dbbdd2e95de19691fa9a630dcb92",
+      "afterSha256": "4a468b7d019c78a610d1443e61285055de334c5ec606e878a6413239198a25aa"
+    },
+    {
+      "status": "modified",
+      "path": "packages/ai/package.json",
+      "owner": "AI governance",
+      "rationale": "Modified for V6 correctness and production-proof scope.",
+      "beforeSha256": "6238d9a2b8cc7e03d768c33eb2c6d2e6c4165c025891fb5b34605e920dbc15f0",
+      "afterSha256": "55f69b116950345fdb098bdca14978ae7810a203fd96cfbf7749ff904d65b093"
+    },
+    {
+      "status": "modified",
+      "path": "packages/ai/src/hosted.ts",
+      "owner": "AI governance",
+      "rationale": "Modified for V6 correctness and production-proof scope.",
+      "beforeSha256": "d40a1ef5aa73da30a9e6f1f8301edb2a71a9e3a1846222bcf5bafea7fecd52e2",
+      "afterSha256": "a49afd5c5d8538443eb92ab59651283aa56a70731b287896b195c8dc6458117c"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/advanced-simulation-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "2a64aea06e92aa5312320a293f772ddfd1f4b85abab3cef2518d8c937a65819a",
+      "afterSha256": "12923cc2656caaf5e35e8ee16a28a531b4cc0eff5a1ebc08ac0f1a579be9810d"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/export-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "b2e3922d7fd2c4b6188e9b43d997a8c66579fde3b1c11130500e2be6b10f4f99",
+      "afterSha256": "3f79625485892fdcd28000bb9664bd284e447bd732b9e8d0f1a80bd1b7aa760d"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/index.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "e29d133940df0bccc538561ef831fde26ad9f5f963173c9ea1491ecacae92b17",
+      "afterSha256": "85a69b91d3cba1a5f80361653dcb82164c510b1142ab5b5a25576c741dcb45e7"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/media-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "9b4447f04de3e0b2d85a38f9a0072fec379c89927e9812f4ae59d8f3fe951c89",
+      "afterSha256": "c52f75a881ca5bcf250897b3f25357543c33607372218c5a2d306cc2acdc1a33"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/operations-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "398943e634cc1f84bdfccc9efc59086720f72860b2c488a0fa52dfcb31c37967",
+      "afterSha256": "d7f5a290b0a32be93293083b5a1b583d70f129fb842712c73859c79048d92891"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/research-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "a561b721bd4f2d1ec8f909654c167e0127dab8997e556e6096010825efe97681",
+      "afterSha256": "6e089562df90dc51a53ea124042508fb3a479d933f56ec1df6dc342ba4aac895"
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/simulation-service.ts",
+      "owner": "Application services",
+      "rationale": "Adds canonical admission, reconciliation or integration behavior.",
+      "beforeSha256": "7b08cc1b15ce10a5544a153d99d5f61b85f32b4a668da00e13154c0f964c56a0",
+      "afterSha256": "e11a67715613c704a2171a8fbce64519fec8b9a3ce3e5df95e5c3ffa85e3e22b"
+    },
+    {
+      "status": "modified",
+      "path": "packages/config/src/index.test.ts",
+      "owner": "Platform",
+      "rationale": "Enforces fail-closed production environment and hosted-AI cost policy.",
+      "beforeSha256": "db8fb2fabeba4fbe981d0ee28b6d382ea10b82d72b9f255a2dc00a2b5348cd38",
+      "afterSha256": "ef3e9264bcc4705524ae1e45977d39f2969e06371014816cace47c1e5f4776f1"
+    },
+    {
+      "status": "modified",
+      "path": "packages/config/src/index.ts",
+      "owner": "Platform",
+      "rationale": "Enforces fail-closed production environment and hosted-AI cost policy.",
+      "beforeSha256": "cb4bfb1b363b8c7d98004fef5afcd4e1d9598d1a8434306ee4486269872d76a4",
+      "afterSha256": "43ba4688be1eb0268a69db18f307e95c3da698b90135ada51496f3ea0a8604ad"
+    },
+    {
+      "status": "modified",
+      "path": "packages/contracts/src/platform.ts",
+      "owner": "Platform",
+      "rationale": "Adds governed versioned operation contracts.",
+      "beforeSha256": "df4f40bdc60909d8ba16f99aa32e7dd04af8131f4474ad376dbff7ed6e7ecc1c",
+      "afterSha256": "414f01c3cc4e3474be93d54922668ba1d7e41d8b97ccd035fd617d65317cfa94"
+    },
+    {
+      "status": "modified",
+      "path": "packages/database/package.json",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": "19188f70e2e6674d48815685cdd732b3bdea24ed4dff4d4e65d3ca3eae2d147a",
+      "afterSha256": "8b01ce856997f5724a40a9e2a17728c23523b2be4b527c97c69f4bfdd616348f"
+    },
+    {
+      "status": "modified",
+      "path": "packages/database/scripts/migrate.mjs",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": "b6d07ebf446e4e675304605bf24a58b17fe4c2992c957265b14cb1d05f1f2da2",
+      "afterSha256": "fbc8034ca3a53000cc58b4eb9220339d17ba98a24f4c8f63f79acd10232b1a7a"
+    },
+    {
+      "status": "modified",
+      "path": "packages/database/scripts/verify-authority.mjs",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": "735a908d4284deeb0e232a92ec82ae37ca98027f7b73ba64907a1cee8c0dce42",
+      "afterSha256": "6f8a3a81b438a584150724cc9e18b286c447fb208a42af53130f8c9886981e36"
+    },
+    {
+      "status": "modified",
+      "path": "packages/database/src/index.ts",
+      "owner": "Database / operations",
+      "rationale": "Strengthens migration/readiness/authority behavior.",
+      "beforeSha256": "80394cf515da397bbd1e86aa383bdb5d4b0a6300b1a2a043dc7fc1ad49bb039f",
+      "afterSha256": "12321b79bfcb2c050f4a545e0f27903c565f4cd1a1b0825dd57c45d4fcd4a862"
+    },
+    {
+      "status": "modified",
+      "path": "packages/storage/package.json",
+      "owner": "Storage / worker security",
+      "rationale": "Corrects S3 signing/streaming/listing and immutable object behavior.",
+      "beforeSha256": "ec7c55156a245d58275c678a1515e0c0b57bb0e1d15114e9e2fde3d41bb27cd0",
+      "afterSha256": "05a8572c54aa9b7d80526f668b8302be0d6850773356258584285f0b0b549760"
+    },
+    {
+      "status": "modified",
+      "path": "packages/storage/src/index.test.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Corrects S3 signing/streaming/listing and immutable object behavior.",
+      "beforeSha256": "0a0da5ff0ce45a6163eae6f912ef767d273d4351228c597f9e7e8c6b26469ad6",
+      "afterSha256": "a064c81304bbe6dddd2bc8d0f46899f1841e2745e9e85a3cf8f52ff6d02dff32"
+    },
+    {
+      "status": "modified",
+      "path": "packages/storage/src/index.ts",
+      "owner": "Storage / worker security",
+      "rationale": "Corrects S3 signing/streaming/listing and immutable object behavior.",
+      "beforeSha256": "af5e2b966e3bbb0490497a911c5b7bc76c6c92095cb4ae3cdeff64b03be7b8e5",
+      "afterSha256": "0b6b2b1d80dae292d9346cdcca5148b3d57edeffae67b6e8f069d9fe80b43db8"
+    },
+    {
+      "status": "modified",
+      "path": "scripts/validate_repository.py",
+      "owner": "Validation / generated-source tooling",
+      "rationale": "Adds behavioral validation or generated manifest/evidence tooling.",
+      "beforeSha256": "fc2395565e1c7996336e73f050dc2531d0ef84de254db87621dc50baa707f75c",
+      "afterSha256": "a6b186a2a53dd02483e3d33f4df64837665c928b606d13d06b08a42ea6346bf6"
+    }
+  ]
+}

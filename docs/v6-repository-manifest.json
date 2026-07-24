@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "release": "V6",
+  "releaseVerdict": "blocked",
+  "baselineArchive": "capsicum-breeding-intelligence-platform-v5-complete.zip",
+  "implementationSourceSha256": "7b0c1cd425a9ba5a26140ed1d3be92f7b0bfe030ee896b40b143e6de64633ab4",
+  "repositoryFileCount": 587,
+  "pageRouteCount": 54,
+  "apiRouteCount": 14,
+  "migrationCount": 29,
+  "uniqueCreateTableCount": 116,
+  "catalog": {
+    "loci": 22,
+    "claims": 22,
+    "sources": 30,
+    "approvedExecutableRules": 0
+  },
+  "validation": {
+    "repositoryChecks": 778,
+    "sourceIssues": 0,
+    "environmentWarnings": 5,
+    "typescriptFilesParsed": 170,
+    "pythonTestsPassed": 8
+  },
+  "reports": [
+    "docs/V6_FINAL_REPORT.md",
+    "docs/V6_ACCEPTANCE_TRACEABILITY.md",
+    "docs/V6_FILE_CHANGE_LEDGER.md",
+    "docs/V6_VALIDATION_REPORT.md",
+    "docs/V6_DATA_MODEL_AND_MIGRATION_REPORT.md",
+    "docs/V6_SECURITY_AND_THREAT_MODEL.md",
+    "docs/V6_SCIENTIFIC_AUTHORITY_AND_MODEL_GATES.md",
+    "docs/V6_OPERATIONS_BACKUP_RESTORE_RUNBOOK.md",
+    "docs/V6_RELEASE_BLOCKERS.md"
+  ]
+}

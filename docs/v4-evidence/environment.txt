@@ -1,0 +1,11 @@
+captured_at=2026-07-23T02:54:56Z
+os=Linux 03986af8646d 6.12.13 #1 SMP Tue Jun 23 15:34:50 UTC 2026 x86_64 GNU/Linux
+node=v22.16.0
+npm=10.9.2
+corepack=0.32.0
+python=Python 3.13.5
+pytest=pytest 9.0.2
+psql=unavailable
+docker=unavailable
+Rscript=unavailable
+pnpm=unavailable

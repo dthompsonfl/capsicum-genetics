@@ -1,0 +1,420 @@
+[
+  {
+    "claim_id": "CLM-001",
+    "catalog_id": "LOC001",
+    "claim_text": "A verified null Pun1 allele can explain nonpungency in documented backgrounds; functional Pun1 supports capsaicinoid synthesis.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "Capsicum spp.; strongest allele evidence in C. annuum, C. chinense, C. frutescens",
+    "required_conditions": "Exact allele, species/accession, assay method, developmental stage, and status of pAMT/CaKR1/other pathway genes.",
+    "exclusions": "Functional Pun1 guarantees a particular SHU or even pungency when other pathway loci are defective.",
+    "source_ids": "SRC001; SRC002",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 2,
+      "rawRowSha256": "54701ada48914ad3844f61f597da66e2bfb68083a3ba46b026fd49ab1112d2d5",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-002",
+    "catalog_id": "LOC002",
+    "claim_text": "Specific null pAMT alleles can cause nonpungency despite functional Pun1; leaky alleles can reduce capsaicinoids.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "Capsicum spp.; documented alleles in C. annuum and C. chacoense",
+    "required_conditions": "Exact allele sequence, splice behavior, genetic background, Pun1 status, assay protocol.",
+    "exclusions": "Any pAMT variant predicts a universal percentage reduction or exact SHU.",
+    "source_ids": "SRC003; SRC004",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 3,
+      "rawRowSha256": "6a766cc4acc02cd58ae3ebcfeb523177974d11aede870762baa7a82a815b52eb",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-003",
+    "catalog_id": "LOC003",
+    "claim_text": "The documented disrupted CaKR1 allele can cause loss of pungency in the studied C. chinense material.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "A",
+    "applicability": "Validated in a C. chinense mapping population and functional assays",
+    "required_conditions": "Allele identity, species, population, Pun1 and pAMT status.",
+    "exclusions": "All CaKR1 variants or all chromosome-10 haplotypes determine pungency.",
+    "source_ids": "SRC005",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 4,
+      "rawRowSha256": "486c99c75dd1fe495129365c4bedab1483b15df54f40128edae9fb70e93f0b3e",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-004",
+    "catalog_id": "LOC004",
+    "claim_text": "CaMYB31 activity influences pathway-gene expression and capsaicinoid accumulation.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "A",
+    "applicability": "Functionally studied in C. annuum cultivars",
+    "required_conditions": "Functional variant evidence, expression context, environment, pathway genotype.",
+    "exclusions": "CaMYB31 genotype alone predicts pungency presence or SHU.",
+    "source_ids": "SRC006",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 5,
+      "rawRowSha256": "34574e5ca9ca6f0191bd5e079071b981c187073cfa5bd571fd8facb7cd5189b3",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-005",
+    "catalog_id": "LOC005",
+    "claim_text": "PSY1 loss can alter carotenoid accumulation and fruit color; PSY2 may partially compensate.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "A",
+    "applicability": "Capsicum spp.; many alleles/accessions",
+    "required_conditions": "PSY1 allele, PSY2, CCS, ZEP, pigment measurements, maturity stage.",
+    "exclusions": "PSY1 alone maps universally to red versus yellow.",
+    "source_ids": "SRC007; SRC008",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 6,
+      "rawRowSha256": "451c5d4b1c4f3528901c5835ac9e5b7d06bf480c4ae11f54c4d10c692683451c",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-006",
+    "catalog_id": "LOC006",
+    "claim_text": "Functional PSY2 can support basal carotenoid production when PSY1 is absent in the studied background.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "A",
+    "applicability": "Functional evidence in C. annuum MicroPep material",
+    "required_conditions": "PSY1 and CCS alleles, expression, accession, pigment profile.",
+    "exclusions": "PSY2 universally causes yellow fruit.",
+    "source_ids": "SRC007; SRC008",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 7,
+      "rawRowSha256": "3ca79aa9d544be716dbde5f5b8930235db83b90634e9b34f768a7d74291274cc",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-007",
+    "catalog_id": "LOC007",
+    "claim_text": "CCS variation is a major determinant of carotenoid composition and mature color in many backgrounds.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "A",
+    "applicability": "Capsicum spp.",
+    "required_conditions": "CCS allele plus PSY1/PSY2/ZEP and pigment measurements.",
+    "exclusions": "Functional CCS alone guarantees red fruit, or null CCS alone guarantees yellow/orange.",
+    "source_ids": "SRC007; SRC008; SRC009",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 8,
+      "rawRowSha256": "cbe50478fb6d3500a84c7e18d231061cb0466a253a0d3b5efaa46f3e8ad277d2",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-008",
+    "catalog_id": "LOC008",
+    "claim_text": "The documented ZEP splicing mutation contributes to orange coloration in the studied material.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum SNU-mini Orange × SNU-mini Yellow population",
+    "required_conditions": "PSY1 and CCS status, exact ZEP allele, accession/background.",
+    "exclusions": "ZEP genotype universally distinguishes orange from yellow peppers.",
+    "source_ids": "SRC009",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 9,
+      "rawRowSha256": "068ec7024bb13a62a40079a6974c9959a0d207753cfae14dec2fad9949be52a5",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-009",
+    "catalog_id": "LOC009",
+    "claim_text": "The documented CaSGR/cl allele impairs chlorophyll breakdown; ripe fruit can appear brown or green depending on carotenoids.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum chlorophyll-retainer mutant material",
+    "required_conditions": "CaSGR allele, carotenoid genotype and measured pigments, maturity.",
+    "exclusions": "cl alone determines one universal ripe color.",
+    "source_ids": "SRC010",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 10,
+      "rawRowSha256": "32ba7778396382bbea683dca4247c5ddc2abb9c9cc7b244edbf1a4936b34747f",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-010",
+    "catalog_id": "LOC010",
+    "claim_text": "CaGLK2 variation contributes to chlorophyll content and immature fruit color intensity.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum; studied mapping populations and accessions",
+    "required_conditions": "PRR2/APRR2 state, background, stage, chlorophyll measurement.",
+    "exclusions": "A single CaGLK2 allele universally yields green versus yellow fruit.",
+    "source_ids": "SRC011; SRC013",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 11,
+      "rawRowSha256": "2871ed4d8aea7991f0985fa111b703e23ad90c0d1ef6291eb0c064bdd406f4b4",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-011",
+    "catalog_id": "LOC011",
+    "claim_text": "PRR2/APRR2 variation contributes to fruit pigmentation, often jointly with CaGLK2.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum and comparative Solanaceae evidence",
+    "required_conditions": "Exact allele, GLK2, PSY1/CCS, stage, population.",
+    "exclusions": "PRR2 is a universal red/yellow or green/yellow switch.",
+    "source_ids": "SRC012; SRC013",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 12,
+      "rawRowSha256": "22df03d2aa47471993858d33693f1f762677f986fb11efd8e6eef6b00b526697",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-012",
+    "catalog_id": "LOC012",
+    "claim_text": "The documented CaAN3/CaPs allele contributes to purple stripe formation in the studied material.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum Chen12-4-derived mapping populations",
+    "required_conditions": "Exact structural variant/transcript, tissue, developmental stage, CaAN2 and other anthocyanin regulators.",
+    "exclusions": "CaAN3 alone explains all purple, black, foliage, flower, or fruit pigmentation.",
+    "source_ids": "SRC014",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 13,
+      "rawRowSha256": "cdbb8b4668e222e38d0f0e013972264eb30661c754edf65b448eb3ffb0388503",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-013",
+    "catalog_id": "LOC013",
+    "claim_text": "Functional Bs2 can confer resistance to strains carrying recognized avrBs2.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "Pepper gene; functional transfer also shown in tomato",
+    "required_conditions": "Host allele, Xanthomonas species/strain, avrBs2 status, temperature/assay conditions.",
+    "exclusions": "Bs2 confers universal bacterial spot resistance.",
+    "source_ids": "SRC015",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 14,
+      "rawRowSha256": "c57ad5cc31cafaddcc715c28d1bb2720f53b60a452ce1e867f0402bfcc053d27",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-014",
+    "catalog_id": "LOC014",
+    "claim_text": "Bs3 and Bs3-E recognize distinct AvrBs3-family effectors through promoter activation specificity.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "C. annuum and Xanthomonas interaction systems",
+    "required_conditions": "Host promoter allele, bacterial effector allele, strain/pathovar.",
+    "exclusions": "AvrBs3 is a pepper resistance gene or Bs3 gives generic disease resistance.",
+    "source_ids": "SRC016",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 15,
+      "rawRowSha256": "cf0cb7dc09dc88607effefb497595527ed8f88eae027c422d3a89f6acb75e92b",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-015",
+    "catalog_id": "LOC015",
+    "claim_text": "Named pvr1 coding alleles can confer recessive resistance to defined potyviruses by altering eIF4E–VPg compatibility.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "C. annuum and C. chinense germplasm",
+    "required_conditions": "Exact host allele, zygosity, virus species and strain, alternate eIF4E isoforms.",
+    "exclusions": "Any pvr1 allele confers resistance to every potyvirus.",
+    "source_ids": "SRC017",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 16,
+      "rawRowSha256": "8a55b0f9e05d960bc46ba7f0a80cdd781711d4d80636d2330040bd03d3871636",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-016",
+    "catalog_id": "LOC016",
+    "claim_text": "Functional Pvr4 can recognize defined potyvirus effectors and confer resistance in validated combinations.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "C. annuum",
+    "required_conditions": "Host allele, virus isolate/pathotype, environmental assay conditions.",
+    "exclusions": "Pvr4 is universal or permanently durable against all potyvirus evolution.",
+    "source_ids": "SRC018",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 17,
+      "rawRowSha256": "06609fc9021a2a2573f066f32f773e2c59426200bb16bedabfa099aeb2244bcc",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-017",
+    "catalog_id": "LOC017",
+    "claim_text": "Functional Tsw can confer resistance to recognized TSWV isolates.",
+    "claim_type": "Production-supported",
+    "evidence_grade": "A",
+    "applicability": "Originally characterized/cloned from C. chinense",
+    "required_conditions": "Exact host allele, virus isolate, temperature and assay conditions.",
+    "exclusions": "Tsw guarantees resistance to all TSWV isolates.",
+    "source_ids": "SRC018",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 18,
+      "rawRowSha256": "2161da5fc38d069f1808ba85d524a65869cecb62401923c4f3c502596a1cdd9a",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-018",
+    "catalog_id": "LOC018",
+    "claim_text": "L alleles provide differential resistance spectra to tobamovirus pathotypes; L4 can be overcome by evolved PMMoV.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "Multiple Capsicum species and introgressions",
+    "required_conditions": "Exact L allele, virus species/pathotype, coat protein genotype, temperature.",
+    "exclusions": "L4 is universally broad-spectrum or resistance cannot break.",
+    "source_ids": "SRC019; SRC020",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 19,
+      "rawRowSha256": "fba6a0e3e0221ae550da562f25e7709ae0676792e29db5ed06baf6274f408741",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-019",
+    "catalog_id": "LOC019",
+    "claim_text": "CMS status follows maternal cytoplasm and can be restored by compatible nuclear genes.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "Primarily C. annuum breeding systems",
+    "required_conditions": "Named CMS line/cytoplasm, maternal parent, Rf/Rf2/pr status, temperature.",
+    "exclusions": "All pepper CMS systems share one universal mitochondrial allele or one universal Rf rule.",
+    "source_ids": "SRC021; SRC022; SRC023",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 20,
+      "rawRowSha256": "b4080495dd84c397b89c3dd3b0709a91b751c1e64d2a7db2fada2d5901b94960",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-020",
+    "catalog_id": "LOC020",
+    "claim_text": "CaPPR6-region haplotypes are strongly associated with restoration in defined populations.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum CMS/restorer populations",
+    "required_conditions": "CMS cytoplasm, restorer source, marker validity, temperature, modifier loci.",
+    "exclusions": "CaPPR6 genotype universally predicts fertility across all CMS lines.",
+    "source_ids": "SRC021; SRC022",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 21,
+      "rawRowSha256": "b8abfa56c8f85144fa88580ba82ab7af873c2ba1e0796c035b4c1dd027e7d3b5",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-021",
+    "catalog_id": "LOC021",
+    "claim_text": "Rf2 contributes to fertility restoration in the reported G164 CMS system.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum G164 and 77013A-derived populations",
+    "required_conditions": "Exact CMS cytoplasm, Rf1 state, G164-derived haplotype, environment.",
+    "exclusions": "Rf2 is required or sufficient in every pepper CMS system.",
+    "source_ids": "SRC023",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 22,
+      "rawRowSha256": "c2cbb581bf9a63e922e0a535d6e18dbd766506c95dde57b3a1046a1acd309c0d",
+      "reviewState": "draft_pending_independent_review"
+    }
+  },
+  {
+    "claim_id": "CLM-022",
+    "catalog_id": "LOC022",
+    "claim_text": "A recessive cvr4 locus confers ChiVMV resistance in the reported CV9 material.",
+    "claim_type": "Advisory/research",
+    "evidence_grade": "B",
+    "applicability": "C. annuum CV9 × Jeju population",
+    "required_conditions": "Causal allele/marker, virus isolate, genetic background.",
+    "exclusions": "cvr4 confers resistance to all ChiVMV isolates or other potyviruses.",
+    "source_ids": "SRC024",
+    "review_status": "Curated seed record; independent domain review required before production release",
+    "_provenance": {
+      "sourceFile": "Evidence_Claims.csv",
+      "sourceFileSha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d",
+      "sourceRow": 23,
+      "rawRowSha256": "a3d4628c46fe641ae4c79a8a7b3ca756f5005d5044c889fe806e78dbfcb19ea9",
+      "reviewState": "draft_pending_independent_review"
+    }
+  }
+]

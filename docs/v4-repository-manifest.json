@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-23T03:02:49.125894+00:00",
+  "releaseVerdict": "blocked",
+  "repository": {
+    "fileCountIncludingManifests": 446,
+    "pageRoutes": 54,
+    "apiRoutes": 11,
+    "migrationCount": 22,
+    "latestMigration": "0022_v4_selection_plan_observed_reconciliation.sql"
+  },
+  "changeSummary": {
+    "created": 45,
+    "modified": 57,
+    "deleted": 0,
+    "generated": 22
+  },
+  "scientificCatalog": {
+    "loci": 22,
+    "claims": 22,
+    "sources": 30,
+    "approvedExecutablePhenotypeRules": 0
+  },
+  "validation": {
+    "behavioralChecks": 634,
+    "sourceIssues": 0,
+    "environmentWarnings": 5,
+    "releaseReady": false
+  },
+  "keyArtifacts": {
+    "docs/v4-file-inventory.json": {
+      "sizeBytes": 79680,
+      "sha256": "4535f82b4a25f65da82c00fdeeaf9c0f5e14f39e3767b8c05b780cb5c85fa056"
+    },
+    "docs/v4-route-inventory.json": {
+      "sizeBytes": 6469,
+      "sha256": "88f7fea6ad6ac58d23da741fc8a7821380c7840b7a54b849fd25f23b3996f6c3"
+    },
+    "docs/v4-validation-results.json": {
+      "sizeBytes": 2292,
+      "sha256": "d30ac456437dd692fb33199b4e47d57ba6f663f45303101a6b9368d5c7c8be2f"
+    },
+    "docs/v4-acceptance-traceability.json": {
+      "sizeBytes": 16066,
+      "sha256": "dc473bb32c43fd03a0f814c4aae4f17f75faa9d5c54b93b6f2483db7b3cd72ec"
+    },
+    "docs/v4-file-change-ledger.json": {
+      "sizeBytes": 30787,
+      "sha256": "3cd6802e617832815f36e8d3b3f3cdfa46066b909cdee7b2108a6f7da75a09c8"
+    },
+    "docs/v4-deletion-manifest.json": {
+      "sizeBytes": 153,
+      "sha256": "e2c62103cd92a0a8812d509bd425562f82a5dd71f0838f42d723dfcb239bd2bf"
+    },
+    "docs/v4-evidence/repository-validator.json": {
+      "sizeBytes": 103729,
+      "sha256": "d72a8b6b2959d01b91ec7052c2e159d41d9d3e0ff3bda8b6b358dc31434d0fc8"
+    }
+  }
+}

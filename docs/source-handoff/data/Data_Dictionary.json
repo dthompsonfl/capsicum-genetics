@@ -1,0 +1,130 @@
+[
+  [
+    "field",
+    "entity",
+    "definition",
+    "required",
+    "validation",
+    "notes"
+  ],
+  [
+    "catalog_id",
+    "Locus_Catalog",
+    "Stable internal identifier for a curated locus/model record.",
+    "Yes",
+    "LOC followed by three digits.",
+    "Never reuse after retirement."
+  ],
+  [
+    "canonical_symbol",
+    "Locus_Catalog",
+    "Preferred scientific symbol for display and search.",
+    "Yes",
+    "Controlled string plus aliases.",
+    "Do not infer dominance from capitalization."
+  ],
+  [
+    "species_scope",
+    "Locus_Catalog",
+    "Species, accession, cross, or population in which evidence applies.",
+    "Yes",
+    "Taxon plus free-text population/source identifiers.",
+    "Broad Capsicum claims require evidence across species."
+  ],
+  [
+    "chromosome",
+    "Locus_Catalog",
+    "Chromosome or cytoplasmic genome assignment.",
+    "Conditional",
+    "Must include reference assembly/version in implementation.",
+    "This seed sheet omits coordinates until lift-over normalization."
+  ],
+  [
+    "model_class",
+    "Locus_Catalog",
+    "Inheritance or interaction model supported by evidence.",
+    "Yes",
+    "Controlled enum in production.",
+    "Examples: nuclear Mendelian, linked, cytoplasmic, host–pathogen interaction, quantitative."
+  ],
+  [
+    "evidence_grade",
+    "Locus_Catalog/Evidence_Claims",
+    "A/B/C/U scientific evidence classification.",
+    "Yes",
+    "Controlled enum and approval record.",
+    "Grade is not confidence percentage."
+  ],
+  [
+    "genotype_prediction",
+    "Locus_Catalog",
+    "Whether allele segregation can be computed and under what conditions.",
+    "Yes",
+    "Controlled eligibility state.",
+    "Exact segregation still requires verified parental calls."
+  ],
+  [
+    "phenotype_prediction",
+    "Locus_Catalog",
+    "Eligibility and constraints for translating genotype to phenotype.",
+    "Yes",
+    "Blocked, advisory, conditional, or approved.",
+    "Default should be blocked."
+  ],
+  [
+    "supported_claim",
+    "Locus_Catalog",
+    "Narrow statement the cited evidence supports.",
+    "Yes",
+    "Human-reviewed atomic claim.",
+    "Avoid compound or universal claims."
+  ],
+  [
+    "prohibited_claim",
+    "Locus_Catalog",
+    "Common overgeneralization that the software must not emit.",
+    "Yes",
+    "Human-reviewed safety boundary.",
+    "Use in UI and model tests."
+  ],
+  [
+    "required_context",
+    "Locus_Catalog",
+    "Inputs that must be present before a model can run.",
+    "Yes",
+    "Machine-readable requirements in production.",
+    "May include pathogen isolate, other loci, stage, environment, or assay."
+  ],
+  [
+    "source_id",
+    "Sources",
+    "Stable identifier for a publication, standard, or official resource.",
+    "Yes",
+    "SRC followed by three digits.",
+    "Assertions should link through a join table in production."
+  ],
+  [
+    "assembly_version",
+    "Future genotype/coordinate tables",
+    "Reference genome build used for a gene ID or coordinate.",
+    "Yes for coordinates",
+    "Controlled assembly registry.",
+    "Never store a naked coordinate."
+  ],
+  [
+    "call_method",
+    "Future genotype_call",
+    "How a genotype was obtained.",
+    "Yes",
+    "sequencing, marker assay, pedigree inference, phenotype inference, assumption, unknown.",
+    "Assumption is not verification."
+  ],
+  [
+    "review_status",
+    "Evidence_Claims",
+    "Scientific governance state for an assertion.",
+    "Yes",
+    "draft, reviewed, approved, rejected, retired.",
+    "Production rules require approved status."
+  ]
+]

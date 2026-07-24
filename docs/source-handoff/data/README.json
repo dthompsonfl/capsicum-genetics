@@ -1,0 +1,212 @@
+[
+  [
+    "Capsicum Genetics Evidence Catalog v0.1",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Purpose",
+    "A curated seed dataset for a science-backed pepper breeding calculator and breeding-record platform. It separates verified genetic claims from advisory evidence and unsupported prediction.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Release status",
+    "Research seed release. Not a clinically, commercially, or legally validated breeding decision system. Independent plant-genetics review is required before activating production phenotype rules.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Core rule",
+    "Genotype inheritance may be exact when parental alleles are verified. Phenotype prediction is enabled only when the literature supports the exact allele, population/background, interaction model, and pathogen/environment context.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Evidence A",
+    "Causal or functionally validated gene/allele with strong genetic/mechanistic evidence. Still subject to applicability limits.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Evidence B",
+    "Fine-mapped strong candidate, population-specific model, linked marker, or replicated major-effect evidence. Advisory by default.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Evidence C",
+    "Association, expression, candidate, or QTL evidence without sufficient causal validation. Not included as production rules in this seed catalog.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Critical nonclaim",
+    "This catalog does not predict exact SHU, flavor, yield, fruit weight, wall thickness, or environmental adaptation from cultivar names or parent phenotypes.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Source policy",
+    "Use primary peer-reviewed studies for scientific claims; reviews and official databases guide discovery and normalization but do not replace primary evidence.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Versioning",
+    "Every future prediction run must store catalog version, exact source assertions, parental call status, and assembly/version for genomic coordinates.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Workbook contents",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Locus_Catalog",
+    "Curated loci/genes with evidence grade, allowed claim, forbidden claim, and prediction eligibility.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Evidence_Claims",
+    "Atomic claim records suitable for a future approval and versioning workflow.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Sources",
+    "Bibliographic source registry with DOI/PMID/URL and study limitations.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Standards",
+    "Data standards and official resources to adopt.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Research_Backlog",
+    "Required work before production release and advanced model development.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Data_Dictionary",
+    "Field definitions for implementation.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  [
+    "Change_Log",
+    "Dataset release history.",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+]

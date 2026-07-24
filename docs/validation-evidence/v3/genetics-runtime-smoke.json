@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "singleLocus": [
+    "1/4",
+    "1/2",
+    "1/4"
+  ],
+  "multiLocusStates": 9,
+  "linkedStates": 3,
+  "maternalDirection": "M",
+  "monteCarloMaximumAbsoluteError": 0.0014000000000000123,
+  "segregationMethod": "chi_square"
+}

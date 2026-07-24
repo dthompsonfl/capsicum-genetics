@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-23T19:22:56Z",
+  "implementationSourceSha256": "7b0c1cd425a9ba5a26140ed1d3be92f7b0bfe030ee896b40b143e6de64633ab4",
+  "releaseVerdict": "blocked",
+  "environment": {
+    "node": "v22.16.0",
+    "requiredNode": "24.18.0",
+    "corepack": "0.32.0",
+    "python": "3.13.5",
+    "typescriptParser": "5.8.3",
+    "pnpm": null,
+    "postgres": false,
+    "docker": false,
+    "r": false
+  },
+  "checks": [
+    {
+      "name": "backup-portability",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/backup-portability.txt"
+    },
+    {
+      "name": "catalog-reconciliation",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/catalog-reconciliation.txt"
+    },
+    {
+      "name": "environment-contracts",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/environment-contracts.txt"
+    },
+    {
+      "name": "genetics-smoke",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/genetics-smoke.txt"
+    },
+    {
+      "name": "migration-manifest",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/migration-manifest.txt"
+    },
+    {
+      "name": "migration-utils",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/migration-utils.txt"
+    },
+    {
+      "name": "node-script-syntax",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/node-script-syntax.txt"
+    },
+    {
+      "name": "python-worker",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/python-worker.txt"
+    },
+    {
+      "name": "registry-install",
+      "exitCode": 1,
+      "passed": false,
+      "evidence": "docs/v6-evidence/registry-install.txt"
+    },
+    {
+      "name": "repository-validator",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/repository-validator.txt"
+    },
+    {
+      "name": "routine-manifest",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/routine-manifest.txt"
+    },
+    {
+      "name": "runtime-smoke",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/runtime-smoke.txt"
+    },
+    {
+      "name": "shell-syntax",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/shell-syntax.txt"
+    },
+    {
+      "name": "typescript-parser",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/typescript-parser.txt"
+    },
+    {
+      "name": "yaml-validation",
+      "exitCode": 0,
+      "passed": true,
+      "evidence": "docs/v6-evidence/yaml-validation.txt"
+    }
+  ],
+  "repositoryValidator": {
+    "checkCount": 778,
+    "issueCount": 0,
+    "warningCount": 5
+  },
+  "typescriptParser": {
+    "fileCount": 170,
+    "failureCount": 0
+  },
+  "unexecuted": [
+    "frozen-install",
+    "full-format-lint-type-test-build",
+    "postgresql-18-replay-and-authority",
+    "minio-clamav-worker-integration",
+    "playwright-axe-manual-responsive",
+    "production-container-scans",
+    "sbom-from-frozen-graph",
+    "isolated-backup-restore",
+    "r-worker"
+  ],
+  "failureClassification": {
+    "environment_tooling": [
+      "registry",
+      "node24",
+      "postgresql",
+      "docker",
+      "browser",
+      "r"
+    ],
+    "scientific_data": [
+      "approved-phenotype-rules",
+      "validated-learned-model"
+    ],
+    "introduced_remaining": []
+  }
+}

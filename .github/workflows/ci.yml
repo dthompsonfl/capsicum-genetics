@@ -1,0 +1,439 @@
+name: ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 24.18.0
+  PNPM_VERSION: 10.14.0
+  APP_RELEASE_SHA: ${{ github.sha }}
+
+jobs:
+  quality-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.14.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.18.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm validate:toolchain
+      - run: pnpm validate:workspace-dependencies
+      - run: pnpm validate:next-contracts
+      - run: pnpm format:check
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm validate:smoke
+      - run: pnpm build
+      - run: pnpm validate:catalog
+      - run: pnpm validate:repository
+      - run: pnpm validate:runtime-artifacts
+      - name: Generate commit-bound release evidence
+        env:
+          EVIDENCE_OUTPUT: artifacts/release-evidence
+        run: pnpm evidence:release
+      - name: Upload release evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-evidence-${{ github.sha }}-${{ github.run_attempt }}
+          path: artifacts/release-evidence
+          retention-days: 30
+          if-no-files-found: error
+      - name: Upload build evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-runtime-evidence
+          path: |
+            apps/web/.next/standalone
+            apps/web/.next/static
+            apps/worker-node/dist
+            packages/*/dist
+          retention-days: 7
+
+  security-supply-chain:
+    needs: quality-and-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - run: node scripts/ci/check-lockfile.mjs
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.14.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.18.0, cache: pnpm }
+      - uses: github/codeql-action/init@v3
+        with: { languages: javascript-typescript }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm audit --audit-level high
+      - name: Generate license inventory
+        run: mkdir -p artifacts/security && pnpm licenses list --json > artifacts/security/licenses.json
+      - run: pnpm build
+      - uses: github/codeql-action/analyze@v3
+      - name: Scan repository for secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate SPDX SBOM
+        uses: anchore/sbom-action@v0.17.2
+        with:
+          path: .
+          format: spdx-json
+          output-file: artifacts/security/capsicum-source.spdx.json
+          upload-artifact: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: security-supply-chain-evidence
+          path: artifacts/security
+          retention-days: 30
+          if-no-files-found: error
+
+  container-security:
+    needs: quality-and-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - name: Build production images
+        run: |
+          docker build -f apps/web/Dockerfile -t capsicum-web:${{ github.sha }} .
+          docker build -f apps/worker-node/Dockerfile -t capsicum-worker:${{ github.sha }} .
+      - name: Scan web image
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: capsicum-web:${{ github.sha }}
+          format: sarif
+          output: trivy-web.sarif
+          severity: CRITICAL,HIGH
+          exit-code: '1'
+      - name: Scan worker image
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: capsicum-worker:${{ github.sha }}
+          format: sarif
+          output: trivy-worker.sarif
+          severity: CRITICAL,HIGH
+          exit-code: '1'
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: container-scan-evidence
+          path: trivy-*.sarif
+          retention-days: 30
+
+
+  postgres-authority:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18.4
+        env:
+          POSTGRES_DB: capsicum_authority_ci
+          POSTGRES_USER: capsicum_admin
+          POSTGRES_PASSWORD: authority-admin-password
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U capsicum_admin -d capsicum_authority_ci"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      MIGRATION_DATABASE_URL: postgresql://capsicum_admin:authority-admin-password@127.0.0.1:5432/capsicum_authority_ci
+      DATABASE_ADMIN_URL: postgresql://capsicum_admin:authority-admin-password@127.0.0.1:5432/capsicum_authority_ci
+      AUTHORITY_TEST_DATABASE_URL: postgresql://capsicum_admin:authority-admin-password@127.0.0.1:5432/capsicum_authority_ci
+      DATABASE_URL: postgresql://capsicum_runtime_login:authority-runtime-password@127.0.0.1:5432/capsicum_authority_ci
+      WORKER_DATABASE_URL: postgresql://capsicum_worker_login:authority-worker-password@127.0.0.1:5432/capsicum_authority_ci
+      ALLOW_V6_INTEGRATION_TEST: 'YES'
+      ALLOW_APPLICATION_INTEGRATION_TEST: 'YES'
+      APPLICATION_INTEGRATION_DATABASE_URL: postgresql://capsicum_runtime_login:authority-runtime-password@127.0.0.1:5432/capsicum_authority_ci
+      CAPSICUM_RUNTIME_DB_PASSWORD: authority-runtime-password
+      CAPSICUM_WORKER_DB_PASSWORD: authority-worker-password
+      ALLOW_AUTHORITY_TEST: 'YES'
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.14.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.18.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:migrate
+      - run: pnpm db:provision-roles
+      - run: pnpm db:verify-authority
+      - run: pnpm --filter @capsicum/database verify:migration-atomicity
+        env:
+          MIGRATION_ATOMICITY_DATABASE_URL: postgresql://capsicum_admin:authority-admin-password@127.0.0.1:5432/capsicum_authority_ci
+          ALLOW_MIGRATION_ATOMICITY_TEST: 'YES'
+      - run: pnpm --filter @capsicum/database verify:v6-integration
+      - run: pnpm --filter @capsicum/application test
+      - run: pnpm --filter @capsicum/database test
+
+
+  storage-security-integration:
+    needs: quality-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.14.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.18.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - name: Start MinIO and ClamAV
+        run: |
+          docker run -d --name capsicum-minio -p 9000:9000 \
+            -e MINIO_ROOT_USER=integration-minio \
+            -e MINIO_ROOT_PASSWORD=integration-minio-secret-password \
+            minio/minio:RELEASE.2025-09-07T16-13-09Z server /data
+          docker run -d --name capsicum-clamav -p 3310:3310 clamav/clamav:1.4.2
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:9000/minio/health/live && break; sleep 2; done
+          for i in $(seq 1 90); do docker exec capsicum-clamav clamdscan --ping 2 >/dev/null 2>&1 && break; sleep 2; done
+          docker run --rm --network host -e MC_HOST_local=http://integration-minio:integration-minio-secret-password@127.0.0.1:9000 \
+            minio/mc:RELEASE.2025-08-13T08-35-41Z mb --ignore-existing local/capsicum-storage-integration
+      - name: MinIO immutable-storage integration
+        env:
+          MINIO_INTEGRATION_ENDPOINT: http://127.0.0.1:9000
+          MINIO_INTEGRATION_BUCKET: capsicum-storage-integration
+          MINIO_INTEGRATION_ACCESS_KEY: integration-minio
+          MINIO_INTEGRATION_SECRET_KEY: integration-minio-secret-password
+        run: pnpm --filter @capsicum/storage test:integration
+      - name: ClamAV clean and EICAR integration
+        env:
+          CLAMAV_INTEGRATION_HOST: 127.0.0.1
+          CLAMAV_INTEGRATION_PORT: '3310'
+        run: pnpm --filter @capsicum/worker-node test:integration
+      - if: always()
+        run: docker logs capsicum-minio > minio.log 2>&1 || true; docker logs capsicum-clamav > clamav.log 2>&1 || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: storage-security-integration-logs, path: "*.log", retention-days: 7 }
+
+  python-and-r-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - run: python -m pip install --disable-pip-version-check pytest
+      - run: python -m pytest apps/worker-python/tests -q
+      - uses: r-lib/actions/setup-r@v2
+        with: { r-version: '4.5.1' }
+      - run: Rscript apps/worker-r/worker.R health
+
+  browser-accessibility:
+    needs: [quality-and-build, postgres-authority]
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18.4
+        env:
+          POSTGRES_DB: capsicum_browser_ci
+          POSTGRES_USER: capsicum_admin
+          POSTGRES_PASSWORD: browser-admin-password
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U capsicum_admin -d capsicum_browser_ci"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      APP_MODE: demo
+      NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
+      APP_ORIGIN: http://127.0.0.1:3000
+      BOOTSTRAP_TOKEN_SHA256: 37e9f23a28c301a0c4b9bf55472080a449c4699b7c75a4f28323f44ae51e4bba
+      PLAYWRIGHT_BOOTSTRAP_TOKEN: Browser-E2E-Install-Token-47-Quartz-Canopy
+      MIGRATION_DATABASE_URL: postgresql://capsicum_admin:browser-admin-password@127.0.0.1:5432/capsicum_browser_ci
+      DATABASE_ADMIN_URL: postgresql://capsicum_admin:browser-admin-password@127.0.0.1:5432/capsicum_browser_ci
+      DATABASE_URL: postgresql://capsicum_runtime_login:browser-runtime-password@127.0.0.1:5432/capsicum_browser_ci
+      CAPSICUM_RUNTIME_DB_PASSWORD: browser-runtime-password
+      CAPSICUM_WORKER_DB_PASSWORD: browser-worker-password
+      SESSION_SECRET: browser-session-secret-must-be-at-least-32-characters
+      TOKEN_DERIVATION_SECRET: browser-token-secret-must-be-at-least-32-characters
+      NETWORK_FINGERPRINT_SECRET: browser-network-secret-must-be-at-least-32-characters
+      ABUSE_CONTROL_SECRET: browser-abuse-secret-must-be-at-least-32-characters
+      MFA_ENCRYPTION_KEY: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      REQUIRE_PRIVILEGED_MFA: 'false'
+      TRUSTED_PROXY_HOPS: '0'
+      S3_ENDPOINT: http://127.0.0.1:9000
+      S3_BUCKET: capsicum-browser-ci
+      S3_ACCESS_KEY_ID: browser-minio
+      S3_SECRET_ACCESS_KEY: browser-minio-secret-at-least-32-characters
+      WORKER_DATABASE_URL: postgresql://capsicum_worker_login:browser-worker-password@127.0.0.1:5432/capsicum_browser_ci
+      MEDIA_SCANNER_HOST: 127.0.0.1
+      MEDIA_SCANNER_PORT: '3310'
+      PYTHON_WORKER_PATH: ${{ github.workspace }}/apps/worker-python/worker.py
+      AI_PROVIDER: disabled
+      ENABLE_HOSTED_AI: 'false'
+      ENABLE_LEARNED_VISION: 'false'
+      ENABLE_RESEARCH_MODELS: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.14.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.18.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - run: python -m pip install --disable-pip-version-check Pillow==12.2.0
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Start browser-stack object and malware services
+        run: |
+          docker run -d --name browser-minio -p 9000:9000 \
+            -e MINIO_ROOT_USER=browser-minio \
+            -e MINIO_ROOT_PASSWORD=browser-minio-secret-at-least-32-characters \
+            minio/minio:RELEASE.2025-09-07T16-13-09Z server /data
+          docker run -d --name browser-clamav -p 3310:3310 clamav/clamav:1.4.2
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:9000/minio/health/live && break; sleep 2; done
+          for i in $(seq 1 90); do docker exec browser-clamav clamdscan --ping 2 >/dev/null 2>&1 && break; sleep 2; done
+          docker run --rm --network host -e MC_HOST_local=http://browser-minio:browser-minio-secret-at-least-32-characters@127.0.0.1:9000 \
+            minio/mc:RELEASE.2025-08-13T08-35-41Z mb --ignore-existing local/capsicum-browser-ci
+      - run: pnpm db:migrate && pnpm db:provision-roles
+      - run: pnpm build:web && pnpm build:worker
+      - name: Start durable worker
+        run: node apps/worker-node/dist/worker.js > worker-browser.log 2>&1 &
+      - run: pnpm --filter @capsicum/web test:e2e
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: browser-worker-log, path: worker-browser.log, retention-days: 7 }
+
+  compose-smoke:
+    needs: quality-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - run: |
+          cat > .env.ci <<'ENV'
+          APP_MODE=demo
+          CAPSICUM_ADMIN_DB_PASSWORD=compose-admin-password
+          CAPSICUM_RUNTIME_DB_PASSWORD=compose-runtime-password
+          CAPSICUM_WORKER_DB_PASSWORD=compose-worker-password
+          NEXT_PUBLIC_APP_URL=http://127.0.0.1:3000
+          APP_ORIGIN=http://127.0.0.1:3000
+          APP_RELEASE_SHA=${{ github.sha }}
+          BOOTSTRAP_TOKEN_SHA256=37e9f23a28c301a0c4b9bf55472080a449c4699b7c75a4f28323f44ae51e4bba
+          SESSION_SECRET=compose-session-secret-must-be-at-least-32-characters
+          TOKEN_DERIVATION_SECRET=compose-token-secret-must-be-at-least-32-characters
+          NETWORK_FINGERPRINT_SECRET=compose-network-secret-must-be-at-least-32-characters
+          ABUSE_CONTROL_SECRET=compose-abuse-secret-must-be-at-least-32-characters
+          MFA_ENCRYPTION_KEY=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+          REQUIRE_PRIVILEGED_MFA=false
+          DELIVERY_ADAPTER=resend
+          DELIVERY_FROM_EMAIL=notifications@example.test
+          RESEND_API_KEY=compose-placeholder-resend-api-key
+          TRUSTED_PROXY_HOPS=0
+          S3_REGION=us-east-1
+          S3_BUCKET=capsicum-compose-ci
+          S3_ACCESS_KEY_ID=compose-minio
+          S3_SECRET_ACCESS_KEY=compose-minio-secret-at-least-32-characters
+          AI_PROVIDER=disabled
+          ENABLE_HOSTED_AI=false
+          ENABLE_LEARNED_VISION=false
+          ENABLE_RESEARCH_MODELS=false
+          ENV
+      - run: docker compose --env-file .env.ci -f infra/compose/docker-compose.yml -f infra/compose/docker-compose.dev.yml config --quiet
+      - run: docker compose --env-file .env.ci -f infra/compose/docker-compose.yml -f infra/compose/docker-compose.dev.yml --profile application up --build --wait
+      - run: node scripts/ci/run-compose-smoke.mjs
+      - if: always()
+        run: docker compose --env-file .env.ci -f infra/compose/docker-compose.yml -f infra/compose/docker-compose.dev.yml --profile application logs --no-color > compose.log
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: compose-log, path: compose.log, retention-days: 7 }
+      - if: always()
+        run: docker compose --env-file .env.ci -f infra/compose/docker-compose.yml -f infra/compose/docker-compose.dev.yml --profile application down -v
+
+  backup-restore:
+    needs: compose-smoke
+    runs-on: ubuntu-latest
+    services:
+      source-postgres:
+        image: postgres:18.4
+        env:
+          POSTGRES_DB: capsicum_source
+          POSTGRES_USER: capsicum_admin
+          POSTGRES_PASSWORD: source-admin-password
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U capsicum_admin -d capsicum_source"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+      restore-postgres:
+        image: postgres:18.4
+        env:
+          POSTGRES_DB: capsicum_restore
+          POSTGRES_USER: capsicum_admin
+          POSTGRES_PASSWORD: restore-admin-password
+        ports: ['5433:5432']
+        options: >-
+          --health-cmd "pg_isready -U capsicum_admin -d capsicum_restore"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      MIGRATION_DATABASE_URL: postgresql://capsicum_admin:source-admin-password@127.0.0.1:5432/capsicum_source
+      DATABASE_ADMIN_URL: postgresql://capsicum_admin:source-admin-password@127.0.0.1:5432/capsicum_source
+      CAPSICUM_RUNTIME_DB_PASSWORD: backup-runtime-password
+      CAPSICUM_WORKER_DB_PASSWORD: backup-worker-password
+      S3_ENDPOINT: http://127.0.0.1:9000
+      S3_BUCKET: capsicum-backup-source
+      S3_ACCESS_KEY_ID: backup-minio
+      S3_SECRET_ACCESS_KEY: backup-minio-secret-at-least-32-characters
+      RESTORE_DATABASE_URL: postgresql://capsicum_admin:restore-admin-password@127.0.0.1:5433/capsicum_restore
+      RESTORE_S3_ENDPOINT: http://127.0.0.1:9000
+      RESTORE_S3_BUCKET: capsicum-backup-restore
+      RESTORE_S3_ACCESS_KEY_ID: backup-minio
+      RESTORE_S3_SECRET_ACCESS_KEY: backup-minio-secret-at-least-32-characters
+      ALLOW_DESTRUCTIVE_RESTORE_TEST: 'YES'
+      ALLOW_DESTRUCTIVE_OBJECT_RESTORE_TEST: 'YES'
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/ci/check-lockfile.mjs
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.14.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.18.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - name: Install PostgreSQL and MinIO clients
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+          sudo curl -fsSL https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc
+          sudo chmod 0755 /usr/local/bin/mc
+      - name: Start isolated object storage
+        run: |
+          docker run -d --name backup-minio -p 9000:9000 \
+            -e MINIO_ROOT_USER=backup-minio \
+            -e MINIO_ROOT_PASSWORD=backup-minio-secret-at-least-32-characters \
+            minio/minio:RELEASE.2025-09-07T16-13-09Z server /data
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:9000/minio/health/live && break; sleep 2; done
+          mc alias set backup http://127.0.0.1:9000 backup-minio backup-minio-secret-at-least-32-characters
+          mc mb --ignore-existing backup/capsicum-backup-source backup/capsicum-backup-restore
+          printf 'capsicum-backup-object\n' | mc pipe backup/capsicum-backup-source/workspaces/test/evidence.txt
+      - run: pnpm db:migrate && pnpm db:provision-roles
+      - name: Create, relocate, restore, and reconcile backup
+        run: |
+          rm -rf /tmp/capsicum-backup-source /tmp/capsicum-backup-relocated
+          bash infra/backup/backup.sh /tmp/capsicum-backup-source
+          cp -a /tmp/capsicum-backup-source /tmp/capsicum-backup-relocated
+          rm -rf /tmp/capsicum-backup-source
+          bash infra/backup/restore-test.sh /tmp/capsicum-backup-relocated
+          mkdir -p artifacts
+          cp -a /tmp/capsicum-backup-relocated artifacts/backup-restore
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-restore-evidence
+          path: artifacts/backup-restore
+          retention-days: 14
+          if-no-files-found: error
+      - if: always()
+        run: docker logs backup-minio > backup-minio.log 2>&1 || true

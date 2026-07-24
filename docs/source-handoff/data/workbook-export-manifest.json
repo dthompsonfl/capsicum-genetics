@@ -1,0 +1,61 @@
+{
+  "source_file": "capsicum_genetics_evidence_catalog_v0_1.xlsx",
+  "sheets": [
+    {
+      "name": "README",
+      "rows": 21,
+      "columns": 8,
+      "csv": "data/README.csv",
+      "json": "data/README.json"
+    },
+    {
+      "name": "Locus_Catalog",
+      "rows": 23,
+      "columns": 20,
+      "csv": "data/Locus_Catalog.csv",
+      "json": "data/Locus_Catalog.json"
+    },
+    {
+      "name": "Evidence_Claims",
+      "rows": 23,
+      "columns": 10,
+      "csv": "data/Evidence_Claims.csv",
+      "json": "data/Evidence_Claims.json"
+    },
+    {
+      "name": "Sources",
+      "rows": 31,
+      "columns": 12,
+      "csv": "data/Sources.csv",
+      "json": "data/Sources.json"
+    },
+    {
+      "name": "Standards",
+      "rows": 6,
+      "columns": 5,
+      "csv": "data/Standards.csv",
+      "json": "data/Standards.json"
+    },
+    {
+      "name": "Research_Backlog",
+      "rows": 12,
+      "columns": 4,
+      "csv": "data/Research_Backlog.csv",
+      "json": "data/Research_Backlog.json"
+    },
+    {
+      "name": "Data_Dictionary",
+      "rows": 16,
+      "columns": 6,
+      "csv": "data/Data_Dictionary.csv",
+      "json": "data/Data_Dictionary.json"
+    },
+    {
+      "name": "Change_Log",
+      "rows": 2,
+      "columns": 5,
+      "csv": "data/Change_Log.csv",
+      "json": "data/Change_Log.json"
+    }
+  ]
+}

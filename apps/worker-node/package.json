@@ -1,0 +1,32 @@
+{
+  "name": "@capsicum/worker-node",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node ../../scripts/fix-esm-imports.mjs dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint src --max-warnings=0",
+    "start": "node dist/worker.js",
+    "test:integration": "vitest run src/clamav.integration.test.ts"
+  },
+  "dependencies": {
+    "@capsicum/contracts": "workspace:*",
+    "@capsicum/genetics-advanced": "workspace:*",
+    "@capsicum/genetics-core": "workspace:*",
+    "@capsicum/simulation-domain": "workspace:*",
+    "@capsicum/storage": "workspace:*",
+    "pg": "8.16.3",
+    "sharp": "0.34.4"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "@types/pg": "8.15.4",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
+  },
+  "files": [
+    "dist"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capsicum.local/schemas/phenotype-observation.schema.json",
+  "title": "PhenotypeObservation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "workspaceId",
+    "observationUnitId",
+    "observationVariableId",
+    "value",
+    "status",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "workspaceId": {
+      "type": "string"
+    },
+    "observationUnitId": {
+      "type": "string"
+    },
+    "observationVariableId": {
+      "type": "string"
+    },
+    "value": {},
+    "unitId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "observed",
+        "machine_suggested",
+        "human_corrected",
+        "reviewed",
+        "rejected"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "method",
+        "actorType"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "actorType": {
+          "enum": [
+            "human",
+            "deterministic_algorithm",
+            "machine_learning_model",
+            "ai_assistant",
+            "import"
+          ]
+        },
+        "actorId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "modelVersionId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "imageCaptureId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocolId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "qualityFlags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

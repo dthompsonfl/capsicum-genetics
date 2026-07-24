@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capsicum.local/schemas/ai-answer.schema.json",
+  "title": "AiAnswer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "answerClass",
+    "text",
+    "citations",
+    "toolCalls",
+    "uncertainty",
+    "missingData",
+    "requiresApproval"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "answerClass": {
+      "enum": [
+        "workflow_help",
+        "evidence_summary",
+        "simulation_explanation",
+        "record_summary",
+        "draft_observation",
+        "candidate_claim",
+        "abstention"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sourceId",
+          "passageId"
+        ],
+        "properties": {
+          "sourceId": {
+            "type": "string"
+          },
+          "passageId": {
+            "type": "string"
+          },
+          "locator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "toolCalls": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "uncertainty": {
+      "type": "string"
+    },
+    "missingData": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requiresApproval": {
+      "type": "boolean"
+    }
+  }
+}

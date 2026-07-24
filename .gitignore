@@ -1,0 +1,14 @@
+node_modules
+.next
+dist
+coverage
+.env
+.env.local
+*.log
+.pytest_cache
+__pycache__
+.validation
+.validation-build
+backups
+
+.runtime

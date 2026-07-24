@@ -1,0 +1,9 @@
+date_utc=2026-07-22T23:32:23Z
+node24=v24.11.1
+default_node=v22.16.0
+python=Python 3.13.5
+pytest=pytest 9.0.2
+pnpm=unavailable
+psql=unavailable
+docker=unavailable
+Rscript=unavailable

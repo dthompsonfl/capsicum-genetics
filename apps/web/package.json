@@ -1,0 +1,45 @@
+{
+  "name": "@capsicum/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint src --max-warnings=0",
+    "test:e2e": "playwright test",
+    "test:e2e:accessibility": "playwright test e2e/accessibility.spec.ts"
+  },
+  "dependencies": {
+    "@capsicum/ai": "workspace:*",
+    "@capsicum/application": "workspace:*",
+    "@capsicum/auth": "workspace:*",
+    "@capsicum/breeding-domain": "workspace:*",
+    "@capsicum/config": "workspace:*",
+    "@capsicum/contracts": "workspace:*",
+    "@capsicum/database": "workspace:*",
+    "@capsicum/genetics-core": "workspace:*",
+    "@capsicum/jobs": "workspace:*",
+    "@capsicum/observation-domain": "workspace:*",
+    "@capsicum/observability": "workspace:*",
+    "@capsicum/scientific-catalog": "workspace:*",
+    "@capsicum/simulation-domain": "workspace:*",
+    "@capsicum/storage": "workspace:*",
+    "@capsicum/vision": "workspace:*",
+    "next": "16.2.11",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4",
+    "@playwright/test": "1.55.0",
+    "@axe-core/playwright": "4.10.2"
+  }
+}

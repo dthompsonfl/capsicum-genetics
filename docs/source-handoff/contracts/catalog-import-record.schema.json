@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capsicum.local/schemas/catalog-import-record.schema.json",
+  "title": "CatalogImportRecord",
+  "type": "object",
+  "required": [
+    "sourceFileHash",
+    "sourceSheet",
+    "sourceRow",
+    "rawPayload",
+    "normalizationStatus"
+  ],
+  "properties": {
+    "sourceFileHash": {
+      "type": "string"
+    },
+    "sourceSheet": {
+      "type": "string"
+    },
+    "sourceRow": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "rawPayload": {
+      "type": "object"
+    },
+    "normalizationStatus": {
+      "enum": [
+        "pending",
+        "normalized",
+        "requires_review",
+        "rejected"
+      ]
+    },
+    "normalizedEntityIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

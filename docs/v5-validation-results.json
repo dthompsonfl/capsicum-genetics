@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "1.0",
+  "releaseVerdict": "blocked",
+  "environment": [
+    "timestamp_utc=2026-07-23T04:35:26Z",
+    "uname=Linux 59371776aa6f 6.12.13 #1 SMP Tue Jun 23 15:34:50 UTC 2026 x86_64 GNU/Linux",
+    "node=v22.16.0",
+    "npm=10.9.2",
+    "corepack=0.32.0",
+    "python=Python 3.13.5",
+    "pytest=pytest 9.0.2",
+    "pnpm=unavailable",
+    "psql=unavailable",
+    "docker=unavailable",
+    "Rscript=unavailable"
+  ],
+  "checks": [
+    {
+      "id": "typescript-parser",
+      "command": "TYPESCRIPT_MODULE_PATH=... node scripts/ci/parse-typescript.mjs",
+      "exitCode": 0,
+      "status": "passed",
+      "summary": "155 files; 0 parse diagnostics",
+      "evidence": "docs/v5-evidence/typescript-parser.json"
+    },
+    {
+      "id": "repository-validator",
+      "command": "python3 scripts/validate_repository.py",
+      "exitCode": 0,
+      "status": "passed_source_release_blocked",
+      "summary": "699 checks; 0 source issues; 5 environment warnings",
+      "evidence": "docs/v5-evidence/repository-validator.json"
+    },
+    {
+      "id": "python-worker",
+      "command": "python3 -m pytest apps/worker-python/tests -q",
+      "exitCode": 0,
+      "status": "passed",
+      "summary": "8 tests passed, including hash mismatch, path escape, multiframe, and EXIF orientation fixtures",
+      "evidence": "docs/v5-evidence/python-worker-tests.txt"
+    },
+    {
+      "id": "catalog",
+      "command": "python3 scripts/import_catalog.py --check",
+      "exitCode": 0,
+      "status": "passed_draft_only",
+      "summary": "22 loci, 22 evidence claims, 30 sources, 0 executable rules; all remain pending independent review",
+      "evidence": "docs/catalog-reconciliation.json"
+    },
+    {
+      "id": "genetics-runtime",
+      "command": "temporary isolated TypeScript build plus node genetics smoke",
+      "exitCode": 0,
+      "status": "passed",
+      "summary": "exact/independent/uncertainty/linkage/maternal/Monte Carlo/segregation/abstention passed; MC max absolute error 0.0003499999999999892",
+      "evidence": "docs/v5-evidence/genetics-runtime-smoke.json"
+    },
+    {
+      "id": "auth-runtime",
+      "command": "node --experimental-strip-types isolated auth smoke",
+      "exitCode": 0,
+      "status": "passed_with_experimental_host_loader",
+      "summary": "scrypt-v2; keyed digest and opaque token hashing passed",
+      "evidence": "docs/v5-evidence/auth-runtime-smoke.json"
+    },
+    {
+      "id": "node-script-syntax",
+      "command": "node --check scripts/*.mjs scripts/ci/*.mjs packages/database/scripts/*.mjs",
+      "exitCode": 0,
+      "status": "passed",
+      "summary": "Operational JavaScript syntax passed",
+      "evidence": "docs/v5-evidence/node-script-syntax.txt"
+    },
+    {
+      "id": "shell-syntax",
+      "command": "find infra -name '*.sh' -print0 | xargs -0 -n1 bash -n",
+      "exitCode": 0,
+      "status": "passed",
+      "summary": "Backup and operational shell syntax passed",
+      "evidence": "docs/v5-evidence/shell-syntax.txt"
+    },
+    {
+      "id": "yaml",
+      "command": "python yaml.safe_load over GitHub and infra YAML",
+      "exitCode": 0,
+      "status": "passed",
+      "summary": "4 YAML files parsed",
+      "evidence": "docs/v5-evidence/yaml-validation.txt"
+    },
+    {
+      "id": "frozen-install",
+      "command": "corepack prepare pnpm@10.14.0 --activate && pnpm install --lockfile-only",
+      "exitCode": 127,
+      "status": "blocked_environment",
+      "summary": "Corepack registry download failed; pnpm unavailable; no lockfile fabricated",
+      "evidence": "docs/v5-evidence/frozen-install-attempt.txt"
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "node24-full-workspace",
+      "classification": "environment_or_tooling",
+      "reason": "Only Node 22.16.0 is installed; dependency graph is unavailable."
+    },
+    {
+      "id": "postgres18-runtime",
+      "classification": "environment_or_tooling",
+      "reason": "psql/PostgreSQL unavailable."
+    },
+    {
+      "id": "docker-compose",
+      "classification": "environment_or_tooling",
+      "reason": "Docker unavailable."
+    },
+    {
+      "id": "browser-e2e-a11y",
+      "classification": "environment_or_tooling_and_coverage",
+      "reason": "Installed dependency/browser runtime unavailable; full journey coverage incomplete."
+    },
+    {
+      "id": "backup-restore",
+      "classification": "environment_or_tooling",
+      "reason": "PostgreSQL, Docker, and object storage unavailable."
+    },
+    {
+      "id": "security-scans-sbom",
+      "classification": "environment_or_tooling",
+      "reason": "No frozen dependency/container graph."
+    },
+    {
+      "id": "r-worker",
+      "classification": "environment_or_tooling",
+      "reason": "Rscript unavailable."
+    }
+  ],
+  "environmentWarnings": [
+    "frozen-lockfile: pnpm-lock.yaml requires a registry-enabled clean install",
+    "runtime-node-24: validation host: v22.16.0; Node 24+ required",
+    "postgres-runtime-validation: PostgreSQL psql unavailable on validation host",
+    "docker-runtime-validation: Docker CLI unavailable on validation host",
+    "r-runtime-validation: Rscript unavailable on validation host"
+  ],
+  "introducedFailuresRemaining": [],
+  "unknownFailures": []
+}

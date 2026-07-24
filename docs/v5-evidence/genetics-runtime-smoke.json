@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "singleLocusStates": 3,
+  "independentStates": 9,
+  "uncertaintyStates": 2,
+  "linkedStates": 3,
+  "maternalDirection": "M",
+  "monteCarloMaximumAbsoluteError": 0.0003499999999999892,
+  "segregationMethod": "chi_square",
+  "segregationPValue": 1,
+  "hostPathogenOutcome": "insufficient_evidence"
+}

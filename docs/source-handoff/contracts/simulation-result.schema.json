@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capsicum.local/schemas/simulation-result.schema.json",
+  "title": "SimulationResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "runId",
+    "authority",
+    "modelVersion",
+    "catalogReleaseId",
+    "calculationMode",
+    "distributions",
+    "assumptions",
+    "warnings",
+    "abstentions",
+    "contentHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "runId": {
+      "type": "string"
+    },
+    "authority": {
+      "enum": [
+        "exact_supported",
+        "conditional_supported",
+        "research_only",
+        "model_derived",
+        "unsupported"
+      ]
+    },
+    "modelVersion": {
+      "type": "string"
+    },
+    "catalogReleaseId": {
+      "type": "string"
+    },
+    "calculationMode": {
+      "enum": [
+        "exact",
+        "sampled",
+        "statistical"
+      ]
+    },
+    "distributions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "targetRecovery": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "abstentions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sourceAssertionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "randomSeed": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "sampleCount": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "contentHash": {
+      "type": "string",
+      "minLength": 32
+    }
+  }
+}

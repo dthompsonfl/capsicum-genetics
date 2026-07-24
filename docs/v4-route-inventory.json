@@ -1,0 +1,273 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-23T03:02:16.152265+00:00",
+  "summary": {
+    "pageRoutes": 54,
+    "apiRoutes": 11,
+    "total": 65
+  },
+  "pages": [
+    {
+      "route": "/",
+      "file": "apps/web/src/app/accept-invitation/page.tsx"
+    },
+    {
+      "route": "/audit",
+      "file": "apps/web/src/app/admin/audit/page.tsx"
+    },
+    {
+      "route": "/jobs",
+      "file": "apps/web/src/app/admin/jobs/page.tsx"
+    },
+    {
+      "route": "/models",
+      "file": "apps/web/src/app/admin/models/page.tsx"
+    },
+    {
+      "route": "/system",
+      "file": "apps/web/src/app/admin/system/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/ai/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/annotations/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/breeding-ledger/page.tsx"
+    },
+    {
+      "route": "/claims/[id]",
+      "file": "apps/web/src/app/catalog/claims/[id]/page.tsx"
+    },
+    {
+      "route": "/loci/[id]",
+      "file": "apps/web/src/app/catalog/loci/[id]/page.tsx"
+    },
+    {
+      "route": "/normalized",
+      "file": "apps/web/src/app/catalog/normalized/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/catalog/page.tsx"
+    },
+    {
+      "route": "/releases/[id]",
+      "file": "apps/web/src/app/catalog/releases/[id]/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/crosses/[id]/page.tsx"
+    },
+    {
+      "route": "/new",
+      "file": "apps/web/src/app/crosses/new/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/crosses/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/dashboard/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/experiments/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/experiments/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/families/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/forgot-password/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/germplasm/[id]/page.tsx"
+    },
+    {
+      "route": "/new",
+      "file": "apps/web/src/app/germplasm/new/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/germplasm/page.tsx"
+    },
+    {
+      "route": "/session/[id]",
+      "file": "apps/web/src/app/observations/session/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/onboarding/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/page.tsx"
+    },
+    {
+      "route": "/[materialId]",
+      "file": "apps/web/src/app/pedigrees/[materialId]/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/phenotype-capture/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/phenotype-capture/page.tsx"
+    },
+    {
+      "route": "/images/[id]",
+      "file": "apps/web/src/app/phenotypes/images/[id]/page.tsx"
+    },
+    {
+      "route": "/images",
+      "file": "apps/web/src/app/phenotypes/images/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/plants/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/plants/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/reports/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/research/page.tsx"
+    },
+    {
+      "route": "/review",
+      "file": "apps/web/src/app/research/review/page.tsx"
+    },
+    {
+      "route": "/sources/[id]",
+      "file": "apps/web/src/app/research/sources/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/research-assistant/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/reset-password/page.tsx"
+    },
+    {
+      "route": "/[token]",
+      "file": "apps/web/src/app/scan/[token]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/scientific-catalog/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/seed-lots/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/seed-lots/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/selection-plans/[id]/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/selection-plans/page.tsx"
+    },
+    {
+      "route": "/sessions",
+      "file": "apps/web/src/app/settings/sessions/page.tsx"
+    },
+    {
+      "route": "/users",
+      "file": "apps/web/src/app/settings/users/page.tsx"
+    },
+    {
+      "route": "/workspace",
+      "file": "apps/web/src/app/settings/workspace/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/sign-in/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/simulation-lab/page.tsx"
+    },
+    {
+      "route": "/[id]",
+      "file": "apps/web/src/app/simulations/[id]/page.tsx"
+    },
+    {
+      "route": "/new",
+      "file": "apps/web/src/app/simulations/new/page.tsx"
+    },
+    {
+      "route": "/",
+      "file": "apps/web/src/app/simulations/page.tsx"
+    }
+  ],
+  "apis": [
+    {
+      "route": "/auth/invitation/exchange",
+      "file": "apps/web/src/app/api/auth/invitation/exchange/route.ts"
+    },
+    {
+      "route": "/auth/password-reset/exchange",
+      "file": "apps/web/src/app/api/auth/password-reset/exchange/route.ts"
+    },
+    {
+      "route": "/exports/[id]",
+      "file": "apps/web/src/app/api/exports/[id]/route.ts"
+    },
+    {
+      "route": "/exports/breeding-ledger",
+      "file": "apps/web/src/app/api/exports/breeding-ledger/route.ts"
+    },
+    {
+      "route": "/health/liveness",
+      "file": "apps/web/src/app/api/health/liveness/route.ts"
+    },
+    {
+      "route": "/health/readiness",
+      "file": "apps/web/src/app/api/health/readiness/route.ts"
+    },
+    {
+      "route": "/health",
+      "file": "apps/web/src/app/api/health/route.ts"
+    },
+    {
+      "route": "/media/[id]",
+      "file": "apps/web/src/app/api/media/[id]/route.ts"
+    },
+    {
+      "route": "/media/upload",
+      "file": "apps/web/src/app/api/media/upload/route.ts"
+    },
+    {
+      "route": "/simulations/exact",
+      "file": "apps/web/src/app/api/simulations/exact/route.ts"
+    },
+    {
+      "route": "/system/readiness",
+      "file": "apps/web/src/app/api/system/readiness/route.ts"
+    }
+  ]
+}

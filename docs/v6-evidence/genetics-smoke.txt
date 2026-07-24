@@ -1,0 +1,16 @@
+command=env TYPESCRIPT_MODULE_PATH=/opt/nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/typescript.js node scripts/ci/run-genetics-runtime-smoke.mjs 
+{
+  "schemaVersion": "1.0",
+  "passed": true,
+  "checks": [
+    "exact-single-locus",
+    "exact-multi-locus",
+    "weighted-parent-uncertainty",
+    "linkage-endpoints",
+    "maternal-direction",
+    "direct-categorical-monte-carlo",
+    "observed-segregation",
+    "host-pathogen-abstention"
+  ],
+  "monteCarloMaximumAbsoluteError": 0.0005900000000000072
+}

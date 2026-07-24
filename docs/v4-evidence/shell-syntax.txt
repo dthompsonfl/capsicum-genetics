@@ -1,0 +1,4 @@
+$ bash -n infra/backup/backup.sh
+exit_code=0
+$ bash -n infra/backup/restore-test.sh
+exit_code=0

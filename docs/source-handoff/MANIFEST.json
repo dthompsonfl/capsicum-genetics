@@ -1,0 +1,319 @@
+{
+  "package": "capsicum-breeding-intelligence-platform-agent-handoff",
+  "version": "1.0.0",
+  "createdDate": "2026-07-22",
+  "readiness": "conditionally-ready",
+  "fileCount": 62,
+  "files": [
+    {
+      "path": "DECISIONS_AND_STOP_CONDITIONS.md",
+      "sizeBytes": 1708,
+      "sha256": "376c2ba80b4b4f9e498a4c541ebc76049d730e28f0a3c2fafe01ee8b623188fa"
+    },
+    {
+      "path": "EXECUTION_PROMPT.md",
+      "sizeBytes": 14114,
+      "sha256": "0b959980d0f7acce7baa605c453407caaad480d3e6acaec462431b4f83c8e74e"
+    },
+    {
+      "path": "FINAL_REPORT_TEMPLATE.md",
+      "sizeBytes": 1645,
+      "sha256": "28c41b08971349404fd21c4f242c1fbc57e8f2202c2d0d966fcf3345b9c241a5"
+    },
+    {
+      "path": "PACKAGE_CONTENTS.md",
+      "sizeBytes": 1066,
+      "sha256": "3537a7b5533a058730409db6e2375b98ddec9ab433436e371ed2726cc8c9be0f"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 2553,
+      "sha256": "1bd003f616860d1842daf3aece47760a384fe8502eb818ad1f14f22412adbb9b"
+    },
+    {
+      "path": "SOURCE_PACK_READINESS.md",
+      "sizeBytes": 2446,
+      "sha256": "a45ffead9afaf7e38d72e74a339ab4ebd3e08076324c0501911e148f3c792e96"
+    },
+    {
+      "path": "START_HERE.md",
+      "sizeBytes": 2751,
+      "sha256": "3e93dfef93e94f3db5f2a89d814e6390ed877e0d0d21dab733f5e847d1793916"
+    },
+    {
+      "path": "VALIDATION_LEDGER.md",
+      "sizeBytes": 1507,
+      "sha256": "66fe757fe9595f8ef363e81ee8735a5ceecb5ab00a5641e6efce8fba764f27e1"
+    },
+    {
+      "path": "WORKSTREAM_CARDS.md",
+      "sizeBytes": 3718,
+      "sha256": "b0555273fa7d14014f753d129342d44b4c33e4dfd29b1dcc4fc1e0e64dcb3540"
+    },
+    {
+      "path": "checklists/AI_MODEL_RELEASE_GATE.md",
+      "sizeBytes": 526,
+      "sha256": "d4b09d02786a1be6cc5c9f375d30f3ee2f0e148bb8f56bebf272a593eb18b8a1"
+    },
+    {
+      "path": "checklists/SCIENTIFIC_RELEASE_GATE.md",
+      "sizeBytes": 580,
+      "sha256": "552417f92d6138587844135c1837234c6f61dc54cd534a405b845cd7de7bf377"
+    },
+    {
+      "path": "checklists/WEB_RELEASE_GATE.md",
+      "sizeBytes": 565,
+      "sha256": "317df0cb47e4c7dc4cc110d6f28d1a3f2916f99890178d3430713b7d5ffcbc8c"
+    },
+    {
+      "path": "contracts/README.md",
+      "sizeBytes": 420,
+      "sha256": "40aab63210c7317742b54a9340c1be3a08a5f77874f978ac0f377e5ed9fa194a"
+    },
+    {
+      "path": "contracts/ai-answer.schema.json",
+      "sizeBytes": 1598,
+      "sha256": "346cce3250cc474aa6bf366ad9742667aea42a5634107cc290d42fb64a2c648b"
+    },
+    {
+      "path": "contracts/catalog-import-record.schema.json",
+      "sizeBytes": 917,
+      "sha256": "a7772f06fa738b9a1620021e9e679b07fb61195b598f22ec15966daa1748fca9"
+    },
+    {
+      "path": "contracts/phenotype-observation.schema.json",
+      "sizeBytes": 1863,
+      "sha256": "c5a680559a57fbb16b9935179c109b83e0a2c1c63a419587b93e446834f6c084"
+    },
+    {
+      "path": "contracts/simulation-request.schema.json",
+      "sizeBytes": 3669,
+      "sha256": "3dd554a15caaad05cd69f4fc15ef684251992eb399278e507aec990d503ef8e9"
+    },
+    {
+      "path": "contracts/simulation-result.schema.json",
+      "sizeBytes": 1819,
+      "sha256": "5058c2caa4f31daf36369f6fdce24e59313bd23a4322d43211bc88da6f9d73ca"
+    },
+    {
+      "path": "data/Change_Log.csv",
+      "sizeBytes": 297,
+      "sha256": "be45ed20c41400aa23e4fdc4be01db4723d1aaa9696b73c1585a8da7e47ee12e"
+    },
+    {
+      "path": "data/Change_Log.json",
+      "sizeBytes": 382,
+      "sha256": "69aea9c974901eafc3d699ca46d1aad6bece2466cfb3e8c1bcc595d56670e19c"
+    },
+    {
+      "path": "data/Data_Dictionary.csv",
+      "sizeBytes": 2782,
+      "sha256": "2243bbc4d005a343606b4f8207cc126ee59b16e372dcfb2f400268d11e9f7f2c"
+    },
+    {
+      "path": "data/Data_Dictionary.json",
+      "sizeBytes": 3555,
+      "sha256": "449fdf47301cee4784dffe04188e22a56a6d4373b4228610e9b6b3ffd8199a80"
+    },
+    {
+      "path": "data/Evidence_Claims.csv",
+      "sizeBytes": 9211,
+      "sha256": "2cb149573e8f46597f93da0d9450191dbff6aee60562d6783dde78ce5b90d44d"
+    },
+    {
+      "path": "data/Evidence_Claims.json",
+      "sizeBytes": 10935,
+      "sha256": "2897f2da8a72c36b826de5da9983f29aa1ab9d329ac6a04d7ba3558f633fb2ea"
+    },
+    {
+      "path": "data/Locus_Catalog.csv",
+      "sizeBytes": 17170,
+      "sha256": "c5c609447c6dcb73776edb09f866ea3790cfdf98de16a670d34f9ec6a17192e4"
+    },
+    {
+      "path": "data/Locus_Catalog.json",
+      "sizeBytes": 20486,
+      "sha256": "5f352218f4cddd659b9afea3d38e31d1909cdfe3dc9cc21f1d1dd66f33b5e448"
+    },
+    {
+      "path": "data/README.csv",
+      "sizeBytes": 2337,
+      "sha256": "70a0a958e0ff42fbaed7899e157a92133dc5886793feb70647ba3530767c414b"
+    },
+    {
+      "path": "data/README.json",
+      "sizeBytes": 3917,
+      "sha256": "5e87f01a3a3e6b67a0e7cfc0a2d2904cd65908bd325269e204e1634c56e0ff14"
+    },
+    {
+      "path": "data/Research_Backlog.csv",
+      "sizeBytes": 2580,
+      "sha256": "aceb924ae7b5b4be4d6457842be30d32f92407a933a0521e09aa637aaf27c986"
+    },
+    {
+      "path": "data/Research_Backlog.json",
+      "sizeBytes": 2977,
+      "sha256": "bb9b46d5137ecc5e9b5af0326a038ddd926b2494a33a15c69864afae238529a0"
+    },
+    {
+      "path": "data/Sources.csv",
+      "sizeBytes": 13369,
+      "sha256": "d7ba676aa433db3eecbaadeb75d567f5bbc03a91b0af5a05d593adae28db966d"
+    },
+    {
+      "path": "data/Sources.json",
+      "sizeBytes": 16141,
+      "sha256": "9fb7caca3b7e2873936e12821bb7116d298283d9d038f976d93d098d3a40a4f7"
+    },
+    {
+      "path": "data/Standards.csv",
+      "sizeBytes": 1257,
+      "sha256": "dcd8245ca7b084c6835b5e81d887d231ce0b848ba051557ced56407030315d89"
+    },
+    {
+      "path": "data/Standards.json",
+      "sizeBytes": 1504,
+      "sha256": "89798c1e16ad5f0111b93e625bf62aa20d8bdec64d7185db4c9e30613db93d80"
+    },
+    {
+      "path": "data/workbook-export-manifest.json",
+      "sizeBytes": 1336,
+      "sha256": "d86cf1754f27448a494577c45cd67f136a0c7e8fe91e8664502918c418ed60fe"
+    },
+    {
+      "path": "docs/00_PRODUCT_CHARTER.md",
+      "sizeBytes": 2144,
+      "sha256": "0489f23bb21e6584d683679edac116fdb3e4e37ed2bd5c98ef3071284fdff8be"
+    },
+    {
+      "path": "docs/01_SYSTEM_ARCHITECTURE.md",
+      "sizeBytes": 4184,
+      "sha256": "9dc0d9e4b6162b2e5f2871e00c2a7b0e53fc82a9c5cb18327d3c41f324fa0105"
+    },
+    {
+      "path": "docs/02_WEB_APPLICATION_UX_SPEC.md",
+      "sizeBytes": 5041,
+      "sha256": "e122ff14f9885508b01972dbc3457f404913abe19e26a90fa7fc5bcc2cba6758"
+    },
+    {
+      "path": "docs/03_DATA_MODEL_AND_MIGRATIONS.md",
+      "sizeBytes": 4930,
+      "sha256": "425ed790741b0249acc525ab9f2c142e9f1c3ea1217691f960850f8cd2bb7902"
+    },
+    {
+      "path": "docs/04_SIMULATION_ENGINE_SPEC.md",
+      "sizeBytes": 4937,
+      "sha256": "afdf95b9a210a21be1858ccfbafb7538cdbdd71af278648a53864d6ba75f49cf"
+    },
+    {
+      "path": "docs/05_AI_AND_RAG_SPEC.md",
+      "sizeBytes": 3494,
+      "sha256": "d4624b80def1e4565265125aabea862d52baa69c30c0cf07e2e3ca4487ca3e58"
+    },
+    {
+      "path": "docs/06_PHENOTYPE_VISION_SPEC.md",
+      "sizeBytes": 2821,
+      "sha256": "2f3c07b6cdb036c0387c45489648c87550708a8b2070183ae52a66675c9ca90a"
+    },
+    {
+      "path": "docs/07_SCIENTIFIC_GOVERNANCE.md",
+      "sizeBytes": 2071,
+      "sha256": "61dc46b2029e8bdb9a0d62dcc0f40b8d39121a6d4d6ed674ed1c8af63710ec92"
+    },
+    {
+      "path": "docs/08_API_AND_CONTRACTS.md",
+      "sizeBytes": 1753,
+      "sha256": "ac3922b1e37e2e68ecb3594bc86a0352b2cdb038bd71aa0c7e747e64a3538047"
+    },
+    {
+      "path": "docs/09_SECURITY_PRIVACY_OPERATIONS.md",
+      "sizeBytes": 1909,
+      "sha256": "05b1ee9f3a9ff6b0c6710219e14fb0b7528e6f0c374e5313906a5309f04ad0d9"
+    },
+    {
+      "path": "docs/10_TEST_AND_VALIDATION_PLAN.md",
+      "sizeBytes": 2079,
+      "sha256": "e784976aab6245f8f414b17e4b0da7b2ce493454568c644cabafbd1598462879"
+    },
+    {
+      "path": "docs/11_DELIVERY_AND_RELEASE_PLAN.md",
+      "sizeBytes": 2132,
+      "sha256": "b367f18c77817ba6c2397924e25855f9fb4e953ddd5029836a3cd700542f543a"
+    },
+    {
+      "path": "docs/12_DEFINITION_OF_DONE.md",
+      "sizeBytes": 2088,
+      "sha256": "5ef1eba893df60e00d81409543f135f2d7d2b4aad2bafa49e98cbb0e58780c6f"
+    },
+    {
+      "path": "docs/13_ENVIRONMENT_AND_DEPLOYMENT.md",
+      "sizeBytes": 1345,
+      "sha256": "40affcd2364872992ea6c4d1ea5fee82169b53d349d6b31a3c0d8ea441bd842a"
+    },
+    {
+      "path": "docs/14_REPO_STRUCTURE_AND_CONVENTIONS.md",
+      "sizeBytes": 1438,
+      "sha256": "144b2e8c953ec2a8b770a8381c7f579fb10250ae42bc102986ca8a1b181e2339"
+    },
+    {
+      "path": "docs/15_VERIFIED_TECH_AND_STANDARDS_BASELINE.md",
+      "sizeBytes": 989,
+      "sha256": "c4eefc94f43a0c06d7a252043bd28bb95455c0df229dde1cb47f49702715c942"
+    },
+    {
+      "path": "source-pack/CAPSICUM_BREEDING_INTELLIGENCE_PLATFORM_IMPLEMENTATION_PLAN.md",
+      "sizeBytes": 55743,
+      "sha256": "6e127c9d85374cdfa4431361728c4c0e2671901abc44bc47c4ea7028d9634f8c"
+    },
+    {
+      "path": "source-pack/CAPSICUM_GENETICS_DATASET_README_v0_1.md",
+      "sizeBytes": 1157,
+      "sha256": "aa7ffffcebd2caa565ccafd0e58e991f9f6b98718351d9a872c8b0235e4c0208"
+    },
+    {
+      "path": "source-pack/build_capsicum_catalog.py",
+      "sizeBytes": 65304,
+      "sha256": "25814629f1ab9ef960c18f86a3af669e1499b999928957e25ab4e08690763ce1"
+    },
+    {
+      "path": "source-pack/capsicum_genetics_evidence_catalog_v0_1.xlsx",
+      "sizeBytes": 44218,
+      "sha256": "16c72b6655bb61b03be663f827095a53ff2888da761e03c0b56bdf94efdeaa5e"
+    },
+    {
+      "path": "source-pack/capsicum_locus_catalog_v0_1.csv",
+      "sizeBytes": 17173,
+      "sha256": "a9b3684355987952c0fbd39d86fd0a401229e7d061700dff3eddd557cc7578b5"
+    },
+    {
+      "path": "source-pack/capsicum_sources_v0_1.csv",
+      "sizeBytes": 13372,
+      "sha256": "e2d4832b7954bb3062f330f9637b920e344976eb1c33ce223672a8690e4b5201"
+    },
+    {
+      "path": "starter-repo-blueprint/.env.example",
+      "sizeBytes": 666,
+      "sha256": "02217e7b69a016fe01d2cd2b340048ac80d738f9031b20a03584b87953be5761"
+    },
+    {
+      "path": "starter-repo-blueprint/AGENTS.md",
+      "sizeBytes": 826,
+      "sha256": "eaaee9d53685844c300482649fb4385955e9446af54d45e2796e2a680c5a774f"
+    },
+    {
+      "path": "starter-repo-blueprint/REPOSITORY_TREE.md",
+      "sizeBytes": 736,
+      "sha256": "c908aa9af32410944ef4c5105fbb5b6cf85bc37480954ef3d08a14ae18a58e06"
+    },
+    {
+      "path": "starter-repo-blueprint/VERSION_POLICY.md",
+      "sizeBytes": 445,
+      "sha256": "edf0ef4a7f564128fd9b425d981709e2467924a90766f125b6402e5562be20e2"
+    },
+    {
+      "path": "tools/build_capsicum_handoff_pack.py",
+      "sizeBytes": 93511,
+      "sha256": "81f7949db14ebcbc4c3e4b6b338fd2bc2ad1b903efa4a1866a110f8fecc21a5a"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "2.0",
+  "buildDate": "2026-07-22",
+  "releaseReady": false,
+  "sourceBundle": "capsicum-next-sweep-complete-agent-bundle(1).zip",
+  "repository": {
+    "fileCount": 294,
+    "sourceFileCount": 147,
+    "packageManifestCount": 20,
+    "pageRouteCount": 48,
+    "apiRouteCount": 7,
+    "postgresMigrationCount": 6,
+    "postgresTableCount": 57,
+    "baselineFileCount": 238,
+    "addedFiles": 56,
+    "modifiedFiles": 82,
+    "deletedFiles": 0
+  },
+  "catalog": {
+    "loci": 22,
+    "evidenceClaims": 22,
+    "sources": 30,
+    "activatedExecutablePhenotypeRules": 0,
+    "state": "draft_pending_review"
+  },
+  "validation": {
+    "typescriptPackages": "passed",
+    "typescriptWebAndWorker": "passed",
+    "databaseScriptSyntax": "passed",
+    "backupRestoreShellSyntax": "passed",
+    "pythonParityTests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "catalogReconciliation": {
+      "passed": true,
+      "loci": 22,
+      "evidenceClaims": 22,
+      "sources": 30,
+      "activatedRules": 0
+    },
+    "repositoryValidation": {
+      "checks": 381,
+      "issues": 0,
+      "environmentWarnings": [
+        "frozen-lockfile",
+        "runtime-node-24",
+        "postgres-runtime-validation",
+        "docker-runtime-validation",
+        "r-runtime-validation"
+      ]
+    },
+    "runtimeSmoke": {
+      "passed": true,
+      "singleLocusStates": 3,
+      "independentTwoLocusStates": 9,
+      "weightedUncertaintyStates": 2,
+      "zeroRecombinationHaplotypes": 2,
+      "monteCarloStates": 3,
+      "jobState": "running"
+    },
+    "releaseReady": false
+  },
+  "environmentBlockers": [
+    "frozen-lockfile",
+    "runtime-node-24",
+    "postgres-runtime-validation",
+    "docker-runtime-validation",
+    "r-runtime-validation"
+  ],
+  "packageNames": [
+    "@capsicum/ai",
+    "@capsicum/application",
+    "@capsicum/auth",
+    "@capsicum/breeding-domain",
+    "@capsicum/config",
+    "@capsicum/contracts",
+    "@capsicum/database",
+    "@capsicum/genetics-advanced",
+    "@capsicum/genetics-core",
+    "@capsicum/jobs",
+    "@capsicum/observability",
+    "@capsicum/observation-domain",
+    "@capsicum/scientific-catalog",
+    "@capsicum/simulation-domain",
+    "@capsicum/storage",
+    "@capsicum/test-utils",
+    "@capsicum/vision",
+    "@capsicum/web",
+    "@capsicum/worker-node",
+    "capsicum-breeding-intelligence"
+  ]
+}

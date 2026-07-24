@@ -1,0 +1,2 @@
+command=node scripts/generate-migration-manifest.mjs --check 
+migration manifest verified (29 entries)

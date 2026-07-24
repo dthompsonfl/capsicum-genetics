@@ -1,0 +1,641 @@
+{
+  "schemaVersion": "1.0",
+  "baseline": "capsicum-breeding-intelligence-platform-v4-complete.zip",
+  "summary": {
+    "added": 54,
+    "modified": 36,
+    "deleted": 0
+  },
+  "entries": [
+    {
+      "status": "added",
+      "path": "apps/web/src/app/api/media/[id]/derivative/[type]/route.ts",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Deterministic media and measurement authority implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "apps/web/src/app/api/research/upload/route.ts",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Durable research and evidence-bounded AI implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "apps/web/src/app/api/simulations/advanced/route.ts",
+      "workstream": "Governed advanced simulation laboratory",
+      "rationale": "Governed advanced simulation laboratory implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "apps/web/src/app/simulation-lab/advanced-simulation-form.tsx",
+      "workstream": "Governed advanced simulation laboratory",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "apps/worker-node/src/media-processing.ts",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Durable bounded worker execution and failure handling.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_ACCEPTANCE_TRACEABILITY.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_BASELINE_REPORT.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_DATA_MODEL_AND_MIGRATION_REPORT.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_FILE_CHANGE_LEDGER.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_FINAL_REPORT.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_OPERATIONS_BACKUP_RESTORE_RUNBOOK.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_RELEASE_BLOCKERS.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_ROUTE_INVENTORY.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_SCIENTIFIC_AUTHORITY_AND_MODEL_GATES.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_SECURITY_AND_THREAT_MODEL.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_SHA256SUMS.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/V5_VALIDATION_REPORT.md",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-acceptance-traceability.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-baseline.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-deletion-manifest.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/auth-runtime-smoke.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/auth-runtime-smoke.stderr",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/catalog-reconciliation.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/catalog-reconciliation.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/environment.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/frozen-install-attempt.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/genetics-runtime-smoke.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/node-script-syntax.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/node-script-syntax.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/python-worker-tests.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Durable bounded worker execution and failure handling.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/python-worker-tests.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/repository-validator.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/repository-validator.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/repository-validator.stderr",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/shell-syntax.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/shell-syntax.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/typescript-parser.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/typescript-parser.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/typescript-parser.stderr",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/yaml-validation.exit",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Release evidence and traceability implementation or integration.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-evidence/yaml-validation.txt",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-file-change-ledger.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-file-inventory.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-repository-manifest.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-route-inventory.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "docs/v5-validation-results.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": true
+    },
+    {
+      "status": "added",
+      "path": "packages/application/src/advanced-simulation-service.ts",
+      "workstream": "Governed advanced simulation laboratory",
+      "rationale": "Governed advanced simulation laboratory implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/contracts/src/advanced-simulation.ts",
+      "workstream": "Governed advanced simulation laboratory",
+      "rationale": "Governed advanced simulation laboratory implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/contracts/src/research-ingestion.ts",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Durable research and evidence-bounded AI implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/database/migrations/0023_v5_governed_advanced_simulation_laboratory.sql",
+      "workstream": "Governed advanced simulation laboratory",
+      "rationale": "Forward-only authority migration; preserves prior migrations.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/database/migrations/0024_v5_durable_research_ingestion.sql",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Forward-only authority migration; preserves prior migrations.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/database/migrations/0025_v5_durable_media_derivatives_and_measurements.sql",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Forward-only authority migration; preserves prior migrations.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/database/migrations/0026_v5_streaming_breeding_ledger_export.sql",
+      "workstream": "Streaming exports and object authority",
+      "rationale": "Forward-only authority migration; preserves prior migrations.",
+      "generated": false
+    },
+    {
+      "status": "added",
+      "path": "packages/database/migrations/0027_v5_phenotype_measurement_revision_authority.sql",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Forward-only authority migration; preserves prior migrations.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": ".env.example",
+      "workstream": "Security and configuration",
+      "rationale": "Security and configuration implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/actions.ts",
+      "workstream": "Responsive web workflows",
+      "rationale": "Responsive web workflows implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/phenotype-capture/[id]/page.tsx",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/phenotypes/images/[id]/page.tsx",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/research/page.tsx",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/research/review/page.tsx",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/research/sources/[id]/page.tsx",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/simulation-lab/page.tsx",
+      "workstream": "Responsive web workflows",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/simulations/[id]/page.tsx",
+      "workstream": "Responsive web workflows",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/app/simulations/page.tsx",
+      "workstream": "Responsive web workflows",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/web/src/components/research-assistant-form.tsx",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Nontechnical governed browser workflow or authority display.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-node/Dockerfile",
+      "workstream": "Durable worker runtime",
+      "rationale": "Durable bounded worker execution and failure handling.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-node/package.json",
+      "workstream": "Durable worker runtime",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-node/src/worker.ts",
+      "workstream": "Durable worker runtime",
+      "rationale": "Durable bounded worker execution and failure handling.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-python/pyproject.toml",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Durable bounded worker execution and failure handling.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-python/tests/test_worker.py",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Regression or scientific/safety fixture.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "apps/worker-python/worker.py",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Durable bounded worker execution and failure handling.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "docs/repository-validation.json",
+      "workstream": "Release evidence and traceability",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/ai/src/hosted.ts",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Durable research and evidence-bounded AI implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/package.json",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Verified evidence, inventory, traceability, or release judgment.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/catalog-service.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/export-service.ts",
+      "workstream": "Streaming exports and object authority",
+      "rationale": "Streaming exports and object authority implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/index.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/media-service.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/operations-service.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/phenotype-service.ts",
+      "workstream": "Deterministic media and measurement authority",
+      "rationale": "Deterministic media and measurement authority implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/research-service.ts",
+      "workstream": "Durable research and evidence-bounded AI",
+      "rationale": "Durable research and evidence-bounded AI implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/application/src/simulation-service.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/auth/src/index.ts",
+      "workstream": "Security and configuration",
+      "rationale": "Security and configuration implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/config/src/index.ts",
+      "workstream": "Security and configuration",
+      "rationale": "Security and configuration implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/contracts/src/index.test.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Regression or scientific/safety fixture.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/contracts/src/index.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/contracts/src/platform.ts",
+      "workstream": "Shared contracts and canonical application services",
+      "rationale": "Shared contracts and canonical application services implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/database/scripts/verify-authority.mjs",
+      "workstream": "Validation and database authority",
+      "rationale": "Validation and database authority implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "packages/storage/src/index.ts",
+      "workstream": "Streaming exports and object authority",
+      "rationale": "Streaming exports and object authority implementation or integration.",
+      "generated": false
+    },
+    {
+      "status": "modified",
+      "path": "scripts/validate_repository.py",
+      "workstream": "Validation and database authority",
+      "rationale": "Validation and database authority implementation or integration.",
+      "generated": false
+    }
+  ]
+}

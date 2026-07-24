@@ -1,0 +1,14 @@
+$ corepack prepare pnpm@10.14.0 --activate
+Preparing pnpm@10.14.0 for immediate activation...
+Internal Error: Error when performing the request to https://registry.npmjs.org/pnpm/-/pnpm-10.14.0.tgz; for troubleshooting help, see https://github.com/nodejs/corepack#troubleshooting
+    at fetch (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22051:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchUrlStream (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22081:20)
+    at async download (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22204:18)
+    at async installVersion (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22296:55)
+    at async Engine.ensurePackageManager (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22847:32)
+    at async PrepareCommand.execute (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:23567:27)
+    at async PrepareCommand.validateAndExecute (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:20258:22)
+    at async _Cli.run (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:21195:18)
+    at async Object.runMain (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:23642:19)
+exit_code=1

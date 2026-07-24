@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "executed": false,
+  "reason": "PostgreSQL 18 unavailable",
+  "emptyDatabaseReplay": {
+    "status": "not_executed"
+  },
+  "v3BaselineUpgrade": {
+    "status": "not_executed"
+  },
+  "migrationCountExpected": 22,
+  "forwardMigrationsAdded": [
+    "0015",
+    "0016",
+    "0017",
+    "0018",
+    "0019",
+    "0020",
+    "0021",
+    "0022"
+  ],
+  "checksumRepairTest": {
+    "status": "not_executed"
+  }
+}

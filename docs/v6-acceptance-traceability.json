@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "1.0",
+  "implementationSourceSha256": "7b0c1cd425a9ba5a26140ed1d3be92f7b0bfe030ee896b40b143e6de64633ab4",
+  "entries": [
+    {
+      "id": "sigv4_storage",
+      "requirement": "Actual-method SigV4 and immutable storage",
+      "code": [
+        "packages/storage/src/index.ts",
+        "packages/storage/src/minio.integration.test.ts"
+      ],
+      "evidence": [
+        "docs/v6-evidence/runtime-smoke.txt"
+      ],
+      "status": "local_pass",
+      "blocker": "MinIO proof requires Docker"
+    },
+    {
+      "id": "migration_identity",
+      "requirement": "Ordered migration versions and checksums",
+      "code": [
+        "packages/database/src/migration-manifest.ts",
+        "packages/database/src/index.ts"
+      ],
+      "evidence": [
+        "docs/v6-evidence/migration-manifest.txt",
+        "docs/v6-evidence/repository-validator.txt"
+      ],
+      "status": "local_pass",
+      "blocker": "PostgreSQL readiness execution unavailable"
+    },
+    {
+      "id": "routine_authority",
+      "requirement": "Exact routine grants and role separation",
+      "code": [
+        "packages/database/src/generated/routine-grants.json",
+        "packages/database/scripts/verify-authority.mjs"
+      ],
+      "evidence": [
+        "packages/database/scripts/verify-v6-integration.mjs"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "id": "frozen_graph",
+      "requirement": "Legitimate Node 24/pnpm frozen graph",
+      "code": [
+        "package.json",
+        ".github/workflows/ci.yml"
+      ],
+      "evidence": [
+        "docs/v6-evidence/registry-install.txt"
+      ],
+      "status": "blocked_external",
+      "blocker": "Registry DNS failed; no lockfile fabricated"
+    },
+    {
+      "id": "migration_atomicity",
+      "requirement": "Schema and ledger in one transaction",
+      "code": [
+        "packages/database/scripts/migrate.mjs",
+        "packages/database/scripts/migration-utils.mjs"
+      ],
+      "evidence": [
+        "docs/v6-evidence/migration-utils.txt",
+        "packages/database/scripts/verify-migration-atomicity.mjs"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "Local utility tests pass; PostgreSQL crash proof unavailable"
+    },
+    {
+      "id": "redirect_security",
+      "requirement": "Exact-origin redirects and hardened responses",
+      "code": [
+        "apps/web/src/lib/safe-redirect.ts",
+        "apps/web/src/proxy.ts"
+      ],
+      "evidence": [
+        "docs/v6-evidence/runtime-smoke.txt"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "Local parser passes; browser unavailable"
+    },
+    {
+      "id": "object_reconciliation",
+      "requirement": "Pending authority, dry run, bounded discovery and reference guard",
+      "code": [
+        "packages/database/migrations/0028_v6_pending_object_reconciliation.sql",
+        "packages/database/migrations/0029_v6_storage_cleanup_preview_and_reference_guard.sql",
+        "apps/worker-node/src/worker.ts"
+      ],
+      "evidence": [
+        "docs/v6-evidence/runtime-smoke.txt",
+        "packages/database/scripts/verify-v6-integration.mjs"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "Local storage listing passes; PostgreSQL/MinIO unavailable"
+    },
+    {
+      "id": "backup_restore",
+      "requirement": "Relocatable checksums and content reconciliation",
+      "code": [
+        "infra/backup/backup.sh",
+        "infra/backup/restore-test.sh"
+      ],
+      "evidence": [
+        "docs/v6-evidence/backup-portability.txt"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "Real isolated restore unavailable"
+    },
+    {
+      "id": "application_concurrency",
+      "requirement": "Twenty-request idempotency and RLS attacks",
+      "code": [
+        "packages/application/src/postgres.integration.test.ts"
+      ],
+      "evidence": [
+        ".github/workflows/ci.yml"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "id": "media_isolation",
+      "requirement": "Streamed bounded quarantine/scanning/decoding",
+      "code": [
+        "apps/web/src/lib/bounded-upload.ts",
+        "apps/worker-node/src/worker.ts",
+        "infra/compose/docker-compose.yml"
+      ],
+      "evidence": [
+        "docs/v6-evidence/python-worker.txt"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "Python tests pass; integrated containers unavailable"
+    },
+    {
+      "id": "ai_evaluation",
+      "requirement": "Optional evidence-bounded evaluated hosted AI",
+      "code": [
+        "packages/ai/src/evaluation.ts",
+        "packages/ai/src/evaluation-corpus.json"
+      ],
+      "evidence": [
+        "docs/v6-evidence/environment-contracts.txt"
+      ],
+      "status": "implemented_unproven",
+      "blocker": "Provider optional and not exercised"
+    },
+    {
+      "id": "genetics_exact",
+      "requirement": "Exact, uncertain, linked, maternal and stochastic calculations",
+      "code": [
+        "packages/genetics-core",
+        "packages/genetics-advanced"
+      ],
+      "evidence": [
+        "docs/v6-evidence/genetics-smoke.txt"
+      ],
+      "status": "local_pass",
+      "blocker": null
+    },
+    {
+      "id": "catalog",
+      "requirement": "Source-backed normalized catalog and zero-rule abstention",
+      "code": [
+        "packages/scientific-catalog",
+        "packages/application/src/catalog-service.ts"
+      ],
+      "evidence": [
+        "docs/v6-evidence/catalog-reconciliation.txt"
+      ],
+      "status": "local_pass",
+      "blocker": "PostgreSQL workflow execution unavailable"
+    },
+    {
+      "id": "unsupported_science",
+      "requirement": "No unsupported quantitative or learned claims",
+      "code": [
+        "docs/V6_SCIENTIFIC_AUTHORITY_AND_MODEL_GATES.md"
+      ],
+      "evidence": [
+        "docs/v6-evidence/repository-validator.txt"
+      ],
+      "status": "scientific_abstention",
+      "blocker": "Requires independently validated evidence/model artifacts"
+    },
+    {
+      "id": "browser_accessibility",
+      "requirement": "Authenticated role, viewport and axe journeys",
+      "code": [
+        "apps/web/e2e",
+        ".github/workflows/ci.yml"
+      ],
+      "evidence": [],
+      "status": "implemented_unproven",
+      "blocker": "Browser infrastructure unavailable"
+    },
+    {
+      "id": "security_supply_chain",
+      "requirement": "Dependency/license/secret/SAST/container scans and SBOM",
+      "code": [
+        ".github/workflows/ci.yml"
+      ],
+      "evidence": [],
+      "status": "blocked_external",
+      "blocker": "Frozen graph and Docker unavailable"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-07-22",
+  "releaseReady": false,
+  "executed": {
+    "typescriptPackages": "passed",
+    "typescriptWebAndWorker": "passed",
+    "databaseScriptSyntax": "passed",
+    "backupRestoreShellSyntax": "passed",
+    "pythonParityTests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "catalogReconciliation": {
+      "passed": true,
+      "loci": 22,
+      "evidenceClaims": 22,
+      "sources": 30,
+      "activatedRules": 0
+    },
+    "repositoryValidation": {
+      "checks": 381,
+      "issues": 0,
+      "environmentWarnings": [
+        "frozen-lockfile",
+        "runtime-node-24",
+        "postgres-runtime-validation",
+        "docker-runtime-validation",
+        "r-runtime-validation"
+      ]
+    },
+    "runtimeSmoke": {
+      "passed": true,
+      "singleLocusStates": 3,
+      "independentTwoLocusStates": 9,
+      "weightedUncertaintyStates": 2,
+      "zeroRecombinationHaplotypes": 2,
+      "monteCarloStates": 3,
+      "jobState": "running"
+    }
+  },
+  "notExecuted": [
+    "frozen dependency install",
+    "Prettier/ESLint with installed dependencies",
+    "Vitest runtime",
+    "Next.js production build",
+    "PostgreSQL migration/RLS/trigger/concurrency suite",
+    "Docker Compose/object-storage smoke",
+    "browser E2E/accessibility",
+    "backup/restore drill",
+    "dependency/security/SBOM scans",
+    "R worker"
+  ],
+  "environment": {
+    "node": "v22.16.0",
+    "requiredNode": ">=24.0.0",
+    "python": "3.13.5",
+    "postgresAvailable": false,
+    "dockerAvailable": false,
+    "rAvailable": false,
+    "registryAccess": false
+  }
+}

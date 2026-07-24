@@ -1,0 +1,752 @@
+{
+  "schemaVersion": "1.0",
+  "releaseVerdict": "blocked",
+  "journeys": [
+    {
+      "journey": 1,
+      "title": "Owner bootstrap, sign-in, workspace switch, invitation, acceptance, permission enforcement, sessions, revocation, suspended denial",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/auth-service.ts",
+        "packages/auth/src/index.ts",
+        "apps/web/src/lib/session.ts",
+        "apps/web/src/app/settings/workspace/page.tsx",
+        "apps/web/src/app/settings/users/page.tsx"
+      ],
+      "database": [
+        "0003_authenticated_mvp.sql",
+        "0006_membership_bound_rls.sql",
+        "0011_v3_auth_idempotency_and_token_lifecycle.sql"
+      ],
+      "tests": [
+        "packages/auth/src/index.test.ts",
+        "packages/database/scripts/verify-authority.mjs"
+      ],
+      "command": "pnpm test && ALLOW_AUTHORITY_TEST=YES pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL/browser runtime unavailable"
+    },
+    {
+      "journey": 2,
+      "title": "Accession to inventory-backed plant, label, QR, movement, and history",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "apps/web/src/app/germplasm/page.tsx",
+        "apps/web/src/app/seed-lots/page.tsx",
+        "apps/web/src/app/plants/page.tsx",
+        "apps/web/src/app/scan/[token]/page.tsx"
+      ],
+      "database": [
+        "0007_v3_biological_identity_and_cross_authority.sql",
+        "0013_v3_research_and_label_authority.sql"
+      ],
+      "tests": [
+        "packages/database/scripts/verify-authority.mjs"
+      ],
+      "command": "pnpm test && pnpm --filter @capsicum/web test:e2e",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG/object/browser proof unavailable"
+    },
+    {
+      "journey": 3,
+      "title": "Controlled, selfed, and open pollination preserve direction and separate operation from verification",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "packages/contracts/src/platform.ts",
+        "apps/web/src/app/crosses/page.tsx"
+      ],
+      "database": [
+        "0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test && pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG integration unavailable"
+    },
+    {
+      "journey": 4,
+      "title": "Fruit set does not verify a cross",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts"
+      ],
+      "database": [
+        "0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG integration unavailable"
+    },
+    {
+      "journey": 5,
+      "title": "Verification evidence is explicit",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "apps/web/src/app/crosses/[id]/page.tsx"
+      ],
+      "database": [
+        "0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG integration unavailable"
+    },
+    {
+      "journey": 6,
+      "title": "Canonical harvest creates fruit, harvest, derived lot, family, inventory, and provenance atomically",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts"
+      ],
+      "database": [
+        "0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG integration unavailable"
+    },
+    {
+      "journey": 7,
+      "title": "Progeny are not mislabeled as maternal accession",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts"
+      ],
+      "database": [
+        "0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG integration unavailable"
+    },
+    {
+      "journey": 8,
+      "title": "Normalized release-aware genotype calls preserve assay, evidence, and supersession",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "packages/application/src/simulation-service.ts"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Normalized catalog authoring workflow remains blocked; PG proof unavailable"
+    },
+    {
+      "journey": 9,
+      "title": "Unknown and conflicting genotype inputs remain uncertain",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/genetics-core/src/types.ts",
+        "packages/application/src/simulation-service.ts"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [
+        "packages/genetics-core/src/exact.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Installed Vitest unavailable"
+    },
+    {
+      "journey": 10,
+      "title": "Approved-release exact simulation persists reproducibly",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/simulation-service.ts",
+        "packages/simulation-domain/src/index.ts"
+      ],
+      "database": [
+        "0001_foundation.sql",
+        "0008_v3_genotype_observation_and_simulation_authority.sql",
+        "0010_v3_canonical_session_and_runtime_authority.sql"
+      ],
+      "tests": [
+        "packages/genetics-core/src/exact.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG/Vitest unavailable"
+    },
+    {
+      "journey": 11,
+      "title": "User-declared lower-authority simulation remains conditional",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/simulation-service.ts",
+        "apps/web/src/app/simulation-lab/page.tsx"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [
+        "packages/application/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG/Vitest unavailable"
+    },
+    {
+      "journey": 12,
+      "title": "Weighted uncertainty, linkage, maternal state, and queued Monte Carlo persist with authority dimensions",
+      "status": "partial",
+      "code": [
+        "packages/genetics-advanced/src/index.ts",
+        "packages/genetics-advanced/src/monte-carlo.ts",
+        "packages/application/src/simulation-service.ts",
+        "apps/worker-node/src/worker.ts"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [
+        "packages/genetics-advanced/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Weighted exact and direct MC paths exist; unified persisted linkage/maternal laboratory incomplete"
+    },
+    {
+      "journey": 13,
+      "title": "Multi-locus target and F2/backcross plan produces statistical grow-out requirement",
+      "status": "partial",
+      "code": [
+        "packages/genetics-core/src/target-recovery.ts",
+        "apps/web/src/app/selection-plans/page.tsx"
+      ],
+      "database": [
+        "0003_authenticated_mvp.sql"
+      ],
+      "tests": [
+        "packages/genetics-core/src/exact.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Persisted F2/backcross scenario planner incomplete"
+    },
+    {
+      "journey": 14,
+      "title": "Observed progeny compared with expected segregation without causal overclaim",
+      "status": "source_component_complete_workflow_incomplete",
+      "code": [
+        "packages/genetics-advanced/src/segregation.ts"
+      ],
+      "database": [],
+      "tests": [
+        "packages/genetics-advanced/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Pure bounded analysis exists; persisted UI/workflow and PG evidence absent"
+    },
+    {
+      "journey": 15,
+      "title": "Approved observation protocol/session records unit- and vocabulary-valid values",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/observation-service.ts"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql",
+        "0010_v3_canonical_session_and_runtime_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG integration unavailable"
+    },
+    {
+      "journey": 16,
+      "title": "Stale observation correction conflicts",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/observation-service.ts"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG concurrency unavailable"
+    },
+    {
+      "journey": 17,
+      "title": "Linear observation revision succeeds",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/observation-service.ts"
+      ],
+      "database": [
+        "0002_operations_and_observations.sql",
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG concurrency unavailable"
+    },
+    {
+      "journey": 18,
+      "title": "Curator/reviewer source, locus, assertion, allele, and release workflow is immutable and independently reviewed",
+      "status": "partial",
+      "code": [
+        "packages/application/src/catalog-service.ts"
+      ],
+      "database": [
+        "0001_foundation.sql",
+        "0004_runtime_authority_guards.sql",
+        "0014_v3_runtime_privilege_closure.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Core source/locus/assertion/release exists; normalized allele/variant workflow deliberately read-only"
+    },
+    {
+      "journey": 19,
+      "title": "Author self-approval fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/catalog-service.ts",
+        "packages/auth/src/index.ts"
+      ],
+      "database": [
+        "0001_foundation.sql",
+        "0004_runtime_authority_guards.sql"
+      ],
+      "tests": [
+        "packages/auth/src/index.test.ts"
+      ],
+      "command": "pnpm test && pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG proof unavailable"
+    },
+    {
+      "journey": 20,
+      "title": "Unapproved executable-rule use fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/phenotype-service.ts",
+        "packages/genetics-advanced/src/rule-graph.ts"
+      ],
+      "database": [
+        "0001_foundation.sql",
+        "0004_runtime_authority_guards.sql"
+      ],
+      "tests": [
+        "packages/genetics-advanced/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG proof unavailable"
+    },
+    {
+      "journey": 21,
+      "title": "Scientific document ingestion creates immutable reviewed passages",
+      "status": "partial",
+      "code": [
+        "packages/application/src/research-service.ts",
+        "apps/worker-node/src/worker.ts"
+      ],
+      "database": [
+        "0002_operations_and_observations.sql",
+        "0009_v3_runtime_media_research_and_auth_hardening.sql",
+        "0013_v3_research_and_label_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Ingestion and extraction job contracts exist but handlers are inactive"
+    },
+    {
+      "journey": 22,
+      "title": "Source detail and citation navigation work",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/research-service.ts",
+        "apps/web/src/app/research/sources/[id]/page.tsx"
+      ],
+      "database": [
+        "0013_v3_research_and_label_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm --filter @capsicum/web test:e2e",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Browser runtime unavailable"
+    },
+    {
+      "journey": 23,
+      "title": "Safe image quarantine, inspection, capture, measurement, annotation, correction",
+      "status": "partial",
+      "code": [
+        "apps/web/src/app/api/media/upload/route.ts",
+        "packages/application/src/media-service.ts",
+        "apps/worker-node/src/worker.ts"
+      ],
+      "database": [
+        "0009_v3_runtime_media_research_and_auth_hardening.sql",
+        "0012_v3_worker_media_export_and_annotation_authority.sql"
+      ],
+      "tests": [
+        "packages/storage/src/index.test.ts",
+        "packages/vision/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Isolated decoding, stripping, derivatives, cleanup, durable Python participation incomplete"
+    },
+    {
+      "journey": 24,
+      "title": "Hostile image fails safely",
+      "status": "partial",
+      "code": [
+        "apps/web/src/app/api/media/upload/route.ts",
+        "packages/storage/src/index.ts",
+        "apps/worker-node/src/worker.ts"
+      ],
+      "database": [
+        "0009_v3_runtime_media_research_and_auth_hardening.sql"
+      ],
+      "tests": [
+        "packages/storage/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Hostile corpus and isolated decoder unavailable"
+    },
+    {
+      "journey": 25,
+      "title": "AI answer cites only approved in-scope evidence",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/research-service.ts",
+        "packages/ai/src/index.ts"
+      ],
+      "database": [
+        "0002_operations_and_observations.sql",
+        "0013_v3_research_and_label_authority.sql"
+      ],
+      "tests": [
+        "packages/ai/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG retrieval proof unavailable"
+    },
+    {
+      "journey": 26,
+      "title": "AI abstains when evidence is insufficient",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/ai/src/index.ts",
+        "packages/application/src/research-service.ts"
+      ],
+      "database": [],
+      "tests": [
+        "packages/ai/src/index.test.ts"
+      ],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Installed Vitest unavailable"
+    },
+    {
+      "journey": 27,
+      "title": "Hosted provider failure falls back safely",
+      "status": "partial",
+      "code": [
+        "packages/ai/src/hosted.ts",
+        "packages/config/src/index.ts"
+      ],
+      "database": [],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Hosted provider is disabled by default but not wired/evaluated end to end"
+    },
+    {
+      "journey": 28,
+      "title": "AI cannot mutate authority",
+      "status": "source_boundary_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/research-service.ts",
+        "packages/ai/src/index.ts"
+      ],
+      "database": [
+        "0014_v3_runtime_privilege_closure.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG and adversarial provider evaluation unavailable"
+    },
+    {
+      "journey": 29,
+      "title": "Large export runs in a durable job",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/export-service.ts",
+        "apps/worker-node/src/worker.ts"
+      ],
+      "database": [
+        "0012_v3_worker_media_export_and_annotation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Current snapshot is bounded/in-memory rather than truly streamed"
+    },
+    {
+      "journey": 30,
+      "title": "Export survives worker restart",
+      "status": "source_contract_implemented_runtime_unproven",
+      "code": [
+        "apps/worker-node/src/worker.ts"
+      ],
+      "database": [
+        "0005_durable_worker_runtime.sql",
+        "0012_v3_worker_media_export_and_annotation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Worker restart integration unavailable"
+    },
+    {
+      "journey": 31,
+      "title": "Export creates immutable artifact",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "apps/worker-node/src/worker.ts",
+        "packages/application/src/export-service.ts"
+      ],
+      "database": [
+        "0009_v3_runtime_media_research_and_auth_hardening.sql",
+        "0012_v3_worker_media_export_and_annotation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG/S3 integration unavailable"
+    },
+    {
+      "journey": 32,
+      "title": "Export enforces workspace access",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "apps/web/src/app/api/exports/[id]/route.ts",
+        "packages/application/src/export-service.ts"
+      ],
+      "database": [
+        "0006_membership_bound_rls.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PG/S3 integration unavailable"
+    },
+    {
+      "journey": 33,
+      "title": "Admin can inspect, cancel, retry, and remediate jobs",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/operations-service.ts",
+        "apps/web/src/app/admin/jobs/page.tsx"
+      ],
+      "database": [
+        "0012_v3_worker_media_export_and_annotation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm --filter @capsicum/web test:e2e",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Browser/PG unavailable"
+    },
+    {
+      "journey": 34,
+      "title": "Admin can inspect audits and readiness",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/operations-service.ts",
+        "apps/web/src/app/admin/audit/page.tsx",
+        "apps/web/src/app/admin/system/page.tsx"
+      ],
+      "database": [],
+      "tests": [],
+      "command": "pnpm --filter @capsicum/web test:e2e",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Browser/PG unavailable"
+    },
+    {
+      "journey": 35,
+      "title": "Verified backup and restore",
+      "status": "blocked_external_runtime",
+      "code": [
+        "infra/backup/backup.sh",
+        "infra/backup/restore-test.sh"
+      ],
+      "database": [],
+      "tests": [],
+      "command": "pnpm backup:create && pnpm backup:restore-test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL/object storage unavailable"
+    },
+    {
+      "journey": 36,
+      "title": "Twenty duplicate submissions create one aggregate and stable result",
+      "status": "source_contract_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/internal.ts",
+        "apps/web/src/components/mutation-form.tsx"
+      ],
+      "database": [
+        "0011_v3_auth_idempotency_and_token_lifecycle.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Multi-instance PG concurrency unavailable"
+    },
+    {
+      "journey": 37,
+      "title": "Cross-workspace attacks fail",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/src/index.ts",
+        "packages/database/scripts/verify-authority.mjs"
+      ],
+      "database": [
+        "0006_membership_bound_rls.sql"
+      ],
+      "tests": [],
+      "command": "ALLOW_AUTHORITY_TEST=YES pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "journey": 38,
+      "title": "Stale or revoked membership fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/auth-service.ts",
+        "packages/database/scripts/verify-authority.mjs"
+      ],
+      "database": [
+        "0006_membership_bound_rls.sql"
+      ],
+      "tests": [],
+      "command": "ALLOW_AUTHORITY_TEST=YES pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "journey": 39,
+      "title": "Forged identifiers fail",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/contracts/src/platform.ts",
+        "packages/application/src/breeding-service.ts"
+      ],
+      "database": [
+        "0006_membership_bound_rls.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Integrated adversarial proof unavailable"
+    },
+    {
+      "journey": 40,
+      "title": "Terminal-state bypass fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/scripts/verify-authority.mjs"
+      ],
+      "database": [
+        "0004_runtime_authority_guards.sql",
+        "0010_v3_canonical_session_and_runtime_authority.sql",
+        "0012_v3_worker_media_export_and_annotation_authority.sql",
+        "0014_v3_runtime_privilege_closure.sql"
+      ],
+      "tests": [],
+      "command": "ALLOW_AUTHORITY_TEST=YES pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "journey": 41,
+      "title": "Simulation mutation fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/simulation-service.ts"
+      ],
+      "database": [
+        "0001_foundation.sql",
+        "0010_v3_canonical_session_and_runtime_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "journey": 42,
+      "title": "Stale observation branching fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/observation-service.ts"
+      ],
+      "database": [
+        "0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "tests": [],
+      "command": "pnpm test",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL concurrency unavailable"
+    },
+    {
+      "journey": 43,
+      "title": "Pedigree-cycle insertion fails",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts"
+      ],
+      "database": [
+        "0001_foundation.sql"
+      ],
+      "tests": [],
+      "command": "pnpm db:verify-authority",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "PostgreSQL unavailable"
+    },
+    {
+      "journey": 44,
+      "title": "All journeys pass keyboard, axe, and responsive viewports",
+      "status": "incomplete",
+      "code": [
+        "apps/web/playwright.config.ts",
+        "apps/web/e2e/public-boundary.spec.ts",
+        "apps/web/e2e/accessibility.spec.ts"
+      ],
+      "database": [],
+      "tests": [
+        "apps/web/e2e/public-boundary.spec.ts",
+        "apps/web/e2e/accessibility.spec.ts"
+      ],
+      "command": "pnpm --filter @capsicum/web test:e2e",
+      "resultEvidence": "Source inspection and local deterministic checks where noted; no integrated production pass",
+      "blocker": "Only public-boundary source coverage exists; browsers/runtime unavailable"
+    }
+  ]
+}

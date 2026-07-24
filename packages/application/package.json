@@ -1,0 +1,44 @@
+{
+  "name": "@capsicum/application",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node ../../scripts/fix-esm-imports.mjs dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src --max-warnings=0",
+    "test:postgres": "vitest run src/postgres.integration.test.ts"
+  },
+  "dependencies": {
+    "@capsicum/ai": "workspace:*",
+    "@capsicum/auth": "workspace:*",
+    "@capsicum/breeding-domain": "workspace:*",
+    "@capsicum/contracts": "workspace:*",
+    "@capsicum/database": "workspace:*",
+    "@capsicum/observation-domain": "workspace:*",
+    "@capsicum/simulation-domain": "workspace:*",
+    "@capsicum/storage": "workspace:*",
+    "@capsicum/vision": "workspace:*",
+    "pg": "8.16.3",
+    "@capsicum/genetics-advanced": "workspace:*",
+    "@capsicum/genetics-core": "workspace:*",
+    "@capsicum/config": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "@types/pg": "8.15.4",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
+  },
+  "files": [
+    "dist"
+  ]
+}

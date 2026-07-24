@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "executed": false,
+  "reason": "PostgreSQL psql/server unavailable",
+  "expectedMigrationCount": 22,
+  "verifier": "packages/database/scripts/verify-authority.mjs",
+  "staticChecks": {
+    "runtimeAndWorkerNonSuperuser": true,
+    "allWorkspaceTablesForcedRlsMarker": true,
+    "workerOnlyFunctionDenial": true,
+    "mediaColumnPrivilegeMatrix": true,
+    "normalizedCatalogPrivilegeMatrix": true,
+    "selectionLifecyclePrivilegeMatrix": true,
+    "forgedWorkspaceScenarioDefined": true,
+    "suspendedMembershipScenarioDefined": true,
+    "ownerImmutabilityScenarioDefined": true
+  },
+  "runtimeResult": null
+}

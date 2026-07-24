@@ -1,0 +1,2 @@
+command=bash infra/backup/checksum-portability.test.sh 
+relocated bundle verification and tamper rejection passed

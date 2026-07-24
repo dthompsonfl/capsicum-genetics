@@ -1,0 +1,38 @@
+{
+  "name": "@capsicum/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node ../../scripts/fix-esm-imports.mjs dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src --max-warnings=0",
+    "migrate": "node scripts/migrate.mjs",
+    "seed:catalog": "node scripts/import-catalog.mjs",
+    "provision:roles": "node scripts/provision-roles.mjs",
+    "verify:authority": "node scripts/verify-authority.mjs",
+    "test:migrator": "node --test scripts/*.test.mjs",
+    "verify:v6-integration": "node scripts/verify-v6-integration.mjs",
+    "verify:migration-atomicity": "node scripts/verify-migration-atomicity.mjs"
+  },
+  "dependencies": {
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "@types/pg": "8.15.4",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
+  },
+  "files": [
+    "dist"
+  ]
+}

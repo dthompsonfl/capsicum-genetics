@@ -1,0 +1,521 @@
+{
+  "schemaVersion": "1.0",
+  "pageCount": 54,
+  "apiCount": 14,
+  "routes": [
+    {
+      "type": "page",
+      "url": "/accept-invitation",
+      "path": "apps/web/src/app/accept-invitation/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/admin/audit",
+      "path": "apps/web/src/app/admin/audit/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/admin/jobs",
+      "path": "apps/web/src/app/admin/jobs/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/admin/models",
+      "path": "apps/web/src/app/admin/models/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/admin/system",
+      "path": "apps/web/src/app/admin/system/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/ai",
+      "path": "apps/web/src/app/ai/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/annotations",
+      "path": "apps/web/src/app/annotations/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/breeding-ledger",
+      "path": "apps/web/src/app/breeding-ledger/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/catalog/claims/[id]",
+      "path": "apps/web/src/app/catalog/claims/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/catalog/loci/[id]",
+      "path": "apps/web/src/app/catalog/loci/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/catalog/normalized",
+      "path": "apps/web/src/app/catalog/normalized/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/catalog",
+      "path": "apps/web/src/app/catalog/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/catalog/releases/[id]",
+      "path": "apps/web/src/app/catalog/releases/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/crosses/[id]",
+      "path": "apps/web/src/app/crosses/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/crosses/new",
+      "path": "apps/web/src/app/crosses/new/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/crosses",
+      "path": "apps/web/src/app/crosses/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/dashboard",
+      "path": "apps/web/src/app/dashboard/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": false
+    },
+    {
+      "type": "page",
+      "url": "/experiments/[id]",
+      "path": "apps/web/src/app/experiments/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/experiments",
+      "path": "apps/web/src/app/experiments/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/families/[id]",
+      "path": "apps/web/src/app/families/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/forgot-password",
+      "path": "apps/web/src/app/forgot-password/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/germplasm/[id]",
+      "path": "apps/web/src/app/germplasm/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/germplasm/new",
+      "path": "apps/web/src/app/germplasm/new/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": false
+    },
+    {
+      "type": "page",
+      "url": "/germplasm",
+      "path": "apps/web/src/app/germplasm/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/observations/session/[id]",
+      "path": "apps/web/src/app/observations/session/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/onboarding",
+      "path": "apps/web/src/app/onboarding/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/",
+      "path": "apps/web/src/app/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/pedigrees/[materialId]",
+      "path": "apps/web/src/app/pedigrees/[materialId]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/phenotype-capture/[id]",
+      "path": "apps/web/src/app/phenotype-capture/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/phenotype-capture",
+      "path": "apps/web/src/app/phenotype-capture/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/phenotypes/images/[id]",
+      "path": "apps/web/src/app/phenotypes/images/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/phenotypes/images",
+      "path": "apps/web/src/app/phenotypes/images/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/plants/[id]",
+      "path": "apps/web/src/app/plants/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/plants",
+      "path": "apps/web/src/app/plants/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/reports",
+      "path": "apps/web/src/app/reports/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/research",
+      "path": "apps/web/src/app/research/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/research/review",
+      "path": "apps/web/src/app/research/review/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/research/sources/[id]",
+      "path": "apps/web/src/app/research/sources/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/research-assistant",
+      "path": "apps/web/src/app/research-assistant/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": false
+    },
+    {
+      "type": "page",
+      "url": "/reset-password",
+      "path": "apps/web/src/app/reset-password/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/scan/[token]",
+      "path": "apps/web/src/app/scan/[token]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/scientific-catalog",
+      "path": "apps/web/src/app/scientific-catalog/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/seed-lots/[id]",
+      "path": "apps/web/src/app/seed-lots/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/seed-lots",
+      "path": "apps/web/src/app/seed-lots/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/selection-plans/[id]",
+      "path": "apps/web/src/app/selection-plans/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/selection-plans",
+      "path": "apps/web/src/app/selection-plans/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/settings/sessions",
+      "path": "apps/web/src/app/settings/sessions/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/settings/users",
+      "path": "apps/web/src/app/settings/users/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/settings/workspace",
+      "path": "apps/web/src/app/settings/workspace/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/sign-in",
+      "path": "apps/web/src/app/sign-in/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/simulation-lab",
+      "path": "apps/web/src/app/simulation-lab/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/simulations/[id]",
+      "path": "apps/web/src/app/simulations/[id]/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "page",
+      "url": "/simulations/new",
+      "path": "apps/web/src/app/simulations/new/page.tsx",
+      "requiresPrincipal": false,
+      "dynamic": false
+    },
+    {
+      "type": "page",
+      "url": "/simulations",
+      "path": "apps/web/src/app/simulations/page.tsx",
+      "requiresPrincipal": true,
+      "dynamic": true
+    },
+    {
+      "type": "api",
+      "url": "/api/auth/invitation/exchange",
+      "path": "apps/web/src/app/api/auth/invitation/exchange/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/auth/password-reset/exchange",
+      "path": "apps/web/src/app/api/auth/password-reset/exchange/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/exports/[id]",
+      "path": "apps/web/src/app/api/exports/[id]/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/exports/breeding-ledger",
+      "path": "apps/web/src/app/api/exports/breeding-ledger/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": true
+    },
+    {
+      "type": "api",
+      "url": "/api/health/liveness",
+      "path": "apps/web/src/app/api/health/liveness/route.ts",
+      "methods": [],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/health/readiness",
+      "path": "apps/web/src/app/api/health/readiness/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/health",
+      "path": "apps/web/src/app/api/health/route.ts",
+      "methods": [],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/media/[id]/derivative/[type]",
+      "path": "apps/web/src/app/api/media/[id]/derivative/[type]/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/media/[id]",
+      "path": "apps/web/src/app/api/media/[id]/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    },
+    {
+      "type": "api",
+      "url": "/api/media/upload",
+      "path": "apps/web/src/app/api/media/upload/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": true
+    },
+    {
+      "type": "api",
+      "url": "/api/research/upload",
+      "path": "apps/web/src/app/api/research/upload/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": true
+    },
+    {
+      "type": "api",
+      "url": "/api/simulations/advanced",
+      "path": "apps/web/src/app/api/simulations/advanced/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": true
+    },
+    {
+      "type": "api",
+      "url": "/api/simulations/exact",
+      "path": "apps/web/src/app/api/simulations/exact/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": true
+    },
+    {
+      "type": "api",
+      "url": "/api/system/readiness",
+      "path": "apps/web/src/app/api/system/readiness/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "requiresPrincipal": false,
+      "sameOriginGuard": false
+    }
+  ]
+}

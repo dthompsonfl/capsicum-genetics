@@ -1,0 +1,12 @@
+priority,work_item,reason,acceptance_gate
+P0,Independent plant geneticist review,All production claims and evidence grades require second-person scientific review.,Reviewer signs each active claim and records conflicts/corrections.
+P0,Allele-level Pun1 and pAMT catalog,"Current rows describe loci; the calculator needs exact named alleles, sequence changes, species, markers, and reference sequences.","Every active allele has primary source, sequence-level variant, assay, species, and null/leaky/functional classification."
+P0,Reference assembly normalization,"Gene IDs and positions differ across CM334, Zunla-1, Dempsey, Zhangshugang, and pan-genome resources.",Every coordinate includes assembly/version; cross-build mappings are versioned and tested.
+P0,Pathogen interaction tables,"Resistance predictions require pathogen species, strain/pathotype, effector, and temperature context.",No disease phenotype rule can execute without a compatible pathogen-context record.
+P0,Color multi-locus model curation,"PSY1, PSY2, CCS, ZEP, SGR, GLK2, and PRR2 interact; single-gene color labels are unsafe.",Only source-replicated haplotype combinations are activated; unknown combinations return no prediction.
+P1,Anthocyanin locus expansion,"CaAN2, CaAN3/CaPs, Ca3GT, MBW regulators, tissue specificity, and developmental stage require separate records.","Distinct phenotype models for full purple, stripes, foliage, flowers, and cotyledons."
+P1,CMS/Rf system registry,Multiple cytoplasms and restorer haplotypes make generic Rf predictions invalid.,"Each model names maternal CMS line/cytoplasm, nuclear loci, markers, temperature range, and source population."
+P1,Trait ontology and units,Raw observations must be comparable and computationally reusable.,"Every observation variable has trait, method, unit, scale, growth stage, and ontology mappings where available."
+P1,Public dataset ingestion licenses,Publicly accessible is not always unrestricted for redistribution.,"Each imported dataset records license, redistribution rights, attribution, and retrieval date."
+P2,QTL evidence registry,"QTLs are valuable but must retain population, map, marker interval, effect, and environment rather than becoming universal genes.",QTL records are not used for deterministic predictions and remain tied to study/population/reference build.
+P2,Quantitative model readiness assessment,"SHU, fruit size, yield, flavor, and wall thickness require empirical training data.","No model release without training cohort, held-out validation, uncertainty intervals, and model card."

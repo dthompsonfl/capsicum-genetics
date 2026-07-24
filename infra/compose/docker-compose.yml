@@ -1,0 +1,218 @@
+name: capsicum-breeding-intelligence
+
+networks:
+  edge:
+  data:
+    internal: true
+
+services:
+  postgres:
+    image: postgres:18.4
+    environment:
+      POSTGRES_DB: capsicum
+      POSTGRES_USER: capsicum_admin
+      POSTGRES_PASSWORD: ${CAPSICUM_ADMIN_DB_PASSWORD:?CAPSICUM_ADMIN_DB_PASSWORD is required}
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    networks: [data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U capsicum_admin -d capsicum"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 1g
+    cpus: 1.5
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY_ID:?S3_ACCESS_KEY_ID is required}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_ACCESS_KEY:?S3_SECRET_ACCESS_KEY is required}
+    volumes: ["minio-data:/data"]
+    networks: [data]
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:9000/minio/health/live >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 768m
+    cpus: 1.0
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  clamav:
+    image: clamav/clamav:1.4.2
+    networks: [data]
+    volumes: ["clamav-data:/var/lib/clamav"]
+    healthcheck:
+      test: ["CMD-SHELL", "clamdscan --ping 5 >/dev/null 2>&1"]
+      interval: 15s
+      timeout: 10s
+      retries: 40
+      start_period: 60s
+    restart: unless-stopped
+    mem_limit: 1536m
+    cpus: 1.5
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    tmpfs: ["/tmp"]
+
+  minio-init:
+    image: minio/mc:RELEASE.2025-08-13T08-35-41Z
+    depends_on:
+      minio: { condition: service_healthy }
+    environment:
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:?S3_ACCESS_KEY_ID is required}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:?S3_SECRET_ACCESS_KEY is required}
+      S3_BUCKET: ${S3_BUCKET:?S3_BUCKET is required}
+    networks: [data]
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        mc alias set local http://minio:9000 "$${S3_ACCESS_KEY_ID}" "$${S3_SECRET_ACCESS_KEY}"
+        mc mb --ignore-existing "local/$${S3_BUCKET}"
+        mc anonymous set none "local/$${S3_BUCKET}"
+    security_opt: ["no-new-privileges:true"]
+
+  migrate:
+    build:
+      context: ../..
+      dockerfile: apps/web/Dockerfile
+      target: dependencies
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      MIGRATION_DATABASE_URL: postgresql://capsicum_admin:${CAPSICUM_ADMIN_DB_PASSWORD:?required}@postgres:5432/capsicum
+      DATABASE_ADMIN_URL: postgresql://capsicum_admin:${CAPSICUM_ADMIN_DB_PASSWORD:?required}@postgres:5432/capsicum
+      CAPSICUM_RUNTIME_DB_PASSWORD: ${CAPSICUM_RUNTIME_DB_PASSWORD:?CAPSICUM_RUNTIME_DB_PASSWORD is required}
+      CAPSICUM_WORKER_DB_PASSWORD: ${CAPSICUM_WORKER_DB_PASSWORD:?CAPSICUM_WORKER_DB_PASSWORD is required}
+    command: ["sh", "-ec", "pnpm db:migrate && pnpm --filter @capsicum/database provision:roles"]
+    restart: "no"
+    networks: [data]
+    security_opt: ["no-new-privileges:true"]
+
+  web:
+    profiles: ["application"]
+    build:
+      context: ../..
+      dockerfile: apps/web/Dockerfile
+    environment:
+      APP_MODE: ${APP_MODE:-production}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:?NEXT_PUBLIC_APP_URL is required}
+      APP_ORIGIN: ${APP_ORIGIN:?APP_ORIGIN is required}
+      APP_RELEASE_SHA: ${APP_RELEASE_SHA:?APP_RELEASE_SHA is required}
+      BOOTSTRAP_TOKEN_SHA256: ${BOOTSTRAP_TOKEN_SHA256:?BOOTSTRAP_TOKEN_SHA256 is required}
+      DATABASE_URL: postgresql://capsicum_runtime_login:${CAPSICUM_RUNTIME_DB_PASSWORD:?required}@postgres:5432/capsicum
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+      TOKEN_DERIVATION_SECRET: ${TOKEN_DERIVATION_SECRET:?TOKEN_DERIVATION_SECRET is required}
+      NETWORK_FINGERPRINT_SECRET: ${NETWORK_FINGERPRINT_SECRET:?NETWORK_FINGERPRINT_SECRET is required}
+      ABUSE_CONTROL_SECRET: ${ABUSE_CONTROL_SECRET:?ABUSE_CONTROL_SECRET is required}
+      MFA_ENCRYPTION_KEY: ${MFA_ENCRYPTION_KEY:?MFA_ENCRYPTION_KEY is required}
+      REQUIRE_PRIVILEGED_MFA: ${REQUIRE_PRIVILEGED_MFA:-true}
+      TRUSTED_PROXY_HOPS: ${TRUSTED_PROXY_HOPS:-1}
+      DELIVERY_ADAPTER: ${DELIVERY_ADAPTER:?DELIVERY_ADAPTER is required}
+      DELIVERY_FROM_EMAIL: ${DELIVERY_FROM_EMAIL:?DELIVERY_FROM_EMAIL is required}
+      RESEND_API_KEY: ${RESEND_API_KEY:?RESEND_API_KEY is required}
+      S3_ENDPOINT: http://minio:9000
+      S3_REGION: ${S3_REGION:-us-east-1}
+      S3_BUCKET: ${S3_BUCKET:?S3_BUCKET is required}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:?S3_ACCESS_KEY_ID is required}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:?S3_SECRET_ACCESS_KEY is required}
+      AI_PROVIDER: ${AI_PROVIDER:-disabled}
+      AI_MODEL_ID: ${AI_MODEL_ID:-}
+      AI_GATEWAY_API_KEY: ${AI_GATEWAY_API_KEY:-}
+      ENABLE_HOSTED_AI: ${ENABLE_HOSTED_AI:-false}
+      AI_TIMEOUT_MS: ${AI_TIMEOUT_MS:-20000}
+      AI_MAX_RETRIES: ${AI_MAX_RETRIES:-1}
+      AI_MAX_OUTPUT_TOKENS: ${AI_MAX_OUTPUT_TOKENS:-1500}
+      AI_INPUT_COST_MICROUNITS_PER_MILLION_TOKENS: ${AI_INPUT_COST_MICROUNITS_PER_MILLION_TOKENS:-0}
+      AI_OUTPUT_COST_MICROUNITS_PER_MILLION_TOKENS: ${AI_OUTPUT_COST_MICROUNITS_PER_MILLION_TOKENS:-0}
+      AI_MAX_COST_MICROUNITS_PER_REQUEST: ${AI_MAX_COST_MICROUNITS_PER_REQUEST:-0}
+      ENABLE_LEARNED_VISION: ${ENABLE_LEARNED_VISION:-false}
+      ENABLE_RESEARCH_MODELS: ${ENABLE_RESEARCH_MODELS:-false}
+    networks: [edge, data]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      minio-init: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/api/health/liveness').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 768m
+    cpus: 1.5
+    pids_limit: 256
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=256m"]
+    security_opt: ["no-new-privileges:true"]
+
+  worker-node:
+    profiles: ["application", "workers"]
+    build:
+      context: ../..
+      dockerfile: apps/worker-node/Dockerfile
+    environment:
+      APP_MODE: ${APP_MODE:-production}
+      APP_RELEASE_SHA: ${APP_RELEASE_SHA:?APP_RELEASE_SHA is required}
+      WORKER_DATABASE_URL: postgresql://capsicum_worker_login:${CAPSICUM_WORKER_DB_PASSWORD:?required}@postgres:5432/capsicum
+      WORKER_POLL_MS: "1000"
+      WORKER_LEASE_SECONDS: "60"
+      S3_ENDPOINT: http://minio:9000
+      S3_REGION: ${S3_REGION:-us-east-1}
+      S3_BUCKET: ${S3_BUCKET:?S3_BUCKET is required}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:?S3_ACCESS_KEY_ID is required}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:?S3_SECRET_ACCESS_KEY is required}
+      MEDIA_SCANNER_HOST: ${MEDIA_SCANNER_HOST:-clamav}
+      MEDIA_SCANNER_PORT: ${MEDIA_SCANNER_PORT:-3310}
+      MEDIA_SCANNER_URL: ${MEDIA_SCANNER_URL:-}
+      MEDIA_SCANNER_BEARER_TOKEN: ${MEDIA_SCANNER_BEARER_TOKEN:-}
+      WORKER_MAX_MEDIA_BYTES: ${WORKER_MAX_MEDIA_BYTES:-26214400}
+      WORKER_MEDIA_CONCURRENCY: ${WORKER_MEDIA_CONCURRENCY:-1}
+      PYTHON_VISION_MEMORY_MB: ${PYTHON_VISION_MEMORY_MB:-512}
+      PYTHON_VISION_CPU_SECONDS: ${PYTHON_VISION_CPU_SECONDS:-20}
+    networks: [data]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      minio-init: { condition: service_completed_successfully }
+      clamav: { condition: service_healthy }
+    restart: unless-stopped
+    stop_grace_period: 30s
+    mem_limit: 1024m
+    cpus: 1.5
+    pids_limit: 256
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=512m"]
+    security_opt: ["no-new-privileges:true"]
+
+  worker-python:
+    profiles: ["research-workers"]
+    build:
+      context: ../../apps/worker-python
+    command: ["python", "worker.py", "health"]
+    networks: [data]
+    restart: "no"
+    read_only: true
+    tmpfs: ["/tmp"]
+    security_opt: ["no-new-privileges:true"]
+
+  worker-r:
+    profiles: ["research-workers"]
+    build:
+      context: ../../apps/worker-r
+    command: ["Rscript", "worker.R", "health"]
+    networks: [data]
+    restart: "no"
+    read_only: true
+    tmpfs: ["/tmp"]
+    security_opt: ["no-new-privileges:true"]
+
+volumes:
+  postgres-data:
+  minio-data:
+  clamav-data:

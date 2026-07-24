@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-23T03:02:16.185835+00:00",
+  "releaseVerdict": "blocked",
+  "results": [
+    {
+      "name": "behavioral_repository_validator",
+      "status": "passed",
+      "checks": 634,
+      "issues": 0,
+      "warnings": 5,
+      "evidence": "docs/v4-evidence/repository-validator.json"
+    },
+    {
+      "name": "typescript_parser",
+      "status": "passed",
+      "files": 147,
+      "diagnostics": 0,
+      "typescriptVersion": "5.8.3",
+      "evidence": "docs/v4-evidence/typescript-parser.json"
+    },
+    {
+      "name": "targeted_semantic_typecheck",
+      "status": "passed",
+      "evidence": "docs/v4-evidence/semantic-typecheck.txt"
+    },
+    {
+      "name": "python_worker",
+      "status": "passed",
+      "tests": 3,
+      "evidence": "docs/v4-evidence/python-worker-tests.txt"
+    },
+    {
+      "name": "catalog_reconciliation",
+      "status": "passed",
+      "loci": 22,
+      "claims": 22,
+      "sources": 30,
+      "executableRules": 0,
+      "evidence": "docs/v4-evidence/catalog-reconciliation.txt"
+    },
+    {
+      "name": "genetics_runtime_smoke",
+      "status": "passed",
+      "evidence": "docs/v4-evidence/genetics-runtime-smoke.json"
+    },
+    {
+      "name": "authentication_runtime_smoke",
+      "status": "passed",
+      "evidence": "docs/v4-evidence/auth-runtime-smoke.json"
+    },
+    {
+      "name": "frozen_install",
+      "status": "blocked_environment",
+      "reason": "Registry access and pnpm unavailable; no legitimate lockfile generated.",
+      "evidence": "docs/v4-evidence/frozen-install-attempt.txt"
+    },
+    {
+      "name": "postgresql_authority",
+      "status": "blocked_environment",
+      "reason": "PostgreSQL/psql unavailable."
+    },
+    {
+      "name": "docker_compose",
+      "status": "blocked_environment",
+      "reason": "Docker unavailable."
+    },
+    {
+      "name": "browser_e2e_accessibility",
+      "status": "blocked_environment",
+      "reason": "Dependencies and browsers unavailable."
+    },
+    {
+      "name": "backup_restore",
+      "status": "blocked_environment",
+      "reason": "PostgreSQL, Docker, and object storage unavailable."
+    },
+    {
+      "name": "r_worker",
+      "status": "blocked_environment",
+      "reason": "Rscript unavailable."
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "schemaVersion": "1.0",
+  "journeyCount": 34,
+  "items": [
+    {
+      "id": 1,
+      "journey": "Owner bootstrap, sign-in, lockout, recovery, workspace/session/invitation administration",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/auth-service.ts",
+        "packages/auth/src/index.ts",
+        "apps/web/src/app/settings"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "PostgreSQL/browser integration unavailable"
+    },
+    {
+      "id": 2,
+      "journey": "Concurrent denied sign-in/rate-limit persistence",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0015_v4_auth_abuse_and_public_idempotency.sql",
+        "packages/application/src/auth-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires multi-connection PostgreSQL test"
+    },
+    {
+      "id": 3,
+      "journey": "Twenty concurrent identical authoritative mutations create one aggregate",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/internal.ts",
+        "packages/database/migrations/0015_v4_auth_abuse_and_public_idempotency.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PostgreSQL concurrency test"
+    },
+    {
+      "id": 4,
+      "journey": "Idempotency conflict, rollback, and valid retry",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/internal.ts",
+        "packages/application/src/auth-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PostgreSQL integration"
+    },
+    {
+      "id": 5,
+      "journey": "Material to inventory reservation, partial planting, label, movement/history",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "packages/database/migrations/0019_v4_inventory_truth_and_exception_authority.sql",
+        "apps/web/src/app/seed-lots/[id]/page.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires persisted E2E"
+    },
+    {
+      "id": 6,
+      "journey": "Unknown quantity remains unknown and known zero remains zero",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/contracts/src/index.ts",
+        "packages/database/migrations/0019_v4_inventory_truth_and_exception_authority.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires migration/service integration"
+    },
+    {
+      "id": 7,
+      "journey": "Controlled, selfed, and open crosses preserve direction and uncertainty",
+      "status": "implemented_from_v3_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "packages/database/migrations/0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PostgreSQL E2E"
+    },
+    {
+      "id": 8,
+      "journey": "Fruit set does not verify parentage",
+      "status": "implemented_from_v3_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0007_v3_biological_identity_and_cross_authority.sql",
+        "packages/application/src/breeding-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires database authority test"
+    },
+    {
+      "id": 9,
+      "journey": "Canonical atomic harvest creates derived provenance chain",
+      "status": "implemented_from_v3_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts",
+        "packages/database/migrations/0007_v3_biological_identity_and_cross_authority.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires rollback/concurrency test"
+    },
+    {
+      "id": 10,
+      "journey": "Recombinant progeny are not maternal accession",
+      "status": "implemented_from_v3_runtime_unproven",
+      "code": [
+        "packages/application/src/breeding-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires persisted fixture"
+    },
+    {
+      "id": 11,
+      "journey": "Pedigree cycles fail",
+      "status": "implemented_from_v3_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0001_foundation.sql",
+        "packages/application/src/breeding-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PostgreSQL attack test"
+    },
+    {
+      "id": 12,
+      "journey": "Source/passage/assertion/locus/allele/variant/marker/assay review and release",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/catalog-service.ts",
+        "packages/database/migrations/0017_v4_catalog_release_lifecycle.sql",
+        "packages/database/migrations/0018_v4_normalized_catalog_authoring.sql",
+        "apps/web/src/app/catalog/normalized/page.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Research ingestion remains inactive; PG/browser proof unavailable"
+    },
+    {
+      "id": 13,
+      "journey": "Self-approval and post-publication mutation fail",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0017_v4_catalog_release_lifecycle.sql",
+        "packages/database/migrations/0018_v4_normalized_catalog_authoring.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PostgreSQL adversarial test"
+    },
+    {
+      "id": 14,
+      "journey": "Published release has exact allele membership and is consumable",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/simulation-service.ts",
+        "packages/application/src/catalog-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "No curated approved release fixture and no PG E2E"
+    },
+    {
+      "id": 15,
+      "journey": "Genotype evidence states remain distinct",
+      "status": "implemented_runtime_unproven",
+      "code": [
+        "packages/contracts/src/index.ts",
+        "packages/application/src/simulation-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires persisted fixtures"
+    },
+    {
+      "id": 16,
+      "journey": "Exact approved-release simulation persists reproducibly",
+      "status": "implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/simulation-service.ts",
+        "apps/web/src/app/api/simulations/exact/route.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Pure runtime smoke passed; persistence requires PG"
+    },
+    {
+      "id": 17,
+      "journey": "User-declared lower-authority simulation is conditional",
+      "status": "implemented_source_and_ui",
+      "code": [
+        "apps/web/src/app/simulation-lab/simulation-form.tsx",
+        "apps/web/src/app/simulation-lab/weighted-simulation-form.tsx",
+        "packages/application/src/simulation-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Browser proof unavailable"
+    },
+    {
+      "id": 18,
+      "journey": "Weighted uncertainty, linkage, maternal, conditional rules, queued Monte Carlo persist",
+      "status": "partial",
+      "code": [
+        "packages/genetics-advanced/src",
+        "apps/worker-node/src/monte-carlo-task.ts",
+        "apps/web/src/app/simulation-lab/weighted-simulation-form.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Advanced engines not unified through one persisted service/API/UI"
+    },
+    {
+      "id": 19,
+      "journey": "Selection plan preserves all scientific fields",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0016_v4_selection_plan_scientific_snapshot.sql",
+        "packages/application/src/simulation-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PG E2E"
+    },
+    {
+      "id": 20,
+      "journey": "F2/backcross grow-out is statistical, not guarantee",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/contracts/src/index.ts",
+        "apps/web/src/app/selection-plans/[id]/page.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Multi-generation unified laboratory remains incomplete"
+    },
+    {
+      "id": 21,
+      "journey": "Observed progeny comparison without causal overclaim",
+      "status": "source_and_pure_runtime_passed",
+      "code": [
+        "packages/genetics-advanced/src/segregation.ts",
+        "packages/database/migrations/0022_v4_selection_plan_observed_reconciliation.sql",
+        "apps/web/src/app/selection-plans/[id]/segregation-form.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Persistence requires PostgreSQL"
+    },
+    {
+      "id": 22,
+      "journey": "Approved protocol/session validates units, vocabulary, method, missingness",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0020_v4_observation_protocol_and_method_authority.sql",
+        "packages/application/src/observation-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PG/browser E2E"
+    },
+    {
+      "id": 23,
+      "journey": "Stale observation/genotype correction conflicts; linear correction succeeds",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/observation-service.ts",
+        "packages/database/migrations/0008_v3_genotype_observation_and_simulation_authority.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires concurrent PostgreSQL test"
+    },
+    {
+      "id": 24,
+      "journey": "Scientific document ingestion creates immutable reviewed passages",
+      "status": "blocked_implementation",
+      "code": [
+        "packages/application/src/research-service.ts",
+        "packages/database/migrations/0013_v3_research_and_label_authority.sql"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Durable ingestion/extraction jobs remain inactive"
+    },
+    {
+      "id": 25,
+      "journey": "Safe image quarantine, scanning, decoding, derivatives, measurement, correction",
+      "status": "partial",
+      "code": [
+        "apps/worker-node/src/malware-scanner.ts",
+        "apps/worker-node/src/worker.ts",
+        "infra/compose/docker-compose.yml"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Derivative/metadata/measurement pipeline and integration proof incomplete"
+    },
+    {
+      "id": 26,
+      "journey": "Hostile image/PDF fails safely",
+      "status": "partial",
+      "code": [
+        "packages/storage/src/index.ts",
+        "apps/worker-node/src/malware-scanner.test.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Hostile decoder fixture suite unavailable/incomplete"
+    },
+    {
+      "id": 27,
+      "journey": "AI uses only approved evidence and exact citation navigation",
+      "status": "implemented_runtime_unproven",
+      "code": [
+        "packages/application/src/research-service.ts",
+        "packages/ai/src/index.ts",
+        "apps/web/src/app/research/sources/[id]/page.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Adversarial provider/retrieval tests unavailable"
+    },
+    {
+      "id": 28,
+      "journey": "AI abstains and cannot mutate authority",
+      "status": "implemented_runtime_unproven",
+      "code": [
+        "packages/ai/src/index.ts",
+        "packages/application/src/research-service.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Full adversarial test harness absent"
+    },
+    {
+      "id": 29,
+      "journey": "Hosted provider failure falls back safely",
+      "status": "blocked_implementation",
+      "code": [
+        "packages/config/src/index.ts",
+        "packages/ai/src/index.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Hosted generation is intentionally not application-wired"
+    },
+    {
+      "id": 30,
+      "journey": "Large durable export survives restart, immutable useful artifact, authorized stream",
+      "status": "partial",
+      "code": [
+        "apps/worker-node/src/worker.ts",
+        "packages/storage/src/index.ts",
+        "apps/web/src/app/api/exports/[id]/route.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Export assembly remains in-memory and integration unproven"
+    },
+    {
+      "id": 31,
+      "journey": "Job cancel/retry/stale/dead-letter/remediation",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0005_durable_worker_runtime.sql",
+        "packages/application/src/operations-service.ts",
+        "apps/web/src/app/admin/jobs/page.tsx"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Requires PG worker crash/restart tests"
+    },
+    {
+      "id": 32,
+      "journey": "Cross-workspace, revoked, forged IDs, CSRF, token replay, terminal bypass fail",
+      "status": "source_implemented_runtime_unproven",
+      "code": [
+        "packages/database/migrations/0006_membership_bound_rls.sql",
+        "packages/database/scripts/verify-authority.mjs",
+        "apps/web/src/lib/storage.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Authority script expanded but PostgreSQL/browser unavailable"
+    },
+    {
+      "id": 33,
+      "journey": "Backup and isolated restore reconcile data and objects",
+      "status": "blocked_environment",
+      "code": [
+        "infra/backup/backup.sh",
+        "infra/backup/restore-test.sh"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Docker/PostgreSQL/object storage unavailable"
+    },
+    {
+      "id": 34,
+      "journey": "All journeys pass keyboard, axe, responsive viewports",
+      "status": "blocked_environment",
+      "code": [
+        "apps/web/e2e/accessibility.spec.ts",
+        "apps/web/playwright.config.ts"
+      ],
+      "evidence": [
+        "docs/v4-evidence/repository-validator.json"
+      ],
+      "remainingBlocker": "Dependencies/browser/runtime unavailable and coverage incomplete"
+    }
+  ]
+}

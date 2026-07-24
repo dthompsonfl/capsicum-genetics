@@ -1,0 +1,31 @@
+{
+  "sourceArchive": "capsicum-breeding-intelligence-platform-next-sweep-v2(1).zip",
+  "reviewedFileCount": 294,
+  "files": [
+    {
+      "path": "CAPSICUM_V2_FILE_BY_FILE_AUDIT.csv",
+      "bytes": 61723,
+      "sha256": "e69f53c81097c21f6cae7d4e9b820257782555518772472d580573c7663244a9"
+    },
+    {
+      "path": "CAPSICUM_V2_FILE_BY_FILE_AUDIT.json",
+      "bytes": 99399,
+      "sha256": "ffc78068498e70c5d9a64160e6c24561915dbd9b8da0c06c9ce2f095192a5857"
+    },
+    {
+      "path": "CAPSICUM_V2_FILE_BY_FILE_REVIEW_AND_V3_GAP_ANALYSIS.md",
+      "bytes": 16866,
+      "sha256": "32ef9b7b4e82f38823660a1325f6c41c0de28a1f2061b75b8a966b0ec0e4755f"
+    },
+    {
+      "path": "CAPSICUM_V3_AUTONOMOUS_AGENT_PROMPT.md",
+      "bytes": 32269,
+      "sha256": "5f36a123f8c96d4ab16d69ae0463a77ba9f54c84cbad6d1624f89721e33fb4c4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 818,
+      "sha256": "32e2593f18976a31c5730c215eaa12accc06786afe23679b4384be4082e03439"
+    }
+  ]
+}

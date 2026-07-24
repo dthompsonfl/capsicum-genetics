@@ -1,0 +1,9 @@
+date_utc=2026-07-23T19:22:56Z
+node=v22.16.0
+corepack=0.32.0
+python=Python 3.13.5
+typescript=5.8.3
+pnpm=unavailable
+psql=unavailable
+docker=unavailable
+Rscript=unavailable

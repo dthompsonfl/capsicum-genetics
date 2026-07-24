@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAtUtc": "2026-07-22T00:00:00Z",
+  "releaseVerdict": "blocked",
+  "environment": {
+    "node24": "v24.11.1",
+    "defaultNode": "v22.16.0",
+    "python": "3.13.5",
+    "typescriptParser": "5.8.3",
+    "pnpm": "unavailable_registry_dns_failure",
+    "postgresql": "unavailable",
+    "docker": "unavailable",
+    "r": "unavailable"
+  },
+  "executed": [
+    {
+      "id": "typescript-syntax",
+      "command": "TYPESCRIPT_MODULE_PATH=/opt/nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/typescript.js node24 scripts/ci/parse-typescript.mjs",
+      "exitCode": 0,
+      "result": {
+        "schemaVersion": "1.0",
+        "parserVersion": "5.8.3",
+        "fileCount": 143,
+        "failureCount": 0,
+        "failures": []
+      }
+    },
+    {
+      "id": "python-worker-tests",
+      "command": "python3 -m pytest apps/worker-python/tests -q",
+      "exitCode": 0,
+      "summary": "...                                                                      [100%]\n3 passed in 0.02s"
+    },
+    {
+      "id": "catalog-reconciliation",
+      "command": "python3 scripts/import_catalog.py --check",
+      "exitCode": 0,
+      "summary": "22 loci, 22 evidence claims, 30 sources, 0 executable phenotype rules"
+    },
+    {
+      "id": "repository-validator",
+      "command": "CAPSICUM_NODE_BINARY=<node24> python3 scripts/validate_repository.py",
+      "exitCode": 0,
+      "summary": {
+        "checkCount": 527,
+        "issueCount": 0,
+        "warningCount": 4
+      },
+      "releaseReady": false
+    },
+    {
+      "id": "yaml-validation",
+      "command": "python3 yaml.safe_load(.github/workflows/*.yml, infra/compose/*.yml)",
+      "exitCode": 0
+    },
+    {
+      "id": "shell-syntax",
+      "command": "bash -n infra/backup/*.sh",
+      "exitCode": 0
+    },
+    {
+      "id": "node-script-syntax",
+      "command": "node24 --check packages/database/scripts/*.mjs scripts/ci/*.mjs scripts/*.mjs",
+      "exitCode": 0
+    },
+    {
+      "id": "genetics-core-build",
+      "command": "global tsc 5.8.3 -p packages/genetics-core/tsconfig.build.json --outDir /tmp/...",
+      "exitCode": 0
+    },
+    {
+      "id": "genetics-advanced-build",
+      "command": "global tsc 5.8.3 -p packages/genetics-advanced/tsconfig.build.json --outDir /tmp/...",
+      "exitCode": 0
+    },
+    {
+      "id": "genetics-runtime-smoke",
+      "command": "node24 /tmp/capsicum-v3-runtime-smoke.mjs",
+      "exitCode": 0,
+      "result": {
+        "passed": true,
+        "singleLocus": [
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        "multiLocusStates": 9,
+        "linkedStates": 3,
+        "maternalDirection": "M",
+        "monteCarloMaximumAbsoluteError": 0.0014000000000000123,
+        "segregationMethod": "chi_square"
+      }
+    },
+    {
+      "id": "credential-delivery-smoke",
+      "command": "node24 transpiled credential-delivery runtime smoke",
+      "exitCode": 0,
+      "result": {
+        "passed": true,
+        "duplicateNoticeCount": 1,
+        "filenameExposesToken": false,
+        "fileMode": "600",
+        "productionLocalAdapterRejected": true
+      }
+    },
+    {
+      "id": "auth-runtime-smoke",
+      "command": "node24 transpiled auth runtime smoke",
+      "exitCode": 0,
+      "result": {
+        "passed": true,
+        "viewerRead": true,
+        "viewerWrite": false,
+        "independentReview": true,
+        "selfReview": false,
+        "passwordValid": true,
+        "wrongPasswordValid": false,
+        "plaintextContained": false,
+        "tokenHashValid": true
+      }
+    },
+    {
+      "id": "registry-pnpm-attempt",
+      "command": "corepack pnpm --version",
+      "exitCode": 1,
+      "classification": "environment_or_tooling",
+      "summary": "EAI_AGAIN registry.npmjs.org; no lockfile generated"
+    }
+  ],
+  "notExecuted": [
+    {
+      "id": "pnpm-frozen-install",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "prettier",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "eslint",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "strict-typescript-5.9.2",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "vitest-full-suite",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "turbo-build",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "next-production-build",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "worker-production-build-start",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "postgresql-migration-replay",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "restricted-role-rls-authority",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "postgresql-concurrency-idempotency",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "object-storage-integration",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "playwright-e2e",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "axe-wcag",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "docker-compose-smoke",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "backup-isolated-restore",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "dependency-license-secret-sast-container-scans",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "sbom",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    },
+    {
+      "id": "r-worker-health",
+      "classification": "environment_or_tooling",
+      "blocking": true
+    }
+  ],
+  "scientificBlockers": [
+    "No independently approved executable phenotype rule",
+    "No promoted validated learned-vision model",
+    "No approved quantitative genetics, exact SHU, GxE, flavor, yield, or universal phenotype model"
+  ]
+}

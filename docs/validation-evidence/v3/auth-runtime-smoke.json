@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "viewerRead": true,
+  "viewerWrite": false,
+  "independentReview": true,
+  "selfReview": false,
+  "passwordValid": true,
+  "wrongPasswordValid": false,
+  "plaintextContained": false,
+  "tokenHashValid": true
+}

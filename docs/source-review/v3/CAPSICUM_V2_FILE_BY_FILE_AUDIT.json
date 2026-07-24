@@ -1,0 +1,2358 @@
+{
+  "sourceArchive": "capsicum-breeding-intelligence-platform-next-sweep-v2(1).zip",
+  "fileCount": 294,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "category": "Repository configuration",
+      "lines": 9,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": ".env.example",
+      "category": "Repository configuration",
+      "lines": 23,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "category": "CI",
+      "lines": 46,
+      "priority": "P0",
+      "status": "Incomplete",
+      "review_note": "CI cannot currently install with --frozen-lockfile and lacks PostgreSQL, object-storage, browser, container, migration, RLS, restore, and security-scan jobs."
+    },
+    {
+      "path": ".gitignore",
+      "category": "Repository configuration",
+      "lines": 13,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": ".nvmrc",
+      "category": "Repository configuration",
+      "lines": 2,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": ".prettierignore",
+      "category": "Repository configuration",
+      "lines": 7,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": ".prettierrc.json",
+      "category": "Repository configuration",
+      "lines": 7,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "AGENTS.md",
+      "category": "Repository configuration",
+      "lines": 12,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "README.md",
+      "category": "Repository configuration",
+      "lines": 112,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/Dockerfile",
+      "category": "Repository configuration",
+      "lines": 24,
+      "priority": "P0",
+      "status": "Blocked",
+      "review_note": "Frozen install is correct policy but impossible without committed lockfile; prove standalone output and non-root runtime from clean build."
+    },
+    {
+      "path": "apps/web/next-env.d.ts",
+      "category": "Repository configuration",
+      "lines": 3,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/next.config.ts",
+      "category": "Repository configuration",
+      "lines": 35,
+      "priority": "P0",
+      "status": "Unproven",
+      "review_note": "Workspace packages export TypeScript source but transpilePackages omits application/auth/database/storage/breeding-domain/observation-domain; prove or fix production build boundary."
+    },
+    {
+      "path": "apps/web/package.json",
+      "category": "Repository configuration",
+      "lines": 41,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "apps/web/src/app/accept-invitation/page.tsx",
+      "category": "Web route",
+      "lines": 19,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/actions.ts",
+      "category": "Web application",
+      "lines": 538,
+      "priority": "P0",
+      "status": "Defective",
+      "review_note": "Server actions generate a new random idempotency key per submission, so duplicate clicks/retries are not deduplicated across requests."
+    },
+    {
+      "path": "apps/web/src/app/admin/audit/page.tsx",
+      "category": "Web route",
+      "lines": 14,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/admin/jobs/page.tsx",
+      "category": "Web route",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/admin/models/page.tsx",
+      "category": "Web route",
+      "lines": 26,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/admin/system/page.tsx",
+      "category": "Web route",
+      "lines": 30,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/ai/page.tsx",
+      "category": "Web route",
+      "lines": 34,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/annotations/page.tsx",
+      "category": "Web route",
+      "lines": 24,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/api/exports/[id]/route.ts",
+      "category": "Web API",
+      "lines": 40,
+      "priority": "P1",
+      "status": "Security/contract review",
+      "review_note": "API is authenticated or intentionally public; add integration, rate-limit, adversarial, and error-contract tests."
+    },
+    {
+      "path": "apps/web/src/app/api/exports/breeding-ledger/route.ts",
+      "category": "Web API",
+      "lines": 57,
+      "priority": "P1",
+      "status": "Security/contract review",
+      "review_note": "API is authenticated or intentionally public; add integration, rate-limit, adversarial, and error-contract tests."
+    },
+    {
+      "path": "apps/web/src/app/api/health/route.ts",
+      "category": "Web API",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Security/contract review",
+      "review_note": "API is authenticated or intentionally public; add integration, rate-limit, adversarial, and error-contract tests."
+    },
+    {
+      "path": "apps/web/src/app/api/media/[id]/route.ts",
+      "category": "Web API",
+      "lines": 33,
+      "priority": "P1",
+      "status": "Security/contract review",
+      "review_note": "API is authenticated or intentionally public; add integration, rate-limit, adversarial, and error-contract tests."
+    },
+    {
+      "path": "apps/web/src/app/api/media/upload/route.ts",
+      "category": "Web API",
+      "lines": 62,
+      "priority": "P0",
+      "status": "Upload hardening gap",
+      "review_note": "Buffers the full multipart file before enforcing byte limit; lacks quarantine scan/decode pipeline, metadata policy, stable retry semantics, and orphan cleanup."
+    },
+    {
+      "path": "apps/web/src/app/api/simulations/exact/route.ts",
+      "category": "Web API",
+      "lines": 44,
+      "priority": "P1",
+      "status": "Good boundary with gaps",
+      "review_note": "Same-origin and key checks are good; add rate limits, structured error envelopes, allele/release validation, payload/depth limits, and advanced job handoff."
+    },
+    {
+      "path": "apps/web/src/app/api/system/readiness/route.ts",
+      "category": "Web API",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Security/contract review",
+      "review_note": "API is authenticated or intentionally public; add integration, rate-limit, adversarial, and error-contract tests."
+    },
+    {
+      "path": "apps/web/src/app/breeding-ledger/page.tsx",
+      "category": "Web route",
+      "lines": 28,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/catalog/claims/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 24,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/catalog/loci/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 26,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/catalog/page.tsx",
+      "category": "Web route",
+      "lines": 83,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/catalog/releases/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 30,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/crosses/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 26,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/crosses/new/page.tsx",
+      "category": "Web route",
+      "lines": 22,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/crosses/page.tsx",
+      "category": "Web route",
+      "lines": 15,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/dashboard/page.tsx",
+      "category": "Web route",
+      "lines": 3,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/experiments/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 18,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/experiments/page.tsx",
+      "category": "Web route",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/families/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 18,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/germplasm/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 18,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/germplasm/new/page.tsx",
+      "category": "Web route",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/germplasm/page.tsx",
+      "category": "Web route",
+      "lines": 16,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/globals.css",
+      "category": "Web application",
+      "lines": 139,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/app/layout.tsx",
+      "category": "Web application",
+      "lines": 65,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/app/observations/session/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 28,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/onboarding/page.tsx",
+      "category": "Web route",
+      "lines": 34,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/page.tsx",
+      "category": "Web route",
+      "lines": 36,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/pedigrees/[materialId]/page.tsx",
+      "category": "Web route",
+      "lines": 18,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/phenotype-capture/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 72,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/phenotype-capture/page.tsx",
+      "category": "Web route",
+      "lines": 110,
+      "priority": "P0",
+      "status": "Not real visual analysis",
+      "review_note": "Width, height, blur, scale, and color-reference facts are operator-entered. Derive machine-observable values from the immutable image and retain human confirmations separately."
+    },
+    {
+      "path": "apps/web/src/app/phenotypes/images/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 18,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/phenotypes/images/page.tsx",
+      "category": "Web route",
+      "lines": 31,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/plants/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 27,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/plants/page.tsx",
+      "category": "Web route",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/reports/page.tsx",
+      "category": "Web route",
+      "lines": 74,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/research-assistant/page.tsx",
+      "category": "Web route",
+      "lines": 27,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/research/review/page.tsx",
+      "category": "Web route",
+      "lines": 98,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/research/sources/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 22,
+      "priority": "P1",
+      "status": "Blocked route",
+      "review_note": "Only explicit capability placeholder remaining; implement source/document/passage detail, provenance, review, and citation navigation."
+    },
+    {
+      "path": "apps/web/src/app/scientific-catalog/page.tsx",
+      "category": "Web route",
+      "lines": 50,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/seed-lots/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 26,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/seed-lots/page.tsx",
+      "category": "Web route",
+      "lines": 27,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/selection-plans/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 18,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/selection-plans/page.tsx",
+      "category": "Web route",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/settings/users/page.tsx",
+      "category": "Web route",
+      "lines": 35,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/settings/workspace/page.tsx",
+      "category": "Web route",
+      "lines": 14,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/sign-in/page.tsx",
+      "category": "Web route",
+      "lines": 40,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/simulation-lab/page.tsx",
+      "category": "Web route",
+      "lines": 37,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/simulation-lab/simulation-form.tsx",
+      "category": "Web application",
+      "lines": 558,
+      "priority": "P1",
+      "status": "Usable but unsafe defaults",
+      "review_note": "Allows free-form user-declared alleles and generates a new request key per click; needs recorded genotype selection, normalized allele catalog, stable request key, and multi-target/advanced engines."
+    },
+    {
+      "path": "apps/web/src/app/simulation-lab/weighted-simulation-form.tsx",
+      "category": "Web application",
+      "lines": 91,
+      "priority": "P1",
+      "status": "Partial workflow",
+      "review_note": "Weighted uncertainty UI is valuable but must use normalized evidence records, probability validation, stable idempotency, and persisted provenance."
+    },
+    {
+      "path": "apps/web/src/app/simulations/[id]/page.tsx",
+      "category": "Web route",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/simulations/new/page.tsx",
+      "category": "Web route",
+      "lines": 3,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/app/simulations/page.tsx",
+      "category": "Web route",
+      "lines": 15,
+      "priority": "P1",
+      "status": "Workflow review",
+      "review_note": "Route is persistence-backed unless otherwise noted, but most pages need E2E, accessibility, pagination, empty/error/loading, and duplicate-submit proof."
+    },
+    {
+      "path": "apps/web/src/components/capability-page.tsx",
+      "category": "Web application",
+      "lines": 64,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/components/invitation-form.tsx",
+      "category": "Web application",
+      "lines": 23,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/components/page-primitives.tsx",
+      "category": "Web application",
+      "lines": 47,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/components/research-assistant-form.tsx",
+      "category": "Web application",
+      "lines": 48,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/lib/database.ts",
+      "category": "Web application",
+      "lines": 24,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/lib/environment.ts",
+      "category": "Web application",
+      "lines": 98,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/lib/presentation.ts",
+      "category": "Web application",
+      "lines": 25,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/lib/session.ts",
+      "category": "Web application",
+      "lines": 58,
+      "priority": "P1",
+      "status": "Privacy/security gap",
+      "review_note": "Trusts x-forwarded-for directly and stores unsalted SHA-256 IP fingerprints; use trusted proxy configuration and keyed HMAC or omit IP fingerprint."
+    },
+    {
+      "path": "apps/web/src/lib/storage.ts",
+      "category": "Web application",
+      "lines": 23,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/web/src/proxy.ts",
+      "category": "Web application",
+      "lines": 46,
+      "priority": "P1",
+      "status": "Needs browser proof",
+      "review_note": "Cookie-presence redirect is not authorization by itself; prove CSP nonce propagation, CSRF/same-origin behavior, public path matching, and production headers in browser tests."
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "category": "Repository configuration",
+      "lines": 13,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "apps/worker-node/Dockerfile",
+      "category": "Node worker",
+      "lines": 13,
+      "priority": "P0",
+      "status": "Blocked",
+      "review_note": "Frozen production install is impossible without lockfile; direct execution of workspace TypeScript source must be proven or replaced with compiled output."
+    },
+    {
+      "path": "apps/worker-node/package.json",
+      "category": "Node worker",
+      "lines": 25,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "apps/worker-node/src/worker.ts",
+      "category": "Node worker",
+      "lines": 222,
+      "priority": "P0",
+      "status": "Incomplete worker",
+      "review_note": "Only health and direct Monte Carlo jobs execute; long work has no heartbeat during execution, cancellation is checked only before work, and outbox publication logs full payload instead of delivering to a governed sink."
+    },
+    {
+      "path": "apps/worker-node/tsconfig.json",
+      "category": "Node worker",
+      "lines": 10,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "apps/worker-python/Dockerfile",
+      "category": "Python worker",
+      "lines": 8,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/worker-python/pyproject.toml",
+      "category": "Python worker",
+      "lines": 10,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/worker-python/tests/test_worker.py",
+      "category": "Python worker",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Minimal tests",
+      "review_note": "Three tests pass but do not validate image processing, storage, job contracts, hostile inputs, or real worker integration."
+    },
+    {
+      "path": "apps/worker-python/worker.py",
+      "category": "Python worker",
+      "lines": 91,
+      "priority": "P1",
+      "status": "Placeholder boundary",
+      "review_note": "Health/parity/abstention commands exist but no durable job loop, image decode pipeline, or deterministic phenotype analysis."
+    },
+    {
+      "path": "apps/worker-r/Dockerfile",
+      "category": "R worker",
+      "lines": 7,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/worker-r/README.md",
+      "category": "R worker",
+      "lines": 4,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "apps/worker-r/worker.R",
+      "category": "R worker",
+      "lines": 10,
+      "priority": "Deferred",
+      "status": "Correct abstention",
+      "review_note": "Keep research-only until approved AlphaSimR/statistical protocols and datasets exist; add protocol/version interface and health tests."
+    },
+    {
+      "path": "docs/ACCEPTANCE_TRACEABILITY.md",
+      "category": "Project documentation/evidence",
+      "lines": 27,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/BUILD_MANIFEST.json",
+      "category": "Project documentation/evidence",
+      "lines": 94,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/CAPSICUM_FILE_BY_FILE_REVIEW_AND_NEXT_SWEEP_GAP_ANALYSIS.md",
+      "category": "Project documentation/evidence",
+      "lines": 365,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/CAPSICUM_NEXT_SWEEP_AUTONOMOUS_AGENT_PROMPT.md",
+      "category": "Project documentation/evidence",
+      "lines": 441,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/DATA_MODEL_AND_MIGRATION_REPORT.md",
+      "category": "Project documentation/evidence",
+      "lines": 69,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/EXECUTION_MEMO.md",
+      "category": "Project documentation/evidence",
+      "lines": 22,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/FILE_CHANGE_LEDGER.md",
+      "category": "Project documentation/evidence",
+      "lines": 151,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/FILE_INVENTORY.txt",
+      "category": "Project documentation/evidence",
+      "lines": 295,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/FINAL_REPORT.md",
+      "category": "Project documentation/evidence",
+      "lines": 19,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/NEXT_SWEEP_FINAL_REPORT.md",
+      "category": "Project documentation/evidence",
+      "lines": 81,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/NEXT_SWEEP_HANDOFF_SHA256SUMS.txt",
+      "category": "Project documentation/evidence",
+      "lines": 4,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/NEXT_SWEEP_SOURCE_SHA256SUMS.txt",
+      "category": "Project documentation/evidence",
+      "lines": 294,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/OPERATIONS_BACKUP_RESTORE_RUNBOOK.md",
+      "category": "Project documentation/evidence",
+      "lines": 127,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/RELEASE_BLOCKERS.md",
+      "category": "Project documentation/evidence",
+      "lines": 40,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "category": "Project documentation/evidence",
+      "lines": 42,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/ROUTE_INVENTORY.md",
+      "category": "Project documentation/evidence",
+      "lines": 81,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/SCIENTIFIC_AUTHORITY_AND_MODEL_GATES.md",
+      "category": "Project documentation/evidence",
+      "lines": 73,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/SCIENTIFIC_LIMITATIONS.md",
+      "category": "Project documentation/evidence",
+      "lines": 36,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/SECURITY_AND_THREAT_MODEL.md",
+      "category": "Project documentation/evidence",
+      "lines": 94,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/VALIDATION_REPORT.md",
+      "category": "Project documentation/evidence",
+      "lines": 84,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/catalog-reconciliation.json",
+      "category": "Project documentation/evidence",
+      "lines": 36,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/next-sweep-validation.json",
+      "category": "Project documentation/evidence",
+      "lines": 64,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/repository-validation.json",
+      "category": "Project documentation/evidence",
+      "lines": 1931,
+      "priority": "P2",
+      "status": "Review/update",
+      "review_note": "Documentation is useful but claims must be regenerated from actual runtime evidence after the next sweep."
+    },
+    {
+      "path": "docs/source-handoff/DECISIONS_AND_STOP_CONDITIONS.md",
+      "category": "Preserved source specification",
+      "lines": 34,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/EXECUTION_PROMPT.md",
+      "category": "Preserved source specification",
+      "lines": 257,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/FINAL_REPORT_TEMPLATE.md",
+      "category": "Preserved source specification",
+      "lines": 70,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/MANIFEST.json",
+      "category": "Preserved source specification",
+      "lines": 320,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/PACKAGE_CONTENTS.md",
+      "category": "Preserved source specification",
+      "lines": 54,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/README.md",
+      "category": "Preserved source specification",
+      "lines": 49,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/SHA256SUMS.txt",
+      "category": "Preserved source specification",
+      "lines": 63,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/SOURCE_PACK_READINESS.md",
+      "category": "Preserved source specification",
+      "lines": 55,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/START_HERE.md",
+      "category": "Preserved source specification",
+      "lines": 59,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/VALIDATION_LEDGER.md",
+      "category": "Preserved source specification",
+      "lines": 24,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/WORKSTREAM_CARDS.md",
+      "category": "Preserved source specification",
+      "lines": 85,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/checklists/AI_MODEL_RELEASE_GATE.md",
+      "category": "Preserved source specification",
+      "lines": 13,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/checklists/SCIENTIFIC_RELEASE_GATE.md",
+      "category": "Preserved source specification",
+      "lines": 13,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/checklists/WEB_RELEASE_GATE.md",
+      "category": "Preserved source specification",
+      "lines": 13,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/contracts/README.md",
+      "category": "Preserved source specification",
+      "lines": 6,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/contracts/ai-answer.schema.json",
+      "category": "Preserved source specification",
+      "lines": 85,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/contracts/catalog-import-record.schema.json",
+      "category": "Preserved source specification",
+      "lines": 49,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/contracts/phenotype-observation.schema.json",
+      "category": "Preserved source specification",
+      "lines": 99,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/contracts/simulation-request.schema.json",
+      "category": "Preserved source specification",
+      "lines": 180,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/contracts/simulation-result.schema.json",
+      "category": "Preserved source specification",
+      "lines": 103,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Change_Log.csv",
+      "category": "Generated scientific data",
+      "lines": 3,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Change_Log.json",
+      "category": "Generated scientific data",
+      "lines": 17,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Data_Dictionary.csv",
+      "category": "Generated scientific data",
+      "lines": 17,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Data_Dictionary.json",
+      "category": "Generated scientific data",
+      "lines": 131,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Evidence_Claims.csv",
+      "category": "Generated scientific data",
+      "lines": 24,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Evidence_Claims.json",
+      "category": "Generated scientific data",
+      "lines": 279,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Locus_Catalog.csv",
+      "category": "Generated scientific data",
+      "lines": 24,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Locus_Catalog.json",
+      "category": "Generated scientific data",
+      "lines": 509,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/README.csv",
+      "category": "Generated scientific data",
+      "lines": 22,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/README.json",
+      "category": "Generated scientific data",
+      "lines": 213,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Research_Backlog.csv",
+      "category": "Generated scientific data",
+      "lines": 13,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Research_Backlog.json",
+      "category": "Generated scientific data",
+      "lines": 75,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Sources.csv",
+      "category": "Generated scientific data",
+      "lines": 32,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Sources.json",
+      "category": "Generated scientific data",
+      "lines": 437,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Standards.csv",
+      "category": "Generated scientific data",
+      "lines": 7,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/Standards.json",
+      "category": "Generated scientific data",
+      "lines": 45,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/data/workbook-export-manifest.json",
+      "category": "Generated scientific data",
+      "lines": 62,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/00_PRODUCT_CHARTER.md",
+      "category": "Preserved source specification",
+      "lines": 46,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/01_SYSTEM_ARCHITECTURE.md",
+      "category": "Preserved source specification",
+      "lines": 98,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/02_WEB_APPLICATION_UX_SPEC.md",
+      "category": "Preserved source specification",
+      "lines": 179,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/03_DATA_MODEL_AND_MIGRATIONS.md",
+      "category": "Preserved source specification",
+      "lines": 86,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/04_SIMULATION_ENGINE_SPEC.md",
+      "category": "Preserved source specification",
+      "lines": 117,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/05_AI_AND_RAG_SPEC.md",
+      "category": "Preserved source specification",
+      "lines": 113,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/06_PHENOTYPE_VISION_SPEC.md",
+      "category": "Preserved source specification",
+      "lines": 97,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/07_SCIENTIFIC_GOVERNANCE.md",
+      "category": "Preserved source specification",
+      "lines": 73,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/08_API_AND_CONTRACTS.md",
+      "category": "Preserved source specification",
+      "lines": 39,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/09_SECURITY_PRIVACY_OPERATIONS.md",
+      "category": "Preserved source specification",
+      "lines": 55,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/10_TEST_AND_VALIDATION_PLAN.md",
+      "category": "Preserved source specification",
+      "lines": 82,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/11_DELIVERY_AND_RELEASE_PLAN.md",
+      "category": "Preserved source specification",
+      "lines": 52,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/12_DEFINITION_OF_DONE.md",
+      "category": "Preserved source specification",
+      "lines": 50,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/13_ENVIRONMENT_AND_DEPLOYMENT.md",
+      "category": "Preserved source specification",
+      "lines": 51,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/14_REPO_STRUCTURE_AND_CONVENTIONS.md",
+      "category": "Preserved source specification",
+      "lines": 44,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/docs/15_VERIFIED_TECH_AND_STANDARDS_BASELINE.md",
+      "category": "Preserved source specification",
+      "lines": 15,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/source-pack/CAPSICUM_BREEDING_INTELLIGENCE_PLATFORM_IMPLEMENTATION_PLAN.md",
+      "category": "Preserved source specification",
+      "lines": 2011,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/source-pack/CAPSICUM_GENETICS_DATASET_README_v0_1.md",
+      "category": "Preserved source specification",
+      "lines": 23,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/source-pack/build_capsicum_catalog.py",
+      "category": "Preserved source specification",
+      "lines": 416,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/source-pack/capsicum_genetics_evidence_catalog_v0_1.xlsx",
+      "category": "Preserved source specification",
+      "lines": 0,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/source-pack/capsicum_locus_catalog_v0_1.csv",
+      "category": "Preserved source specification",
+      "lines": 24,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/source-pack/capsicum_sources_v0_1.csv",
+      "category": "Preserved source specification",
+      "lines": 32,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/starter-repo-blueprint/.env.example",
+      "category": "Preserved source specification",
+      "lines": 23,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/starter-repo-blueprint/AGENTS.md",
+      "category": "Preserved source specification",
+      "lines": 15,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/starter-repo-blueprint/REPOSITORY_TREE.md",
+      "category": "Preserved source specification",
+      "lines": 46,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/starter-repo-blueprint/VERSION_POLICY.md",
+      "category": "Preserved source specification",
+      "lines": 11,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "docs/source-handoff/tools/build_capsicum_handoff_pack.py",
+      "category": "Preserved source specification",
+      "lines": 2359,
+      "priority": "Reference",
+      "status": "Preserve",
+      "review_note": "Historical source specification or generated evidence; use as requirements/provenance, not proof of implementation."
+    },
+    {
+      "path": "eslint.config.mjs",
+      "category": "Repository configuration",
+      "lines": 23,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "infra/backup/backup.sh",
+      "category": "Infrastructure/operations",
+      "lines": 41,
+      "priority": "P1",
+      "status": "Unproven",
+      "review_note": "Database/object bundle logic is useful; add encryption/retention, authoritative reconciliation, failure cleanup, and execute real drills."
+    },
+    {
+      "path": "infra/backup/restore-test.sh",
+      "category": "Infrastructure/operations",
+      "lines": 39,
+      "priority": "P1",
+      "status": "Insufficient proof",
+      "review_note": "Checks counts rather than authoritative row/object hashes and does not strongly prove target isolation; improve and execute in disposable environment."
+    },
+    {
+      "path": "infra/compose/docker-compose.yml",
+      "category": "Infrastructure/operations",
+      "lines": 121,
+      "priority": "P0",
+      "status": "Unsafe local defaults/unproven",
+      "review_note": "Compose is a useful local stack but ships fallback passwords and lacks full proof, networks/resource limits, scanner/ingestion workers, and production separation."
+    },
+    {
+      "path": "package.json",
+      "category": "Repository configuration",
+      "lines": 45,
+      "priority": "P0",
+      "status": "Blocked",
+      "review_note": "No pnpm-lock.yaml exists although CI and Docker require frozen installs; generate and commit a legitimate lockfile on Node 24."
+    },
+    {
+      "path": "packages/ai/package.json",
+      "category": "Package source/config",
+      "lines": 25,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/ai/src/hosted.ts",
+      "category": "Package source/config",
+      "lines": 48,
+      "priority": "P1",
+      "status": "Not integrated",
+      "review_note": "Structured hosted answer boundary exists but is not called by application workflow; integrate behind feature/provider/data-policy gates with deterministic fallback and evaluation."
+    },
+    {
+      "path": "packages/ai/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 67,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/ai/src/index.ts",
+      "category": "Package source/config",
+      "lines": 144,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/ai/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/application/package.json",
+      "category": "Package source/config",
+      "lines": 34,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/application/src/auth-service.ts",
+      "category": "Package source/config",
+      "lines": 445,
+      "priority": "P1",
+      "status": "Incomplete production auth",
+      "review_note": "Strong password/session baseline; add trusted-proxy-aware keyed fingerprinting, safer invitation exchange, workspace switching/session management UI, recovery, optional MFA, and abuse controls."
+    },
+    {
+      "path": "packages/application/src/breeding-service.ts",
+      "category": "Package source/config",
+      "lines": 766,
+      "priority": "P0",
+      "status": "Scientifically unsafe",
+      "review_note": "Fruit-set advances a cross to verified, generic events can mark harvested without harvest artifacts, progeny seed lots inherit the maternal accession, plant creation does not consume seed inventory, and plant evidence summary mirrors only the latest locus call."
+    },
+    {
+      "path": "packages/application/src/catalog-service.ts",
+      "category": "Package source/config",
+      "lines": 298,
+      "priority": "P1",
+      "status": "Partially complete",
+      "review_note": "Review/publication flow is stronger, but source ingestion, allele/variant normalization, supersession UX, rule authoring, and release-wide applicability validation are incomplete."
+    },
+    {
+      "path": "packages/application/src/export-service.ts",
+      "category": "Package source/config",
+      "lines": 258,
+      "priority": "P1",
+      "status": "Synchronous only",
+      "review_note": "Loads up to 10k rows per section into memory in a request; implement durable streamed background exports and immutable artifacts."
+    },
+    {
+      "path": "packages/application/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 9,
+      "priority": "P0",
+      "status": "Insufficient tests",
+      "review_note": "Only tests a sentinel constant; application services require real PostgreSQL integration, concurrency, RLS, and rollback tests."
+    },
+    {
+      "path": "packages/application/src/index.ts",
+      "category": "Package source/config",
+      "lines": 13,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/application/src/internal.ts",
+      "category": "Package source/config",
+      "lines": 90,
+      "priority": "P1",
+      "status": "Good primitive, misused by UI",
+      "review_note": "Database idempotency is multi-instance safe when keys are stable; add failure-state semantics and use stable client-generated keys."
+    },
+    {
+      "path": "packages/application/src/media-service.ts",
+      "category": "Package source/config",
+      "lines": 138,
+      "priority": "P1",
+      "status": "Retry/reconciliation gap",
+      "review_note": "Repeated same-object upload conflicts with pending/complete state machine; add explicit idempotency, object reconciliation, quarantine, and deletion/retention workflow."
+    },
+    {
+      "path": "packages/application/src/observation-service.ts",
+      "category": "Package source/config",
+      "lines": 236,
+      "priority": "P0",
+      "status": "Concurrency/authority defect",
+      "review_note": "Corrections may branch from stale revisions and overwrite current state; definition identity/review state and vocabulary ID/version are not enforced."
+    },
+    {
+      "path": "packages/application/src/operations-service.ts",
+      "category": "Package source/config",
+      "lines": 92,
+      "priority": "P1",
+      "status": "Read/cancel only",
+      "review_note": "No canonical enqueue API is exposed for application workflows; add job creation, detailed attempts/logs, retry/admin controls, and worker capability health."
+    },
+    {
+      "path": "packages/application/src/phenotype-service.ts",
+      "category": "Package source/config",
+      "lines": 256,
+      "priority": "P1",
+      "status": "Incomplete",
+      "review_note": "Quality gate trusts submitted blur/calibration metadata; wire deterministic worker results, capture-review transitions, measurements, and model promotion workflow."
+    },
+    {
+      "path": "packages/application/src/research-service.ts",
+      "category": "Package source/config",
+      "lines": 182,
+      "priority": "P1",
+      "status": "Foundation only",
+      "review_note": "Retrieval is bounded keyword overlap over preexisting passages; no document ingestion/extraction/review pipeline, hybrid retrieval, evaluation, or source detail workflow."
+    },
+    {
+      "path": "packages/application/src/simulation-service.ts",
+      "category": "Package source/config",
+      "lines": 255,
+      "priority": "P1",
+      "status": "Incomplete authority",
+      "review_note": "Approved releases validate loci but not allele identities; persisted authority conflates exact arithmetic with uncertain biological premises; advanced engines are not integrated."
+    },
+    {
+      "path": "packages/application/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/auth/package.json",
+      "category": "Package source/config",
+      "lines": 21,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/auth/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 35,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/auth/src/index.ts",
+      "category": "Package source/config",
+      "lines": 211,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/auth/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/breeding-domain/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/breeding-domain/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 61,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/breeding-domain/src/index.ts",
+      "category": "Package source/config",
+      "lines": 133,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/breeding-domain/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/config/package.json",
+      "category": "Package source/config",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/config/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 15,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/config/src/index.ts",
+      "category": "Package source/config",
+      "lines": 140,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/config/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "category": "Package source/config",
+      "lines": 24,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/contracts/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 14,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "category": "Package source/config",
+      "lines": 157,
+      "priority": "P1",
+      "status": "Incomplete",
+      "review_note": "Exact request supports only one-locus target and free-form allele strings; add normalized allele/version contracts and distinct authority dimensions."
+    },
+    {
+      "path": "packages/contracts/src/platform.ts",
+      "category": "Package source/config",
+      "lines": 298,
+      "priority": "P1",
+      "status": "Incomplete",
+      "review_note": "Core contracts are useful but need stable client request IDs, inventory consumption, cross verification, observation concurrency, allele/assay provenance, advanced simulation, ingestion, and async artifact schemas."
+    },
+    {
+      "path": "packages/contracts/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/database/migrations/0001_foundation.sql",
+      "category": "Database migration",
+      "lines": 828,
+      "priority": "P1",
+      "status": "Preserve; extend forward",
+      "review_note": "Do not edit historical migration. Add new migration(s) for normalized allele/variant/marker entities and corrected biological identity/authority invariants."
+    },
+    {
+      "path": "packages/database/migrations/0002_operations_and_observations.sql",
+      "category": "Database migration",
+      "lines": 358,
+      "priority": "P1",
+      "status": "Preserve; extend forward",
+      "review_note": "Job and observation foundations are present; add forward constraints for correction concurrency, approved definitions, worker artifacts, and capture-derived metadata."
+    },
+    {
+      "path": "packages/database/migrations/0003_authenticated_mvp.sql",
+      "category": "Database migration",
+      "lines": 585,
+      "priority": "P1",
+      "status": "Preserve; extend forward",
+      "review_note": "MVP tables are broad, but cross verification, progeny identity, allele normalization, and operational transitions require forward migration."
+    },
+    {
+      "path": "packages/database/migrations/0004_runtime_authority_guards.sql",
+      "category": "Database migration",
+      "lines": 324,
+      "priority": "P1",
+      "status": "Needs runtime proof",
+      "review_note": "Promising authority triggers; execute adversarial tests under restricted roles and extend guards to new canonical transition services."
+    },
+    {
+      "path": "packages/database/migrations/0005_durable_worker_runtime.sql",
+      "category": "Database migration",
+      "lines": 531,
+      "priority": "P1",
+      "status": "Partially integrated",
+      "review_note": "Durable lease functions exist, but long-running worker heartbeat/cancellation and real job producers/consumers are incomplete."
+    },
+    {
+      "path": "packages/database/migrations/0006_membership_bound_rls.sql",
+      "category": "Database migration",
+      "lines": 180,
+      "priority": "P0",
+      "status": "Unproven",
+      "review_note": "Membership-bound RLS design is strong but has only a narrow verifier; test every workspace table and mutation path under runtime/worker roles."
+    },
+    {
+      "path": "packages/database/package.json",
+      "category": "Package source/config",
+      "lines": 29,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/database/scripts/import-catalog.mjs",
+      "category": "Package source/config",
+      "lines": 237,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/database/scripts/migrate.mjs",
+      "category": "Package source/config",
+      "lines": 54,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/database/scripts/provision-roles.mjs",
+      "category": "Package source/config",
+      "lines": 47,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/database/scripts/verify-authority.mjs",
+      "category": "Package source/config",
+      "lines": 146,
+      "priority": "P1",
+      "status": "Too narrow",
+      "review_note": "Tests a small RLS subset; expand to every workspace-scoped table, revoked membership, invitations, scientific authority, immutable states, and worker-only functions."
+    },
+    {
+      "path": "packages/database/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 30,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/database/src/index.ts",
+      "category": "Package source/config",
+      "lines": 128,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/database/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 11,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/genetics-advanced/package.json",
+      "category": "Package source/config",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/genetics-advanced/src/host-pathogen.ts",
+      "category": "Package source/config",
+      "lines": 172,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/genetics-advanced/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 128,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/genetics-advanced/src/index.ts",
+      "category": "Package source/config",
+      "lines": 292,
+      "priority": "P1",
+      "status": "Unintegrated",
+      "review_note": "Linkage, maternal state, rule graphs, and host-pathogen logic exist as library primitives but are absent from authoritative application/API/UI workflows."
+    },
+    {
+      "path": "packages/genetics-advanced/src/monte-carlo.ts",
+      "category": "Package source/config",
+      "lines": 292,
+      "priority": "P1",
+      "status": "Unintegrated",
+      "review_note": "Direct deterministic Monte Carlo exists; enqueue it through durable jobs with result provenance, diagnostics, cancellation, and engine-selection rules."
+    },
+    {
+      "path": "packages/genetics-advanced/src/rule-graph.ts",
+      "category": "Package source/config",
+      "lines": 205,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/genetics-advanced/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/genetics-core/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/genetics-core/src/exact.test.ts",
+      "category": "Package source/config",
+      "lines": 184,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/genetics-core/src/exact.ts",
+      "category": "Package source/config",
+      "lines": 275,
+      "priority": "Pass",
+      "status": "Strong core",
+      "review_note": "Preserve purity and exact rational invariants; extend only through reviewed contracts and tests."
+    },
+    {
+      "path": "packages/genetics-core/src/index.ts",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/genetics-core/src/invariants.test.ts",
+      "category": "Package source/config",
+      "lines": 23,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/genetics-core/src/rational.ts",
+      "category": "Package source/config",
+      "lines": 90,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/genetics-core/src/target-recovery.ts",
+      "category": "Package source/config",
+      "lines": 71,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/genetics-core/src/types.ts",
+      "category": "Package source/config",
+      "lines": 37,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/genetics-core/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/jobs/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/jobs/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 59,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/jobs/src/index.ts",
+      "category": "Package source/config",
+      "lines": 180,
+      "priority": "Pass",
+      "status": "Useful domain model",
+      "review_note": "Preserve state-machine tests; reconcile it continuously with PostgreSQL worker functions through integration tests."
+    },
+    {
+      "path": "packages/jobs/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/observability/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/observability/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 26,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/observability/src/index.ts",
+      "category": "Package source/config",
+      "lines": 50,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/observability/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/observation-domain/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/observation-domain/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 15,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/observation-domain/src/index.ts",
+      "category": "Package source/config",
+      "lines": 50,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/observation-domain/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/scientific-catalog/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/scientific-catalog/src/generated/claims.json",
+      "category": "Package source/config",
+      "lines": 421,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/scientific-catalog/src/generated/loci.json",
+      "category": "Package source/config",
+      "lines": 641,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/scientific-catalog/src/generated/sources.json",
+      "category": "Package source/config",
+      "lines": 633,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/scientific-catalog/src/governance.ts",
+      "category": "Package source/config",
+      "lines": 168,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/scientific-catalog/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 81,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/scientific-catalog/src/index.ts",
+      "category": "Package source/config",
+      "lines": 118,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/scientific-catalog/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/simulation-domain/package.json",
+      "category": "Package source/config",
+      "lines": 25,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/simulation-domain/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 46,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/simulation-domain/src/index.ts",
+      "category": "Package source/config",
+      "lines": 261,
+      "priority": "P1",
+      "status": "Misleading authority",
+      "review_note": "Returns exact_supported for exact arithmetic even when parent premises are assumed/inferred/conflicting; split calculation authority from evidence authority."
+    },
+    {
+      "path": "packages/simulation-domain/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 11,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/storage/package.json",
+      "category": "Package source/config",
+      "lines": 21,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/storage/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 16,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/storage/src/index.ts",
+      "category": "Package source/config",
+      "lines": 267,
+      "priority": "P1",
+      "status": "Foundation only",
+      "review_note": "Magic/dimension checks are useful but not a hostile decoder or malware boundary; add stream limits, decode sandbox, metadata stripping, and fuzz fixtures."
+    },
+    {
+      "path": "packages/storage/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/test-utils/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/test-utils/src/index.ts",
+      "category": "Package source/config",
+      "lines": 12,
+      "priority": "P1",
+      "status": "Integrate/test",
+      "review_note": "Source is a meaningful foundation; verify database/contract alignment and add end-to-end use where currently library-only."
+    },
+    {
+      "path": "packages/test-utils/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/vision/package.json",
+      "category": "Package source/config",
+      "lines": 20,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "packages/vision/src/index.test.ts",
+      "category": "Package source/config",
+      "lines": 31,
+      "priority": "P1",
+      "status": "Expand",
+      "review_note": "Unit coverage exists but does not replace PostgreSQL, browser, worker, storage, and concurrency integration proof."
+    },
+    {
+      "path": "packages/vision/src/index.ts",
+      "category": "Package source/config",
+      "lines": 112,
+      "priority": "P1",
+      "status": "Good pure primitive",
+      "review_note": "Deterministic math is safe but no image decoding/segmentation/calibration implementation exists; learned inference correctly abstains."
+    },
+    {
+      "path": "packages/vision/tsconfig.json",
+      "category": "Package source/config",
+      "lines": 6,
+      "priority": "P1",
+      "status": "Validate",
+      "review_note": "Configuration appears coherent statically; prove build graph and runtime packaging on Node 24 with frozen dependencies."
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "category": "Repository configuration",
+      "lines": 4,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "scripts/import_catalog.py",
+      "category": "Validation/import tooling",
+      "lines": 323,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "scripts/validate_repository.py",
+      "category": "Validation/import tooling",
+      "lines": 271,
+      "priority": "P1",
+      "status": "Structural only",
+      "review_note": "Passes marker/file checks but cannot prove runtime behavior; keep as a fast gate and add real integration/E2E/authority validation."
+    },
+    {
+      "path": "tsconfig.base.json",
+      "category": "Repository configuration",
+      "lines": 21,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    },
+    {
+      "path": "turbo.json",
+      "category": "Repository configuration",
+      "lines": 11,
+      "priority": "P2",
+      "status": "Validate",
+      "review_note": "No file-specific blocker identified; keep only if used and include in clean build/review."
+    }
+  ]
+}

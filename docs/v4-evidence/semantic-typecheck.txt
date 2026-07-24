@@ -1,0 +1,6 @@
+command=tsc -p /tmp/capsicum-pure-tsconfig.json --pretty false
+exit_code=0
+command=tsc -p /tmp/capsicum-storage-tsconfig.json --pretty false
+exit_code=0
+command=tsc -p /tmp/capsicum-sim-tsconfig.json --pretty false
+exit_code=0
